@@ -91,7 +91,7 @@ stages:
     jobs:
       - deployment: NuGet
         displayName: 'NuGet.org'
-        environment: 'NuGet.org'
+        environment: 'NuGet'
         strategy:
           runOnce:
             deploy:
