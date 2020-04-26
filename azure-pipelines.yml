@@ -77,3 +77,41 @@ stages:
                     packagesToPush: '$(Pipeline.Workspace)/**/*.nupkg'
                     nuGetFeedType: external
                     publishFeedCredentials: 'AvaintPoint-MyGet'
+
+  - stage: NuGet
+    displayName: Deploy to NuGet.org
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'), eq(variables['system.pullrequest.isfork'], false), or(eq(variables['IS_PREVIEW'], 'true'), eq(variables['IS_RELEASE'], 'true')))
+    jobs:
+      - deployment: NuGet
+        displayName: NuGet.org
+        environment: NuGet.org
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - checkout: self
+                  clean: true
+
+                - powershell: build/Process-Release.ps1
+                  displayName: Process Release
+
+                - task: GitHubRelease@1
+                  inputs:
+                    action: create
+                    gitHubConnection: GitHub
+                    assets: $(Pipeline.Workspace)/**/*.nupkg
+                    tag: 'v$(VersionName)'
+                    tagSource: userSpecifiedTag
+                    isPreRelease: $(IS_PREVIEW)
+                    title: $(ReleaseDisplayName)
+                    addChangeLog: true
+                  enabled: $(DeployToNuGet)
+
+                - task: NuGetCommand@2
+                  displayName: Push to NuGet.org
+                  inputs:
+                    command: push
+                    packagesToPush: '$(Pipeline.Workspace)/**/*.nupkg'
+                    nuGetFeedType: external
+                    publishFeedCredentials: 'NuGet'
+                  enabled: $(DeployToNuGet)
