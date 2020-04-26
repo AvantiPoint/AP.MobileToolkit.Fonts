@@ -1,0 +1,79 @@
+trigger:
+  - master
+
+name: 3.0.0.$(Build.BuildId)
+
+variables:
+- name: BuildPlatform
+  value: 'Any CPU'
+- name: BuildConfiguration
+  value: 'Release'
+- group: CodeSigning
+
+stages:
+  - stage: Build
+    jobs:
+      - job: Build
+        displayName: Build AP.MobileToolkit.Fonts
+        pool:
+          vmImage: windows-latest
+        steps:
+          - task: UseDotNet@2
+            inputs:
+              packageType: sdk
+              useGlobalJson: true
+
+          - task: NuGetToolInstaller@1
+            displayName: Install latest NuGet.exe
+            inputs:
+              checkLatest: true
+
+          - task: NuGetCommand@2
+            displayName: NuGet Restore
+            inputs:
+              command: restore
+
+          - task: MSBuild@1
+            displayName: MSBuild
+            inputs:
+              platform: '$(BuildPlatform)'
+              configuration: '$(BuildConfiguration)'
+              msbuildArguments: '/p:JavaSdkDirectory="$(JAVA_HOME)"'
+
+          - task: DotNetCoreCLI@2
+            displayName: Run Tests
+            inputs:
+              command: test
+              projects: 'tests/**/*.csproj'
+              arguments: '-c $(BuildConfiguration) --collect:"Code Coverage" -s $(System.DefaultWorkingDirectory)/CodeCoverage.runsettings --no-build'
+
+          - task: PublishTestResults@2
+            displayName: Publish Test Results
+            inputs:
+              testRunTitle: 'AP.MobileToolkit.Fonts'
+              testResultsFiles: '**/*.trx'
+
+          - task: PublishPipelineArtifact@1
+            displayName: Publish Pipeline Artifacts
+            inputs:
+              artifact: NuGet
+              targetPath: $(Build.ArtifactStagingDirectory)
+
+  - stage: Deploy
+    displayName: Deploy NuGet Packages
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'), eq(variables['system.pullrequest.isfork'], false))
+    jobs:
+      - deployment: MyGet
+        displayName: MyGet.org
+        environment: MyGet
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+              - task: NuGetCommand@2
+                displayName: 'NuGet push'
+                inputs:
+                    command: push
+                    packagesToPush: '$(Pipeline.Workspace)/**/*.nupkg'
+                    nuGetFeedType: external
+                    publishFeedCredentials: 'AvaintPoint-MyGet'
