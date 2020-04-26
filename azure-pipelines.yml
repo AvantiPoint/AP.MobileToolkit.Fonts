@@ -40,12 +40,9 @@ stages:
               configuration: '$(BuildConfiguration)'
               msbuildArguments: '/p:JavaSdkDirectory="$(JAVA_HOME)"'
 
-          - task: DotNetCoreCLI@2
+          - powershell: |
+              dotnet test $(System.DefaultWorkingDirectory)\tests\AP.MobileToolkit.Fonts.Tests\AP.MobileToolkit.Fonts.Tests.csproj --configuration $env:BuildConfiguration --logger trx --no-build --collect "Code Coverage"
             displayName: Run Tests
-            inputs:
-              command: test
-              projects: 'tests/**/*.csproj'
-              arguments: '-c $(BuildConfiguration) --collect:"Code Coverage" -s $(System.DefaultWorkingDirectory)/CodeCoverage.runsettings --no-build'
 
           - task: PublishTestResults@2
             displayName: Publish Test Results
