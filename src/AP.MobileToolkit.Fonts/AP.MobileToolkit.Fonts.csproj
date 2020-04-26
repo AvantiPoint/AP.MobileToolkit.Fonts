@@ -4,6 +4,8 @@
     <TargetFrameworks>netstandard2.0;Xamarin.iOS10;MonoAndroid90;MonoAndroid10.0</TargetFrameworks>
     <TargetFrameworks Condition=" '$(OS)' == 'Windows_NT' ">$(TargetFrameworks);uap10.0.17763</TargetFrameworks>
     <Description>Provides extensions for easily bundling Icon Fonts with as Embedded Fonts that ship via NuGet</Description>
+    <PackageId>AP.MobileToolkit.Forms.Fonts</PackageId>
+    <PackageTags>avantipoint, fonts, xamarin.forms, embedded fonts</PackageTags>
   </PropertyGroup>
 
     <ItemGroup>
