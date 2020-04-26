@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Description>Provides the embedded font helpers for adding FontAwesome Free - Regular to your Xamarin.Forms project.</Description>
+    <PackageId>AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Regular</PackageId>
+    <PackageTags>avantipoint, fonts, xamarin.forms, embedded fonts, fontawesome</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="*.ttf" />
+    <ProjectReference Include="..\AP.MobileToolkit.Fonts\AP.MobileToolkit.Fonts.csproj" />
+  </ItemGroup>
+
+</Project>
