@@ -4,7 +4,6 @@ using Android.Graphics;
 using AP.MobileToolkit.Controls;
 using Xamarin.Forms;
 
-[assembly: ExportImageSourceHandler(typeof(IconImageSource), typeof(AP.MobileToolkit.Platform.IconImageSourceHandler))]
 namespace AP.MobileToolkit.Platform
 {
     internal static class FontExtensions

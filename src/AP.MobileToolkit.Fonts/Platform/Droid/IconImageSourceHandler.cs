@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using Android.Content;
 using Android.Graphics;
@@ -12,10 +7,8 @@ using AP.MobileToolkit.Controls;
 using AP.MobileToolkit.Fonts;
 using AP.MobileToolkit.Platform;
 using Xamarin.Forms;
-using Xamarin.Forms.Internals;
 using Xamarin.Forms.Platform.Android;
 using Color = Xamarin.Forms.Color;
-using Path = System.IO.Path;
 
 [assembly: ExportImageSourceHandler(typeof(IconImageSource), typeof(IconImageSourceHandler))]
 namespace AP.MobileToolkit.Platform

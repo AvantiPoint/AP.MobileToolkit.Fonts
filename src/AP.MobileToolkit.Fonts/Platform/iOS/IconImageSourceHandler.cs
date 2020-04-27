@@ -18,7 +18,7 @@ using RectangleF = CoreGraphics.CGRect;
 [assembly: ExportImageSourceHandler(typeof(IconImageSource), typeof(AP.MobileToolkit.Platform.IconImageSourceHandler))]
 namespace AP.MobileToolkit.Platform
 {
-    internal class IconImageSourceHandler : IImageSourceHandler
+    public class IconImageSourceHandler : IImageSourceHandler
     {
         // should this be the default color on the BP for iOS?
         readonly Color _defaultColor = UIColor.LabelColor.ToColor();

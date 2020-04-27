@@ -3,7 +3,6 @@ using Xamarin.Forms;
 using Xamarin.Forms.Core;
 using Xamarin.Forms.Internals;
 
-[assembly: ExportImageSourceHandler(typeof(IconImageSource), typeof(AP.MobileToolkit.Platform.IconImageSourceHandler))]
 namespace AP.MobileToolkit.Platform
 {
     internal static class FontExtensions

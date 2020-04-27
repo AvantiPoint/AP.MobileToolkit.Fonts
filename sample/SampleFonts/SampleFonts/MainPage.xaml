@@ -10,6 +10,15 @@
   </ContentPage.ToolbarItems>
   <ScrollView>
     <StackLayout Padding="{OnPlatform Default=20, iOS='20,40'}">
+      <Image Source="{FontImage Glyph={ap:Icon 'far fa-check-circle'}, Color=Blue, Size=60}" />
+      <Image>
+        <Image.Source>
+          <FontImageSource Glyph="{x:Static ap:FontAwesomeRegular.Eye}"
+                           FontFamily="fa-regular-400.ttf"
+                           Size="60"
+                           Color="Red" />
+        </Image.Source>
+      </Image>
       <Label Text="Labels" />
       <Grid>
         <Grid.ColumnDefinitions>
@@ -33,6 +42,32 @@
                Grid.Row="2"
                Grid.Column="1" />
       </Grid>
+      <Label Text="Spans" />
+      <Label>
+        <Label.FormattedText>
+          <FormattedString>
+            <ap:IconSpan GlyphName="far fa-user" />
+            <Span Text="    Font Awesome Regular - User" />
+          </FormattedString>
+        </Label.FormattedText>
+      </Label>
+      <Label>
+        <Label.FormattedText>
+          <FormattedString>
+            <ap:IconSpan GlyphName="fas fa-user" />
+            <Span Text="    Font Awesome Solid - User" />
+          </FormattedString>
+        </Label.FormattedText>
+      </Label>
+      <Label>
+        <Label.FormattedText>
+          <FormattedString>
+            <ap:IconSpan GlyphName="fab fa-github" />
+            <Span Text="    Font Awesome Brands - GitHub" />
+          </FormattedString>
+        </Label.FormattedText>
+      </Label>
+
       <Label Text="Buttons" />
       <Grid>
         <Grid.ColumnDefinitions>
@@ -40,6 +75,9 @@
           <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
+        <Button Text="{x:Static ap:FontAwesomeRegular.AddressBook}"
+                FontFamily="fa-regular-400.ttf"
+                Grid.Row="3"/>
         <Button Text="{ap:Icon 'far fa-user'}" />
         <Label Text="Font Awesome Regular - User"
                Grid.Column="1" />
@@ -71,9 +109,10 @@
           <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <Image>
+        <Image HeightRequest="40"
+               Aspect="AspectFit">
           <Image.Source>
-            <ap:IconImageSource Name="far fa-dashboard"
+            <ap:IconImageSource Name="far fa-user"
                                 Size="40"
                                 Color="Black" />
           </Image.Source>
@@ -81,18 +120,23 @@
         <Label Text="Font Awesome Regular - User"
                Grid.Column="1" />
 
-        <Image Grid.Row="1">
+        <Image HeightRequest="40"
+               Aspect="AspectFit"
+               BackgroundColor="Gray"
+               Grid.Row="1">
           <Image.Source>
             <ap:IconImageSource Name="fas fa-user"
                                 Size="40"
-                                Color="Black" />
+                                Color="White" />
           </Image.Source>
         </Image>
         <Label Text="Font Awesome Solid - User"
                Grid.Row="1"
                Grid.Column="1" />
 
-        <Image Grid.Row="1">
+        <Image HeightRequest="40"
+               Aspect="AspectFit"
+               Grid.Row="1">
           <Image.Source>
             <ap:IconImageSource Name="fab fa-github"
                                 Size="40"
@@ -114,7 +158,8 @@
         <Label Text="Font Awesome Regular - User"
                Grid.Column="1" />
 
-        <Image Source="{ap:IconImageSource 'fas fa-user', Size=40, Color=Black}"
+        <Image Source="{ap:IconImageSource 'fas fa-user', Size=40, Color=White}"
+               BackgroundColor="Gray"
                Grid.Row="1" />
         <Label Text="Font Awesome Solid - User"
                Grid.Row="1"
