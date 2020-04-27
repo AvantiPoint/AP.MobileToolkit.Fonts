@@ -40,3 +40,5 @@ Using it in your XAML couldn't be easier:
   </StackLayout>
 </ContentPage>
 ```
+
+**NOTE** The Icon extension will work on any Element that has both a Text and FontFamily property. Both are set automatically. This does not work with the ToolbarItem as it does not have a FontFamily property.
