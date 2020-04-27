@@ -59,6 +59,7 @@ stages:
               SignClientTenantId: $(SignClientTenantId)
               SignServiceResourceId: $(SignServiceResourceId)
             condition: and(succeeded(), eq(variables['system.pullrequest.isfork'], false))
+            enabled: false
 
           - task: PublishPipelineArtifact@1
             displayName: Publish Pipeline Artifacts
