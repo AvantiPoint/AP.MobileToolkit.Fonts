@@ -5,6 +5,7 @@ using Xamarin.Forms.Internals;
 [assembly: Preserve(AllMembers = true)]
 [assembly: XmlnsPrefix("http://avantipoint.com/mobiletoolkit", "ap")]
 [assembly: XmlnsDefinition("http://avantipoint.com/mobiletoolkit", "AP.MobileToolkit.Controls")]
+[assembly: XmlnsDefinition("http://avantipoint.com/mobiletoolkit", "AP.MobileToolkit.Effects")]
 [assembly: XmlnsDefinition("http://avantipoint.com/mobiletoolkit", "AP.MobileToolkit.Fonts.Controls")]
 [assembly: XmlnsDefinition("http://avantipoint.com/mobiletoolkit", "AP.MobileToolkit.Xaml")]
 

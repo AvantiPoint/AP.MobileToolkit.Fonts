@@ -13,9 +13,9 @@ using WindowsImageSource = Windows.UI.Xaml.Media.ImageSource;
 [assembly: ExportImageSourceHandler(typeof(IconImageSource), typeof(AP.MobileToolkit.Platform.IconImageSourceHandler))]
 namespace AP.MobileToolkit.Platform
 {
-    internal class IconImageSourceHandler : IImageSourceHandler
+    public class IconImageSourceHandler : IImageSourceHandler
     {
-        float _minimumDpi = 300;
+        readonly float _minimumDpi = 300;
 
         public Task<WindowsImageSource> LoadImageAsync(ImageSource imagesource, CancellationToken cancellationToken = default) =>
             new Task<WindowsImageSource>(() => LoadImage(imagesource));
@@ -27,30 +27,35 @@ namespace AP.MobileToolkit.Platform
 
             var device = CanvasDevice.GetSharedDevice();
             var dpi = Math.Max(_minimumDpi, Windows.Graphics.Display.DisplayInformation.GetForCurrentView().LogicalDpi);
-            var canvasSize = (float)iconsource.Size + 2;
 
-            var canvas = new CanvasImageSource(device, canvasSize, canvasSize, dpi);
-            using (var ds = canvas.CreateDrawingSession(Windows.UI.Colors.Transparent))
+            var textFormat = new CanvasTextFormat
             {
-                var textFormat = new CanvasTextFormat
+                FontFamily = icon.FontFileName,
+                FontSize = (float)iconsource.Size,
+                HorizontalAlignment = CanvasHorizontalAlignment.Center,
+                VerticalAlignment = CanvasVerticalAlignment.Center,
+                Options = CanvasDrawTextOptions.Default
+            };
+
+            var glyph = icon.GetGlyph(iconsource.Name);
+            using (var layout = new CanvasTextLayout(device, glyph, textFormat, (float)iconsource.Size, (float)iconsource.Size))
+            {
+                var canvasWidth = (float)layout.LayoutBounds.Width + 2;
+                var canvasHeight = (float)layout.LayoutBounds.Height + 2;
+
+                var imageSource = new CanvasImageSource(device, canvasWidth, canvasHeight, dpi);
+                using (var ds = imageSource.CreateDrawingSession(Windows.UI.Colors.Transparent))
                 {
-                    FontFamily = icon.FontFileName,
-                    FontSize = (float)iconsource.Size,
-                    HorizontalAlignment = CanvasHorizontalAlignment.Center,
-                    Options = CanvasDrawTextOptions.Default,
-                };
+                    var iconcolor = (iconsource.Color != Color.Default ? iconsource.Color : Color.White).ToWindowsColor();
 
-                var iconcolor = ToWindowsColor(iconsource.Color != Color.Default ? iconsource.Color : Color.White);
-                var glyph = icon.GetGlyph(iconsource.Name);
-                ds.DrawText(glyph, textFormat.FontSize / 2, 0, iconcolor, textFormat);
+                    // offset by 1 as we added a 1 inset
+                    var x = (float)layout.DrawBounds.X * -1;
+
+                    ds.DrawTextLayout(layout, x, 1f, iconcolor);
+                }
+
+                return imageSource;
             }
-
-            return canvas;
-        }
-
-        public static Windows.UI.Color ToWindowsColor(Color color)
-        {
-            return Windows.UI.Color.FromArgb((byte)(color.A * 255), (byte)(color.R * 255), (byte)(color.G * 255), (byte)(color.B * 255));
         }
     }
 }

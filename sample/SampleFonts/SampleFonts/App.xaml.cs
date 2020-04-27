@@ -3,18 +3,18 @@ using Xamarin.Forms;
 
 namespace SampleFonts
 {
-    public partial class App : Application
+public partial class App : Application
+{
+    public App()
     {
-        public App()
-        {
-            InitializeComponent();
+        InitializeComponent();
 
-            FontRegistry.RegisterFonts(
-                FontAwesomeBrands.Font,
-                FontAwesomeRegular.Font,
-                FontAwesomeSolid.Font);
+        FontRegistry.RegisterFonts(
+            FontAwesomeBrands.Font,
+            FontAwesomeRegular.Font,
+            FontAwesomeSolid.Font);
 
-            MainPage = new MainPage();
-        }
+        MainPage = new NavigationPage(new MainPage());
     }
+}
 }

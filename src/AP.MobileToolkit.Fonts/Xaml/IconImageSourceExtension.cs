@@ -7,7 +7,7 @@ namespace AP.MobileToolkit.Xaml
 {
     [AcceptEmptyServiceProvider]
     [ContentProperty(nameof(Name))]
-    public sealed class IconFontSourceExtension : IconImageSource, IMarkupExtension<IconImageSource>
+    public sealed class IconImageSourceExtension : IconImageSource, IMarkupExtension<IconImageSource>
     {
         public IconImageSource ProvideValue(IServiceProvider serviceProvider) => this;
 

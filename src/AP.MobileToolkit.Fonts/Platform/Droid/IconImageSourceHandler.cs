@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -9,16 +10,17 @@ using Android.Graphics;
 using Android.Util;
 using AP.MobileToolkit.Controls;
 using AP.MobileToolkit.Fonts;
+using AP.MobileToolkit.Platform;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Platform.Android;
 using Color = Xamarin.Forms.Color;
 using Path = System.IO.Path;
 
-[assembly: ExportImageSourceHandler(typeof(IconImageSource), typeof(AP.MobileToolkit.Platform.IconImageSourceHandler))]
+[assembly: ExportImageSourceHandler(typeof(IconImageSource), typeof(IconImageSourceHandler))]
 namespace AP.MobileToolkit.Platform
 {
-    internal class IconImageSourceHandler : IImageSourceHandler
+    public class IconImageSourceHandler : IImageSourceHandler
     {
         public Task<Bitmap> LoadImageAsync(ImageSource imagesource, Context context, CancellationToken cancelationToken = default) =>
             new Task<Bitmap>(() => LoadImage(imagesource, context));
@@ -26,6 +28,7 @@ namespace AP.MobileToolkit.Platform
         private Bitmap LoadImage(ImageSource imagesource, Context context)
         {
             Bitmap image = null;
+
             if (imagesource is IconImageSource iconsource && FontRegistry.HasFont(iconsource.Name, out var font))
             {
                 var paint = new Paint
@@ -38,6 +41,8 @@ namespace AP.MobileToolkit.Platform
 
                 using (var typeface = Typeface.CreateFromAsset(context.ApplicationContext.Assets, font.FontFileName))
                     paint.SetTypeface(typeface);
+
+                paint.SetTypeface(font.Alias.ToTypeFace());
 
                 var glyph = font.GetGlyph(iconsource.Name);
                 var width = (int)(paint.MeasureText(glyph) + .5f);
