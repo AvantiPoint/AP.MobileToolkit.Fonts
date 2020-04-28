@@ -100,9 +100,8 @@ stages:
                 - checkout: self
                   clean: true
 
-                - powershell: build/Process-Release.ps1
+                - powershell: $(Pipeline.Workspace)/build/Process-Release.ps1
                   displayName: Process Release
-                  workingDirectory: $(Pipeline.Workspace)
 
                 - task: GitHubRelease@1
                   inputs:
