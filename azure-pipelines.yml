@@ -102,6 +102,7 @@ stages:
 
                 - powershell: build/Process-Release.ps1
                   displayName: Process Release
+                  workingDirectory: $(Pipeline.Workspace)
 
                 - task: GitHubRelease@1
                   inputs:
@@ -118,6 +119,6 @@ stages:
                   displayName: Push to NuGet.org
                   inputs:
                     command: push
-                    packagesToPush: '$(Pipeline.Workspace)/**/*.nupkg'
+                    packagesToPush: '$(Pipeline.Workspace)/**/*.nupkg;!$(Pipeline.Workspace)/**/*.symbols.nupkg'
                     nuGetFeedType: external
                     publishFeedCredentials: 'NuGet.org'
