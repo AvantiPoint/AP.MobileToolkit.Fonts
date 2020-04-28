@@ -37,6 +37,7 @@ Using it in your XAML couldn't be easier:
   <StackLayout>
     <Label Text="{ap:Icon 'far fa-user'}" />
     <Button Text="{ap:Icon 'far fa-user'}" />
+    <Image Source="{FontImage Glyph={ap:Icon 'far fa-check-circle'}, Color=Blue, Size=60}" />
   </StackLayout>
 </ContentPage>
 ```
