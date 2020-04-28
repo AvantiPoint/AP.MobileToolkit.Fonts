@@ -67,6 +67,21 @@ Using it in your XAML couldn't be easier:
 </ContentPage>
 ```
 
+You can also use a built-in static class to enable IntelliSense, strong typing, and compile checking for glyphs.
+
+```xml
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ap="http://avantipoint.com/mobiletoolkit"
+             x:Class="SampleFonts.MainPage">
+  <StackLayout>
+    <Label Text="{ap:Icon IconName={x:Static ap:FontAwesomeRegular.User}}" />
+    <Button Text="{ap:Icon IconName={x:Static ap:FontAwesomeRegular.User}}" />
+    <Image Source="{FontImage Glyph={x:Static ap:FontAwesomeRegular.CheckCircle}, Color=Blue, Size=60}" />
+  </StackLayout>
+</ContentPage>
+```
+
 **NOTE** The Icon extension will work on any Element that has both a Text and FontFamily property. Both are set automatically. This does not work with the ToolbarItem as it does not have a FontFamily property. If using a ToolbarItem be sure to use the FontImageSource.
 
 [CoreFontsShield]: https://img.shields.io/nuget/vpre/AP.MobileToolkit.Forms.Fonts.svg
