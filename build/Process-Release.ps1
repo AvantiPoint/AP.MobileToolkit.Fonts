@@ -2,7 +2,7 @@ $searchPath = "."
 
 if ($null -ne $env:PIPELINE_WORKSPACE)
 {
-    $searchPath = Join-Path -Path $env:PIPELINE_WORKSPACE -ChildPath 'Artifacts'
+    $searchPath = Join-Path -Path $env:PIPELINE_WORKSPACE -ChildPath 'NuGet'
 }
 
 Write-Host "Artifact search directory - $searchPath"
