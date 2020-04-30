@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
@@ -26,6 +26,14 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleFonts.iOS", "sample\SampleFonts\SampleFonts.iOS\SampleFonts.iOS.csproj", "{179E5957-8BD8-4AAC-BAD3-CDE4B30286DD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleFonts", "sample\SampleFonts\SampleFonts\SampleFonts.csproj", "{04B78821-189D-4B2C-9497-B3BE937666EF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mappings", "mappings", "{05A3841E-77B1-4F5C-BF2C-A704BE633B2B}"
+	ProjectSection(SolutionItems) = preProject
+		mappings\FontAwesomeBrands.cs = mappings\FontAwesomeBrands.cs
+		mappings\FontAwesomeRegular.cs = mappings\FontAwesomeRegular.cs
+		mappings\FontAwesomeSolid.cs = mappings\FontAwesomeSolid.cs
+		mappings\MappingXmlns.cs = mappings\MappingXmlns.cs
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

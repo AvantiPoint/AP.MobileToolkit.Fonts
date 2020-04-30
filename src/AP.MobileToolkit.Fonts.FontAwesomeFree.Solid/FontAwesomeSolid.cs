@@ -1,11 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 using Xamarin.Forms;
 
-#if XAMARIN_IOS
-[assembly: Foundation.LinkerSafe]
-#elif MONOANDROID
-[assembly: Android.LinkerSafe]
-#endif
 [assembly: InternalsVisibleTo("AP.MobileToolkit.Fonts.Tests")]
 [assembly: ExportFont(AP.MobileToolkit.Fonts.FontAwesomeSolid.FontName)]
 namespace AP.MobileToolkit.Fonts
