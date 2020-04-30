@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6A1E0C57-A046-403E-AA03-EB56913991DD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AP.MobileToolkit.Fonts", "src\AP.MobileToolkit.Fonts\AP.MobileToolkit.Fonts.csproj", "{F407F6E1-EEE2-4CAA-8D4D-AC0BB5243E6F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AP.MobileToolkit.Fonts", "src\AP.MobileToolkit.Fonts\AP.MobileToolkit.Fonts.csproj", "{F407F6E1-EEE2-4CAA-8D4D-AC0BB5243E6F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{A121FCC4-02EC-4F96-A94E-1C7D935B8B66}"
 EndProject
