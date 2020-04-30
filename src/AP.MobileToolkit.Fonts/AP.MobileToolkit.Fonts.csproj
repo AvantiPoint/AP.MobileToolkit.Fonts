@@ -6,9 +6,15 @@
     <Description>Provides extensions for easily bundling Icon Fonts with as Embedded Fonts that ship via NuGet</Description>
     <PackageId>AP.MobileToolkit.Forms.Fonts</PackageId>
     <PackageTags>avantipoint, fonts, xamarin.forms, embedded fonts</PackageTags>
+    <RootNamespace>AP.MobileToolkit</RootNamespace>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
 
-    <ItemGroup>
+  <PropertyGroup Condition=" $(TargetFramework.StartsWith('uap10')) ">
+    <DefineConstants>$(DefineConstants);UWP</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
     <Compile Remove="**/Platform/**/*.cs" />
     <None Include="**/Platform/**/*.cs" />
   </ItemGroup>
@@ -36,6 +42,10 @@
 
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.5.0.657" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Effects\**\*.cs" />
   </ItemGroup>
 
 </Project>

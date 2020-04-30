@@ -51,4 +51,9 @@
     <None Remove=".DS_Store" />
   </ItemGroup>
 
+  <ItemGroup Condition=" $(MappingFile) != '' ">
+    <Compile Include="$(MSBuildThisFileDirectory)mappings\$(MappingFile).cs;$(MSBuildThisFileDirectory)mappings\MappingXmlns.cs"
+             Link="Mappings\%(Filename)%(Extension)" />
+  </ItemGroup>
+
 </Project>

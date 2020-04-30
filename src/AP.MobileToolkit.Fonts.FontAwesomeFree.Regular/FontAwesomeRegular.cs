@@ -5,6 +5,11 @@ using Xamarin.Forms;
 [assembly: ExportFont(AP.MobileToolkit.Fonts.FontAwesomeRegular.FontName)]
 namespace AP.MobileToolkit.Fonts
 {
+#if XAMARIN_IOS
+    [Foundation.Preserve(AllMembers = true)]
+#elif MONOANDROID
+    [Android.Runtime.Preserve(AllMembers = true)]
+#endif
     public static class FontAwesomeRegular
     {
         internal const string FontName = "fa-regular-400.ttf";

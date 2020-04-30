@@ -15,10 +15,8 @@ namespace AP.MobileToolkit.Fonts.StyleSheets
         /// <param name="stream">The file stream.</param>
         public static void ReadCSSFile(this ICssParser parser, Stream stream)
         {
-            using (var reader = new StreamReader(stream))
-            {
-                parser.ReadCSSFile(reader);
-            }
+            using var reader = new StreamReader(stream);
+            parser.ReadCSSFile(reader);
         }
 
         /// <summary>
@@ -27,10 +25,8 @@ namespace AP.MobileToolkit.Fonts.StyleSheets
         /// <param name="Path">The path.</param>
         public static void ReadCSSFile(this ICssParser parser, string filePath)
         {
-            using (var stream = new FileStream(filePath, FileMode.Open))
-            {
-                parser.ReadCSSFile(stream);
-            }
+            using var stream = new FileStream(filePath, FileMode.Open);
+            parser.ReadCSSFile(stream);
         }
 
         public static void ReadCSSFile(this ICssParser parser, string resourceName, Type resolvingType) =>
@@ -53,10 +49,8 @@ namespace AP.MobileToolkit.Fonts.StyleSheets
                 throw new FileNotFoundException($"The css file {resourceName} could not be found in the assembly {assembly.FullName}");
             }
 
-            using (var stream = assembly.GetManifestResourceStream(resourceId))
-            {
-                parser.ReadCSSFile(stream);
-            }
+            using var stream = assembly.GetManifestResourceStream(resourceId);
+            parser.ReadCSSFile(stream);
         }
 
         public static string GetFontIcon(this ICssParser parser, string className)

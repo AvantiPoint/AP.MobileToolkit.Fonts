@@ -5,6 +5,11 @@ using Xamarin.Forms;
 [assembly: ExportFont(AP.MobileToolkit.Fonts.FontAwesomeSolid.FontName)]
 namespace AP.MobileToolkit.Fonts
 {
+#if XAMARIN_IOS
+    [Foundation.Preserve(AllMembers = true)]
+#elif MONOANDROID
+    [Android.Runtime.Preserve(AllMembers = true)]
+#endif
     public static class FontAwesomeSolid
     {
         internal const string FontName = "fa-solid-900.ttf";

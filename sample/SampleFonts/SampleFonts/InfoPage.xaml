@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ap="http://avantipoint.com/mobiletoolkit"
+             Padding="{OnPlatform Default=20, iOS='20,40'}"
+             Title="Info"
+             x:Class="SampleFonts.InfoPage">
+  <ContentPage.IconImageSource>
+    <FontImageSource Glyph="{ap:Icon IconName='fas fa-info-circle'}" />
+  </ContentPage.IconImageSource>
+  <ScrollView>
+    <StackLayout>
+    <Label Text="About"
+           FontSize="Title" />
+    <Label Text="The AP.MobileToolkit.Fonts library lets you more easily create and consume common icon fonts in your Xamarin.Forms projects. To start we are releasing support for Font Awesome Free and will be releasing additional fonts over time." />
+
+    <Label Text="Extensions &amp; Controls"
+           FontSize="Subtitle"
+           Margin="0,20,0,0"/>
+    <Label Text="Perhaps the single most important feature is the ability to easily consume web fonts like Font Awesome using the same friendly syntax you would see while searching for the icons on FontAwesome.com or in any web app. There is huge benefit both in maintainability and readability by keeping it simple with markup like `far fa-user` instead of:&#13;&#13;Text={x:Static local:FontAwesomeRegular.User}&#13;&#13;Of course the issue with this format typically is that you then need to sett the Font Family...&#13;&#13;For those who still prefer the strong typing of a static mapping class, the AP.MobileToolkit comes with a mapping class for each font, rather than mapping to the unicode character, the Mapping class maps to the lookup value for that you would normally type and is thus fully compatible with the Extensions." />
+
+  </StackLayout>
+  </ScrollView>
+</ContentPage>

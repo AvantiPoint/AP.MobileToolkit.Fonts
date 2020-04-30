@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ap="http://avantipoint.com/mobiletoolkit"
+             Title="Mappings"
+             x:Class="SampleFonts.Mappings">
+  <ContentPage.IconImageSource>
+    <FontImageSource Glyph="{ap:Icon {x:Static ap:FontAwesomeRegular.Map}}"
+                     Size="32" />
+  </ContentPage.IconImageSource>
+  <ScrollView>
+    <StackLayout>
+      <Label Text="Labels"
+             Margin="0,0,0,10"/>
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="50" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Text="{ap:Icon {x:Static ap:FontAwesomeRegular.User}}"/>
+        <Label Text="Font Awesome Regular - User"
+               Grid.Column="1" />
+
+        <Label Text="{ap:Icon {x:Static ap:FontAwesomeSolid.User}}"
+               Grid.Row="1" />
+        <Label Text="Font Awesome Solid - User"
+               Grid.Row="1"
+               Grid.Column="1" />
+
+        <Label Text="{ap:Icon {x:Static ap:FontAwesomeBrands.Github}}"
+               Grid.Row="2" />
+        <Label Text="Font Awesome Brands - Github"
+               Grid.Row="2"
+               Grid.Column="1" />
+      </Grid>
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

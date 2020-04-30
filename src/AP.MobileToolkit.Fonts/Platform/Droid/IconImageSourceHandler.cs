@@ -10,7 +10,6 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Color = Xamarin.Forms.Color;
 
-[assembly: ExportImageSourceHandler(typeof(IconImageSource), typeof(IconImageSourceHandler))]
 namespace AP.MobileToolkit.Platform
 {
     public class IconImageSourceHandler : IImageSourceHandler
