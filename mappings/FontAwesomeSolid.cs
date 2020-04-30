@@ -594,7 +594,7 @@ namespace AP.MobileToolkit.Fonts.Mappings
         public const string Divide = "fas fa-divide";
         public const string DoorClosed = "fas fa-door-closed";
         public const string DoorOpen = "fas fa-door-open";
-        public const string Equals = "fas fa-equals";
+        public new const string Equals = "fas fa-equals";
         public const string Feather = "fas fa-feather";
         public const string Frog = "fas fa-frog";
         public const string GasPump = "fas fa-gas-pump";

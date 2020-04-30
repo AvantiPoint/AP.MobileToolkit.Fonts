@@ -29,7 +29,11 @@ namespace MappingClassGenerator
                 var glyph = new GlyphTypeface(new Uri(fontFilePath));
 
                 var mappings = string.IsNullOrEmpty(bundledFont.CssFile) ? HandleNonWebFont(glyph, bundledFont) : HandleWebFont(glyph, bundledFont, basePath);
-                var properties = mappings.Select(x => $"        public const string {x.Key} = \"{x.Value}\";");
+                var properties = mappings.Select(x => {
+                    if(x.Key == "Equals")
+                        return $"        public new const string {x.Key} = \"{x.Value}\";";
+                    return $"        public const string {x.Key} = \"{x.Value}\";";
+                });
                 var file = $@"namespace AP.MobileToolkit.Fonts.Mappings
 {{
     public static class {bundledFont.Name}
