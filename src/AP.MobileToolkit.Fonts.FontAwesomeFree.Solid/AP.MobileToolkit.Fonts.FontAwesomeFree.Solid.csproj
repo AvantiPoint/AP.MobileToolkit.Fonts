@@ -5,6 +5,7 @@
     <Description>Provides the embedded font helpers for adding FontAwesome Free - Solid to your Xamarin.Forms project.</Description>
     <PackageId>AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Solid</PackageId>
     <PackageTags>avantipoint, fonts, xamarin.forms, embedded fonts, fontawesome</PackageTags>
+    <MappingFile>FontAwesomeSolid</MappingFile>
   </PropertyGroup>
 
   <ItemGroup>

@@ -5,6 +5,7 @@
     <Description>Provides the embedded font helpers for adding FontAwesome Free - Brands to your Xamarin.Forms project.</Description>
     <PackageId>AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Brands</PackageId>
     <PackageTags>avantipoint, fonts, xamarin.forms, embedded fonts, fontawesome</PackageTags>
+    <MappingFile>FontAwesomeBrands</MappingFile>
   </PropertyGroup>
 
   <ItemGroup>
