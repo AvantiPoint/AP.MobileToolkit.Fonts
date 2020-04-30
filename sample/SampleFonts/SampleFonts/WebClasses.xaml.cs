@@ -1,8 +1,8 @@
 ﻿namespace SampleFonts
 {
-    public partial class MainPage
+    public partial class WebClasses
     {
-        public MainPage()
+        public WebClasses()
         {
             InitializeComponent();
         }

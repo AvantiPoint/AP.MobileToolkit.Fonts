@@ -2,23 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ap="http://avantipoint.com/mobiletoolkit"
-             Title="Main Page"
-             x:Class="SampleFonts.MainPage">
+             Title="Extensions"
+             IconImageSource="{FontImage {ap:Icon 'far fa-dashboard'}, Size=32}"
+             x:Class="SampleFonts.WebClasses">
   <ContentPage.ToolbarItems>
     <ToolbarItem Text="Login"
-                 IconImageSource="{ap:IconImageSource 'fas fa-sign-in-alt', Color=Black, Size='40'}"/>
+                 IconImageSource="{ap:IconImageSource 'fas fa-sign-in-alt', Color=Black, Size='40'}" />
   </ContentPage.ToolbarItems>
   <ScrollView>
-    <StackLayout Padding="{OnPlatform Default=20, iOS='20,40'}">
-      <Image Source="{FontImage Glyph={ap:Icon 'far fa-check-circle'}, Color=Blue, Size=60}" />
-      <Image>
-        <Image.Source>
-          <FontImageSource Glyph="{x:Static ap:FontAwesomeRegular.Eye}"
-                           FontFamily="fa-regular-400.ttf"
-                           Size="60"
-                           Color="Red" />
-        </Image.Source>
-      </Image>
+    <StackLayout>
       <Label Text="Labels" />
       <Grid>
         <Grid.ColumnDefinitions>
@@ -26,7 +18,7 @@
           <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <Label Text="{ap:Icon 'far fa-user'}" />
+        <Label Text="{ap:Icon IconName='far fa-user'}" />
         <Label Text="Font Awesome Regular - User"
                Grid.Column="1" />
 
@@ -75,9 +67,6 @@
           <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <Button Text="{x:Static ap:FontAwesomeRegular.AddressBook}"
-                FontFamily="fa-regular-400.ttf"
-                Grid.Row="3"/>
         <Button Text="{ap:Icon 'far fa-user'}" />
         <Label Text="Font Awesome Regular - User"
                Grid.Column="1" />
@@ -95,13 +84,13 @@
                Grid.Column="1" />
       </Grid>
       <Label Text="Effects" />
-      <Entry>
+      <!--<Entry>
         <Entry.Effects>
           <ap:ImageEntryEffect Icon="far fa-user"
                                ImageHeight="40"
                                ImageWidth="40" />
         </Entry.Effects>
-      </Entry>
+      </Entry>-->
       <Label Text="Image Source" />
       <Grid>
         <Grid.ColumnDefinitions>
@@ -123,6 +112,7 @@
         <Image HeightRequest="40"
                Aspect="AspectFit"
                BackgroundColor="Gray"
+               WidthRequest="60"
                Grid.Row="1">
           <Image.Source>
             <ap:IconImageSource Name="fas fa-user"

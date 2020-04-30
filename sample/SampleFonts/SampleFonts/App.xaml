@@ -5,7 +5,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="SampleFonts.App">
-    <Application.Resources>
-
-    </Application.Resources>
+  <Application.Resources>
+    <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
+      <Setter Property="Padding" Value="20" />
+    </Style>
+  </Application.Resources>
 </Application>
