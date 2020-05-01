@@ -16,7 +16,7 @@ namespace AP.MobileToolkit.Fonts
 
         public const string Prefix = "far";
 
-        public const string Version = "5.12.0";
+        public const string Version = "5.13.0";
 
         public static readonly IFont Font = new EmbeddedWebFont(FontName, Prefix, "fontawesome.min.css", typeof(FontAwesomeRegular));
     }
