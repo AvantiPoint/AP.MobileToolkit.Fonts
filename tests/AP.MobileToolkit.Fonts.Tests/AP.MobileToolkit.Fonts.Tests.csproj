@@ -22,6 +22,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\AP.MobileToolkit.Fonts\AP.MobileToolkit.Fonts.csproj" />
+    <ProjectReference Include="..\..\src\AP.MobileToolkit.Fonts.FontAwesomeFree.Solid\AP.MobileToolkit.Fonts.FontAwesomeFree.Solid.csproj" />
+    <ProjectReference Include="..\..\src\AP.MobileToolkit.Fonts.FontAwesomeFree.Regular\AP.MobileToolkit.Fonts.FontAwesomeFree.Regular.csproj" />
+    <ProjectReference Include="..\..\src\AP.MobileToolkit.Fonts.FontAwesomeFree.Brands\AP.MobileToolkit.Fonts.FontAwesomeFree.Brands.csproj" />
   </ItemGroup>
 
 </Project>
