@@ -45,14 +45,14 @@ namespace AP.MobileToolkit.Fonts.Tests
 
         object lockobject = new object();
         [Theory]
-        [InlineData("far fa-calendar", "\uf133", SampleFontAwesomeRegular.FontAlias)]
-        [InlineData("fas fa-calendar", "\uf133", SampleFontAwesomeSolid.FontAlias)]
+        [InlineData("far fa-calendar", "\uf133", "far")]
+        [InlineData("fas fa-calendar", "\uf133", "fas")]
         public void LookupFromRegistry(string selector, string expectedGlyph, string fontAlias)
         {
             lock (lockobject)
             {
                 FontRegistry.Clear();
-                FontRegistry.RegisterFonts(SampleFontAwesomeRegular.Font, SampleFontAwesomeSolid.Font);
+                FontRegistry.RegisterFonts(FontAwesomeRegular.Font, FontAwesomeSolid.Font);
 
                 var font = FontRegistry.LocateFont(selector);
 

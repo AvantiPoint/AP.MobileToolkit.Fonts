@@ -12,7 +12,7 @@ namespace AP.MobileToolkit.Fonts.Tests
         {
             Xamarin.Forms.Mocks.MockForms.Init();
             FontRegistry.Clear();
-            FontRegistry.RegisterFonts(SampleFontAwesomeRegular.Font, SampleFontAwesomeSolid.Font);
+            FontRegistry.RegisterFonts(FontAwesomeRegular.Font, FontAwesomeSolid.Font);
         }
 
         [Fact]
@@ -21,7 +21,7 @@ namespace AP.MobileToolkit.Fonts.Tests
             var label = new Label().SetIcon("far fa-calendar");
 
             // "far fa-calendar", "\uf133"
-            Assert.Equal(SampleFontAwesomeRegular.FontFile, label.FontFamily);
+            Assert.Equal(FontAwesomeRegular.Font.FontFileName, label.FontFamily);
             Assert.Equal("\uf133", label.Text);
         }
 
@@ -31,7 +31,7 @@ namespace AP.MobileToolkit.Fonts.Tests
             var label = new Span().SetIcon("far fa-calendar");
 
             // "far fa-calendar", "\uf133"
-            Assert.Equal(SampleFontAwesomeRegular.FontFile, label.FontFamily);
+            Assert.Equal(FontAwesomeRegular.Font.FontFileName, label.FontFamily);
             Assert.Equal("\uf133", label.Text);
         }
 
@@ -41,7 +41,7 @@ namespace AP.MobileToolkit.Fonts.Tests
             var label = new Editor().SetIcon("far fa-calendar");
 
             // "far fa-calendar", "\uf133"
-            Assert.Equal(SampleFontAwesomeRegular.FontFile, label.FontFamily);
+            Assert.Equal(FontAwesomeRegular.Font.FontFileName, label.FontFamily);
             Assert.Equal("\uf133", label.Text);
         }
 
@@ -51,7 +51,7 @@ namespace AP.MobileToolkit.Fonts.Tests
             var label = new Button().SetIcon("far fa-calendar");
 
             // "far fa-calendar", "\uf133"
-            Assert.Equal(SampleFontAwesomeRegular.FontFile, label.FontFamily);
+            Assert.Equal(FontAwesomeRegular.Font.FontFileName, label.FontFamily);
             Assert.Equal("\uf133", label.Text);
         }
 
@@ -61,7 +61,7 @@ namespace AP.MobileToolkit.Fonts.Tests
             var label = new SearchBar().SetIcon("far fa-calendar");
 
             // "far fa-calendar", "\uf133"
-            Assert.Equal(SampleFontAwesomeRegular.FontFile, label.FontFamily);
+            Assert.Equal(FontAwesomeRegular.Font.FontFileName, label.FontFamily);
             Assert.Equal("\uf133", label.Text);
         }
     }
