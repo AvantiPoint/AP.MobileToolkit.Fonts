@@ -4,12 +4,10 @@
     <NeutralLanguage>en</NeutralLanguage>
     <IncludeSymbols>True</IncludeSymbols>
     <IncludeSource>True</IncludeSource>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Dan Siegel</Authors>
     <Company>AvantiPoint</Company>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Copyright>Copyright © AvantiPoint 2020</Copyright>
     <PackageIcon>avantipoint-icon.png</PackageIcon>
-    <!--<PackageIconUrl>https://raw.githubusercontent.com/AvantiPoint/AP.MobileToolkit/master/avantipoint-icon.png</PackageIconUrl>-->
     <PackageProjectUrl>https://github.com/AvantiPoint/AP.MobileToolkit</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/AvantiPoint/AP.MobileToolkit</RepositoryUrl>
@@ -17,43 +15,37 @@
     <PackageOutputPath Condition=" '$(BUILD_ARTIFACTSTAGINGDIRECTORY)' != '' ">$(BUILD_ARTIFACTSTAGINGDIRECTORY)</PackageOutputPath>
     <IsTestProject>$(MSBuildProjectName.Contains('Test'))</IsTestProject>
     <IsPackable>!$(IsTestProject)</IsPackable>
+    <IsPackable Condition=" $(MSBuildProjectName.StartsWith('SampleFonts')) ">false</IsPackable>
+    <GeneratePackageOnBuild>$(IsPackable)</GeneratePackageOnBuild>
     <IsPackable Condition=" $(MSBuildProjectName.StartsWith('ToolkitDemo')) ">false</IsPackable>
-    <VersionPrefix>3.0.0</VersionPrefix>
-    <VersionPrefix Condition=" '$(BUILD_BUILDID)' != '' ">$(VersionPrefix).$(BUILD_BUILDID)</VersionPrefix>
     <IS_PREVIEW Condition=" '$(IS_PREVIEW)' == '' ">false</IS_PREVIEW>
     <IS_RELEASE Condition=" '$(IS_RELEASE)' == '' ">false</IS_RELEASE>
-    <VersionSuffix>ci</VersionSuffix>
-    <VersionSuffix Condition=" '$(IS_PREVIEW)' ">pre</VersionSuffix>
-    <VersionSuffix Condition=" '$(IS_RELEASE)' "></VersionSuffix>
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
 
+  <!-- Font Assets -->
   <PropertyGroup>
-    <CodeAnalysisRuleSet>$(MSBuildThisFileDirectory)AvantiPoint.ruleset</CodeAnalysisRuleSet>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <FontAwesomeBrandsFont>$(MSBuildThisFileDirectory)fonts\fa-brands-400.ttf</FontAwesomeBrandsFont>
+    <FontAwesomeRegularFont>$(MSBuildThisFileDirectory)fonts\fa-regular-400.ttf</FontAwesomeRegularFont>
+    <FontAwesomeSolidFont>$(MSBuildThisFileDirectory)fonts\fa-solid-900.ttf</FontAwesomeSolidFont>
+    <FontAwesomeCssFile>$(MSBuildThisFileDirectory)fonts\fontawesome.min.css</FontAwesomeCssFile>
+    <DevIconsFont>$(MSBuildThisFileDirectory)fonts\devicons.ttf</DevIconsFont>
+    <DevIconsCssFile>$(MSBuildThisFileDirectory)fonts\devicons.min.css</DevIconsCssFile>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.164" PrivateAssets="All" />
-    <AdditionalFiles Include="$(MSBuildThisFileDirectory)stylecop.json" InProject="false" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="all">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
 
   <ItemGroup Condition=" $(IsPackable) ">
     <None Include="$(MSBuildThisFileDirectory)avantipoint-icon.png" Pack="True" PackagePath="" Visible="False" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove=".DS_Store" />
+    <PackageReference Include="Nerdbank.GitVersioning" Version="3.1.91" PrivateAssets="all" />
   </ItemGroup>
 
-  <ItemGroup Condition=" $(MappingFile) != '' ">
-    <Compile Include="$(MSBuildThisFileDirectory)mappings\$(MappingFile).cs;$(MSBuildThisFileDirectory)mappings\MappingXmlns.cs"
-             Link="Mappings\%(Filename)%(Extension)" />
+  <ItemGroup>
+    <None Remove=".DS_Store" />
+    <SourceRoot Include="$(MSBuildThisFileDirectory)"/>
   </ItemGroup>
 
 </Project>
