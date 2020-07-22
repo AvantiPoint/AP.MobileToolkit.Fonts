@@ -26,14 +26,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleFonts.iOS", "sample\S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleFonts", "sample\SampleFonts\SampleFonts\SampleFonts.csproj", "{04B78821-189D-4B2C-9497-B3BE937666EF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mappings", "mappings", "{05A3841E-77B1-4F5C-BF2C-A704BE633B2B}"
-	ProjectSection(SolutionItems) = preProject
-		mappings\FontAwesomeBrands.cs = mappings\FontAwesomeBrands.cs
-		mappings\FontAwesomeRegular.cs = mappings\FontAwesomeRegular.cs
-		mappings\FontAwesomeSolid.cs = mappings\FontAwesomeSolid.cs
-		mappings\MappingXmlns.cs = mappings\MappingXmlns.cs
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Forms", "Forms", "{4B7CAF6E-6323-4F14-8DD3-FAC3D89341EE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AP.MobileToolkit.Forms.Fonts", "src\forms\AP.MobileToolkit.Forms.Fonts\AP.MobileToolkit.Forms.Fonts.csproj", "{24B4D827-8733-4BB9-B28C-EF6280EBF983}"
