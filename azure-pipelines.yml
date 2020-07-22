@@ -68,12 +68,12 @@ stages:
               targetPath: $(Build.ArtifactStagingDirectory)
 
   - stage: Deploy
-    displayName: Deploy NuGet Packages
+    displayName: Deploy CI Packages
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'), eq(variables['system.pullrequest.isfork'], false))
     jobs:
-      - deployment: MyGet
-        displayName: MyGet.org
-        environment: MyGet
+      - deployment: sponsorconnect
+        displayName: SponsorConnect
+        environment: SponsorConnect
         strategy:
           runOnce:
             deploy:
@@ -82,9 +82,23 @@ stages:
                 displayName: 'NuGet push'
                 inputs:
                     command: push
-                    packagesToPush: '$(Pipeline.Workspace)/**/*.nupkg'
+                    packagesToPush: '$(Pipeline.Workspace)/**/*.nupkg;$(Pipeline.Workspace)/**/*.snupkg'
                     nuGetFeedType: external
-                    publishFeedCredentials: 'AvaintPoint-MyGet'
+                    publishFeedCredentials: 'SponsorConnect'
+      - deployment: apnuget
+        displayName: 'nuget.avantipoint.com'
+        environment: APNuGet
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+              - task: NuGetCommand@2
+                displayName: 'NuGet push'
+                inputs:
+                    command: push
+                    packagesToPush: '$(Pipeline.Workspace)/**/*.nupkg;$(Pipeline.Workspace)/**/*.snupkg'
+                    nuGetFeedType: external
+                    publishFeedCredentials: 'AvantiPoint-NuGet'
 
   - stage: NuGet
     displayName: Deploy to NuGet.org
@@ -121,6 +135,6 @@ stages:
                   displayName: Push to NuGet.org
                   inputs:
                     command: push
-                    packagesToPush: '$(Pipeline.Workspace)/**/*.nupkg;!$(Pipeline.Workspace)/**/*.symbols.nupkg'
+                    packagesToPush: '$(Pipeline.Workspace)/**/*.nupkg;$(Pipeline.Workspace)/**/*.snupkg'
                     nuGetFeedType: external
                     publishFeedCredentials: 'NuGet.org'
