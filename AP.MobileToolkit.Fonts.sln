@@ -1,21 +1,20 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6A1E0C57-A046-403E-AA03-EB56913991DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AP.MobileToolkit.Fonts", "src\AP.MobileToolkit.Fonts\AP.MobileToolkit.Fonts.csproj", "{F407F6E1-EEE2-4CAA-8D4D-AC0BB5243E6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AP.MobileToolkit.WinUI.Fonts", "src\winui\AP.MobileToolkit.WinUI.Fonts\AP.MobileToolkit.WinUI.Fonts.csproj", "{F407F6E1-EEE2-4CAA-8D4D-AC0BB5243E6F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{A121FCC4-02EC-4F96-A94E-1C7D935B8B66}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AP.MobileToolkit.Fonts.Tests", "tests\AP.MobileToolkit.Fonts.Tests\AP.MobileToolkit.Fonts.Tests.csproj", "{32F4F2C7-EF3C-4A3B-BA86-9CD4759F7C70}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AP.MobileToolkit.Fonts.FontAwesomeFree.Brands", "src\AP.MobileToolkit.Fonts.FontAwesomeFree.Brands\AP.MobileToolkit.Fonts.FontAwesomeFree.Brands.csproj", "{9BB8EB7D-8C71-47CC-B524-F5C6D5A562FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Brands", "src\forms\AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Brands\AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Brands.csproj", "{9BB8EB7D-8C71-47CC-B524-F5C6D5A562FB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AP.MobileToolkit.Fonts.FontAwesomeFree.Solid", "src\AP.MobileToolkit.Fonts.FontAwesomeFree.Solid\AP.MobileToolkit.Fonts.FontAwesomeFree.Solid.csproj", "{2AEF93D1-EE3C-44A7-BBF2-078D614A158F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Solid", "src\forms\AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Solid\AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Solid.csproj", "{2AEF93D1-EE3C-44A7-BBF2-078D614A158F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AP.MobileToolkit.Fonts.FontAwesomeFree.Regular", "src\AP.MobileToolkit.Fonts.FontAwesomeFree.Regular\AP.MobileToolkit.Fonts.FontAwesomeFree.Regular.csproj", "{8166DE03-DDC8-482B-B2E1-D918FD0B8143}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Regular", "src\forms\AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Regular\AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Regular.csproj", "{8166DE03-DDC8-482B-B2E1-D918FD0B8143}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample", "sample", "{5E639A96-DA0C-4C39-BC31-538597B70325}"
 EndProject
@@ -25,7 +24,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleFonts.Android", "samp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleFonts.iOS", "sample\SampleFonts\SampleFonts.iOS\SampleFonts.iOS.csproj", "{179E5957-8BD8-4AAC-BAD3-CDE4B30286DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleFonts", "sample\SampleFonts\SampleFonts\SampleFonts.csproj", "{04B78821-189D-4B2C-9497-B3BE937666EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleFonts", "sample\SampleFonts\SampleFonts\SampleFonts.csproj", "{04B78821-189D-4B2C-9497-B3BE937666EF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mappings", "mappings", "{05A3841E-77B1-4F5C-BF2C-A704BE633B2B}"
 	ProjectSection(SolutionItems) = preProject
@@ -34,6 +33,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mappings", "mappings", "{05
 		mappings\FontAwesomeSolid.cs = mappings\FontAwesomeSolid.cs
 		mappings\MappingXmlns.cs = mappings\MappingXmlns.cs
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Forms", "Forms", "{4B7CAF6E-6323-4F14-8DD3-FAC3D89341EE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AP.MobileToolkit.Forms.Fonts", "src\forms\AP.MobileToolkit.Forms.Fonts\AP.MobileToolkit.Forms.Fonts.csproj", "{24B4D827-8733-4BB9-B28C-EF6280EBF983}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WinUI", "WinUI", "{9A577E59-63A3-42E3-A0B8-92C25D443ABF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Maui", "Maui", "{A7CBBD90-F92E-4429-9C8B-2C06795EDCF0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "forms", "forms", "{68AE961F-BE46-4414-A198-0B3C14AF10E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -271,20 +280,49 @@ Global
 		{04B78821-189D-4B2C-9497-B3BE937666EF}.Release|x64.Build.0 = Release|Any CPU
 		{04B78821-189D-4B2C-9497-B3BE937666EF}.Release|x86.ActiveCfg = Release|Any CPU
 		{04B78821-189D-4B2C-9497-B3BE937666EF}.Release|x86.Build.0 = Release|Any CPU
+		{24B4D827-8733-4BB9-B28C-EF6280EBF983}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24B4D827-8733-4BB9-B28C-EF6280EBF983}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24B4D827-8733-4BB9-B28C-EF6280EBF983}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{24B4D827-8733-4BB9-B28C-EF6280EBF983}.Debug|ARM.Build.0 = Debug|Any CPU
+		{24B4D827-8733-4BB9-B28C-EF6280EBF983}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{24B4D827-8733-4BB9-B28C-EF6280EBF983}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{24B4D827-8733-4BB9-B28C-EF6280EBF983}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{24B4D827-8733-4BB9-B28C-EF6280EBF983}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{24B4D827-8733-4BB9-B28C-EF6280EBF983}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{24B4D827-8733-4BB9-B28C-EF6280EBF983}.Debug|x64.Build.0 = Debug|Any CPU
+		{24B4D827-8733-4BB9-B28C-EF6280EBF983}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{24B4D827-8733-4BB9-B28C-EF6280EBF983}.Debug|x86.Build.0 = Debug|Any CPU
+		{24B4D827-8733-4BB9-B28C-EF6280EBF983}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24B4D827-8733-4BB9-B28C-EF6280EBF983}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24B4D827-8733-4BB9-B28C-EF6280EBF983}.Release|ARM.ActiveCfg = Release|Any CPU
+		{24B4D827-8733-4BB9-B28C-EF6280EBF983}.Release|ARM.Build.0 = Release|Any CPU
+		{24B4D827-8733-4BB9-B28C-EF6280EBF983}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{24B4D827-8733-4BB9-B28C-EF6280EBF983}.Release|iPhone.Build.0 = Release|Any CPU
+		{24B4D827-8733-4BB9-B28C-EF6280EBF983}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{24B4D827-8733-4BB9-B28C-EF6280EBF983}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{24B4D827-8733-4BB9-B28C-EF6280EBF983}.Release|x64.ActiveCfg = Release|Any CPU
+		{24B4D827-8733-4BB9-B28C-EF6280EBF983}.Release|x64.Build.0 = Release|Any CPU
+		{24B4D827-8733-4BB9-B28C-EF6280EBF983}.Release|x86.ActiveCfg = Release|Any CPU
+		{24B4D827-8733-4BB9-B28C-EF6280EBF983}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{F407F6E1-EEE2-4CAA-8D4D-AC0BB5243E6F} = {6A1E0C57-A046-403E-AA03-EB56913991DD}
+		{F407F6E1-EEE2-4CAA-8D4D-AC0BB5243E6F} = {9A577E59-63A3-42E3-A0B8-92C25D443ABF}
 		{32F4F2C7-EF3C-4A3B-BA86-9CD4759F7C70} = {A121FCC4-02EC-4F96-A94E-1C7D935B8B66}
-		{9BB8EB7D-8C71-47CC-B524-F5C6D5A562FB} = {6A1E0C57-A046-403E-AA03-EB56913991DD}
-		{2AEF93D1-EE3C-44A7-BBF2-078D614A158F} = {6A1E0C57-A046-403E-AA03-EB56913991DD}
-		{8166DE03-DDC8-482B-B2E1-D918FD0B8143} = {6A1E0C57-A046-403E-AA03-EB56913991DD}
-		{4C9A24A5-D42C-40A0-B8AA-DC942CBB0FAD} = {5E639A96-DA0C-4C39-BC31-538597B70325}
-		{94DF30CA-936E-4E0C-8EB2-A3CDE391B483} = {5E639A96-DA0C-4C39-BC31-538597B70325}
-		{179E5957-8BD8-4AAC-BAD3-CDE4B30286DD} = {5E639A96-DA0C-4C39-BC31-538597B70325}
-		{04B78821-189D-4B2C-9497-B3BE937666EF} = {5E639A96-DA0C-4C39-BC31-538597B70325}
+		{9BB8EB7D-8C71-47CC-B524-F5C6D5A562FB} = {4B7CAF6E-6323-4F14-8DD3-FAC3D89341EE}
+		{2AEF93D1-EE3C-44A7-BBF2-078D614A158F} = {4B7CAF6E-6323-4F14-8DD3-FAC3D89341EE}
+		{8166DE03-DDC8-482B-B2E1-D918FD0B8143} = {4B7CAF6E-6323-4F14-8DD3-FAC3D89341EE}
+		{4C9A24A5-D42C-40A0-B8AA-DC942CBB0FAD} = {68AE961F-BE46-4414-A198-0B3C14AF10E0}
+		{94DF30CA-936E-4E0C-8EB2-A3CDE391B483} = {68AE961F-BE46-4414-A198-0B3C14AF10E0}
+		{179E5957-8BD8-4AAC-BAD3-CDE4B30286DD} = {68AE961F-BE46-4414-A198-0B3C14AF10E0}
+		{04B78821-189D-4B2C-9497-B3BE937666EF} = {68AE961F-BE46-4414-A198-0B3C14AF10E0}
+		{4B7CAF6E-6323-4F14-8DD3-FAC3D89341EE} = {6A1E0C57-A046-403E-AA03-EB56913991DD}
+		{24B4D827-8733-4BB9-B28C-EF6280EBF983} = {4B7CAF6E-6323-4F14-8DD3-FAC3D89341EE}
+		{9A577E59-63A3-42E3-A0B8-92C25D443ABF} = {6A1E0C57-A046-403E-AA03-EB56913991DD}
+		{A7CBBD90-F92E-4429-9C8B-2C06795EDCF0} = {6A1E0C57-A046-403E-AA03-EB56913991DD}
+		{68AE961F-BE46-4414-A198-0B3C14AF10E0} = {5E639A96-DA0C-4C39-BC31-538597B70325}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3E2F7183-469C-4935-B094-FE592A3C485E}

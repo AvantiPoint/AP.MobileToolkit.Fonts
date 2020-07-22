@@ -1,0 +1,22 @@
+﻿<Project Sdk="MSBuild.Sdk.Extras">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;Xamarin.iOS10;MonoAndroid90;MonoAndroid10.0</TargetFrameworks>
+    <Description>Provides the embedded font helpers for adding FontAwesome Free - Regular to your Xamarin.Forms project.</Description>
+    <PackageId>AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Regular</PackageId>
+    <PackageTags>avantipoint, fonts, xamarin.forms, embedded fonts, fontawesome</PackageTags>
+    <MappingFile>FontAwesomeRegular</MappingFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="$(FontAwesomeRegularFont)" />
+    <EmbeddedFont Include="$(FontAwesomeRegularFont)" Alias="far" FontName="FontAwesomeRegular" Version="5.13.0" />
+    <CssResource Include="$(FontAwesomeCssFile)" />
+    <PackageReference Include="AP.MobileToolkit.FontGenerator" Version="3.0.13-beta">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <ProjectReference Include="..\AP.MobileToolkit.Forms.Fonts\AP.MobileToolkit.Forms.Fonts.csproj" />
+  </ItemGroup>
+
+</Project>

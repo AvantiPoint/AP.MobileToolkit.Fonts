@@ -143,11 +143,27 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.6.0.726" />
+    <PackageReference Include="Xamarin.Forms" Version="4.7.0.1142" />
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.9" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.1" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\src\forms\AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Brands\AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Brands.csproj">
+      <Project>{9bb8eb7d-8c71-47cc-b524-f5c6d5a562fb}</Project>
+      <Name>AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Brands</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\forms\AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Regular\AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Regular.csproj">
+      <Project>{8166de03-ddc8-482b-b2e1-d918fd0b8143}</Project>
+      <Name>AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Regular</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\forms\AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Solid\AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Solid.csproj">
+      <Project>{2aef93d1-ee3c-44a7-bbf2-078d614a158f}</Project>
+      <Name>AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Solid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\forms\AP.MobileToolkit.Forms.Fonts\AP.MobileToolkit.Forms.Fonts.csproj">
+      <Project>{24b4d827-8733-4bb9-b28c-ef6280ebf983}</Project>
+      <Name>AP.MobileToolkit.Forms.Fonts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SampleFonts\SampleFonts.csproj">
       <Project>{F8AD11EC-9672-48C6-8BB1-BB708ADFF836}</Project>
       <Name>SampleFonts</Name>

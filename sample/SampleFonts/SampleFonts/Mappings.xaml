@@ -2,14 +2,20 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ap="http://avantipoint.com/mobiletoolkit"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="True"
              Title="Mappings"
              x:Class="SampleFonts.Mappings">
   <ContentPage.IconImageSource>
-    <FontImageSource Glyph="{ap:Icon {x:Static ap:FontAwesomeRegular.Map}}"
-                     Size="32" />
+    <ap:IconImageSource Name="{x:Static ap:FontAwesomeRegular.Map}" Size="32" />
   </ContentPage.IconImageSource>
   <ScrollView>
-    <StackLayout>
+    <StackLayout Padding="20,20">
+      <Label Text="Mappings"
+             FontSize="Title"
+             FontAttributes="Bold"
+             HorizontalTextAlignment="Center" />
+
       <Label Text="Labels"
              Margin="0,0,0,10"/>
       <Grid>

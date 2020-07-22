@@ -19,5 +19,12 @@ namespace AP.MobileToolkit.Fonts.Tests.Mocks
 
         public const string FontFile = "TestFont";
         public const string FontAlias = "test";
+
+        public static class Glyphs
+        {
+            public const string Foo = "\uf024";
+
+            public const string FooBar = "\uf025";
+        }
     }
 }
