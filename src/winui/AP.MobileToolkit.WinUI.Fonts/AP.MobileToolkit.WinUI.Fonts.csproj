@@ -7,6 +7,8 @@
     <PackageTags>avantipoint, fonts, xamarin.forms, embedded fonts</PackageTags>
     <RootNamespace>AP.MobileToolkit</RootNamespace>
     <LangVersion>8.0</LangVersion>
+    <IsPackable>false</IsPackable>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <PropertyGroup Condition=" $(TargetFramework.StartsWith('uap10')) ">
@@ -45,8 +47,7 @@
   </ItemGroup>
 
   <ItemGroup Condition=" !$(TargetFramework.StartsWith('uap10.0')) ">
-    <PackageReference Include="Uno.UI" Version="2.0.528" />
-    <PackageReference Include="Uno.Core" Version="2.0.0-dev.5" />
+    <PackageReference Include="Uno.UI" Version="2.4.4" />
   </ItemGroup>
 
 </Project>

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Windows.Markup;
 using Windows.UI.Xaml;
+using Windows.UI.Xaml.Markup;
 
 namespace AP.MobileToolkit.Controls
 {
@@ -17,7 +17,7 @@ namespace AP.MobileToolkit.Controls
         //    set => SetValue(SelectorProperty, value);
         //}
 
-        public override object ProvideValue(IServiceProvider serviceProvider)
+        protected override object ProvideValue()
         {
             return null;
         }
