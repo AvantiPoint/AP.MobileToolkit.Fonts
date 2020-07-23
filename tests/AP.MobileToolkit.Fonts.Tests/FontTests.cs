@@ -1,6 +1,4 @@
-﻿using AP.MobileToolkit.Fonts;
-using AP.MobileToolkit.Fonts.Tests.Mocks;
-using Xunit;
+﻿using Xunit;
 using Xunit.Abstractions;
 
 namespace AP.MobileToolkit.Fonts.Tests
@@ -16,12 +14,12 @@ namespace AP.MobileToolkit.Fonts.Tests
         }
 
         [Theory]
-        [InlineData("fa-500px", "\uf26e")]
-        [InlineData("fa-angry", "\uf556")]
-        [InlineData("fa-accessible-icon", "\uf368")]
+        [InlineData("fa-laugh-squint", "\uf59b")]
+        [InlineData("fa-address-card", "\uf2bb")]
+        [InlineData("fa-comment-dots", "\uf4ad")]
         public void LookupByClassSelector(string selector, string glyph)
         {
-            var font = new EmbeddedWebFont("foobar", "fa", "fontawesome.min.css", GetType());
+            var font = FontAwesomeRegular.Font;
             var resolvedGlyph = font.GetGlyph(selector);
 
             Assert.NotNull(resolvedGlyph);
@@ -30,12 +28,12 @@ namespace AP.MobileToolkit.Fonts.Tests
         }
 
         [Theory]
-        [InlineData("fab fa-500px", "\uf26e")]
-        [InlineData("far fa-angry", "\uf556")]
-        [InlineData("fab fa-accessible-icon", "\uf368")]
+        [InlineData("fab fa-laugh-squint", "\uf59b")]
+        [InlineData("far fa-address-card", "\uf2bb")]
+        [InlineData("fab fa-comment-dots", "\uf4ad")]
         public void LookupByFullyQualifiedSelector(string selector, string glyph)
         {
-            var font = new EmbeddedWebFont("foobar", "fab", "fontawesome.min.css", GetType());
+            var font = FontAwesomeRegular.Font;
             var resolvedGlyph = font.GetGlyph(selector);
 
             Assert.NotNull(resolvedGlyph);

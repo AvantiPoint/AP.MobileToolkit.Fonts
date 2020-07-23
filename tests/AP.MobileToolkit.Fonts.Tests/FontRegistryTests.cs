@@ -12,8 +12,8 @@ namespace AP.MobileToolkit.Fonts.Tests
 {
     public class FontRegistryTests : TestBase
     {
-        private const string FontAlias = "test";
-        private const string FontFamily = "TestFontFamily";
+        //private const string FontAlias = "test";
+        //private const string FontFamily = "TestFontFamily";
 
         public FontRegistryTests(ITestOutputHelper testOutputHelper)
             : base(testOutputHelper)
@@ -36,10 +36,10 @@ namespace AP.MobileToolkit.Fonts.Tests
 
             var iconFont = FontRegistry.RegisteredFonts.First().Value;
 
-            Assert.Equal(FontFamily, iconFont.FontFileName);
-            Assert.Equal(FontAlias, iconFont.Alias);
-            Assert.IsType<EmbeddedMappedFont>(iconFont);
-            var font = (EmbeddedMappedFont)iconFont;
+            Assert.Equal(MockFont.Font.FontFileName, iconFont.FontFileName);
+            Assert.Equal(MockFont.Font.Alias, iconFont.Alias);
+            Assert.IsType<MockFont>(iconFont);
+            var font = (MockFont)iconFont;
             Assert.Equal(2, font._mappings.Count());
         }
 
@@ -60,7 +60,7 @@ namespace AP.MobileToolkit.Fonts.Tests
         private void RegisterTestIcons()
         {
             FontRegistry.Clear();
-            FontRegistry.RegisterFonts(new EmbeddedMappedFont("TestFontFamily", "test", typeof(MockFontAMapping)));
+            FontRegistry.RegisterFonts(MockFont.Font);
         }
     }
 }

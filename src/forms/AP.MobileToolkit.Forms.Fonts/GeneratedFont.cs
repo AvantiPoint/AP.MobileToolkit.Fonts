@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace AP.MobileToolkit.Fonts
 {
-    public abstract class SomeGeneratedFont : IFont
+    public abstract class GeneratedFont : IFont
     {
         public string Alias { get; protected set; }
         public string FontFileName { get; protected set; }
         public string Prefix { get; protected set; }
-
-        protected IDictionary<string, string> _mappings;
+        protected internal IDictionary<string, string> _mappings;
 
         public string GetGlyph(string name)
         {
@@ -38,7 +38,10 @@ namespace AP.MobileToolkit.Fonts
             key = null;
             foreach (var name in searchNames)
             {
-                key = _mappings.Keys.FirstOrDefault(x => x.Equals(name, StringComparison.InvariantCultureIgnoreCase));
+                key = _mappings.Keys.FirstOrDefault(x => 
+                    x.Equals(name, StringComparison.InvariantCultureIgnoreCase) || 
+                    name.Equals($"{Prefix}-{x}", StringComparison.InvariantCultureIgnoreCase) ||
+                    x.Replace("-", string.Empty).Equals(name, StringComparison.InvariantCultureIgnoreCase));
                 if (!string.IsNullOrEmpty(key))
                 {
                     return true;
@@ -49,6 +52,21 @@ namespace AP.MobileToolkit.Fonts
                 if (!string.IsNullOrEmpty(key))
                 {
                     return true;
+                }
+
+                if(!name.Contains('-') && name.Where(x => char.IsUpper(x)).Count() > 1)
+                {
+                    var searchKey = string.Empty;
+                    for(int i = 0; i < name.Length; i++)
+                    {
+                        searchKey += i > 0 && char.IsUpper(name[i]) ? $"-{name[i]}" : $"{name[i]}";
+                    }
+
+                    return HasKey(out key, searchKey.ToLower());
+                }
+                else if(name.StartsWith($"{Alias}-"))
+                {
+                    return HasKey(out key, name.Substring($"{Alias}-".Length));
                 }
             }
             return false;
