@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using AP.MobileToolkit.Fonts;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -6,9 +7,28 @@ using Xamarin.Forms.Xaml;
 namespace AP.MobileToolkit.Xaml
 {
     [ContentProperty(nameof(IconName))]
-    public class IconExtension : IMarkupExtension<string>
+    public class IconExtension : BindableObject, IMarkupExtension<string>
     {
-        public string IconName { get; set; }
+        private const string UnknownIcon = "Unknown Icon";
+
+        public static readonly BindableProperty IconNameProperty =
+            BindableProperty.Create(nameof(IconName), typeof(string), typeof(IconExtension), null, propertyChanged: OnIconNameChanged);
+
+        private static void OnIconNameChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            if(bindable is IconExtension extension)
+            {
+                extension.UpdateValue();
+            }
+        }
+
+        private IProvideValueTarget _provideValueTarget;
+
+        public string IconName
+        {
+            get => (string)GetValue(IconNameProperty);
+            set => SetValue(IconNameProperty, value);
+        }
 
         public string ProvideValue(IServiceProvider serviceProvider)
         {
@@ -17,10 +37,20 @@ namespace AP.MobileToolkit.Xaml
                 throw new ArgumentNullException("The IconGlyphExtension requires a ServiceProvider");
             }
 
-            if (FontRegistry.HasFont(IconName, out var font))
+            _provideValueTarget = serviceProvider.GetService<IProvideValueTarget>();
+            if(_provideValueTarget.TargetObject is Element element)
             {
-                var provideValueTarget = serviceProvider.GetService(typeof(IProvideValueTarget)) as IProvideValueTarget;
-                var element = provideValueTarget.TargetObject;
+                SetBinding(BindingContextProperty, new Binding(nameof(BindingContext), BindingMode.OneWay, source: element));
+            }
+
+            return ProvideValue();
+        }
+
+        private string ProvideValue()
+        {
+            if (!string.IsNullOrEmpty(IconName) && FontRegistry.HasFont(IconName, out var font))
+            {
+                var element = _provideValueTarget.TargetObject;
                 var elementType = element.GetType();
                 var fontFamilyProperty = elementType.GetProperty("FontFamily");
                 if (fontFamilyProperty is null)
@@ -32,7 +62,35 @@ namespace AP.MobileToolkit.Xaml
                 return font.GetGlyph(IconName);
             }
 
-            return "Unknown Icon";
+            return UnknownIcon;
+        }
+
+        private void UpdateValue()
+        {
+            if (_provideValueTarget != null)
+            {
+                var glyph = ProvideValue();
+                if (!string.IsNullOrEmpty(glyph))
+                {
+                    var targetProperty = _provideValueTarget.TargetProperty as BindableProperty;
+                    var element = _provideValueTarget.TargetObject;
+                    var elementType = element.GetType();
+                    var prop = elementType.GetProperty(targetProperty.PropertyName);
+                    if(prop != null)
+                    {
+                        prop.SetValue(element, glyph);
+                    }
+                }
+            }
+        }
+
+        protected override void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            base.OnPropertyChanged(propertyName);
+            if(_provideValueTarget != null && ((propertyName == nameof(BindingContext) && BindingContext != null) || propertyName == nameof(IconName)))
+            {
+                UpdateValue();
+            }
         }
 
         object IMarkupExtension.ProvideValue(IServiceProvider serviceProvider) => ProvideValue(serviceProvider);
