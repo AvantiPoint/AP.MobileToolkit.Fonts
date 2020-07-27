@@ -5,10 +5,10 @@ using Xunit.Abstractions;
 
 namespace AP.MobileToolkit.Fonts.Tests
 {
-    public class IconFontTests : TestBase
+    public class IconFontTests : TestBase, IClassFixture<FontRegistrySetup>
     {
-        public IconFontTests(ITestOutputHelper testOutputHelper)
-            : base(testOutputHelper)
+        public IconFontTests(ITestOutputHelper testOutputHelper, FontRegistrySetup setup)
+            : base(testOutputHelper, setup)
         {
         }
 

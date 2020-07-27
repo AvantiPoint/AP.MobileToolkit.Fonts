@@ -10,28 +10,19 @@ using Xunit.Abstractions;
 
 namespace AP.MobileToolkit.Fonts.Tests
 {
-    public class FontRegistryTests : TestBase
+    public class FontRegistryTests : TestBase, IClassFixture<FontRegistrySetup>
     {
         //private const string FontAlias = "test";
         //private const string FontFamily = "TestFontFamily";
 
-        public FontRegistryTests(ITestOutputHelper testOutputHelper)
-            : base(testOutputHelper)
+        public FontRegistryTests(ITestOutputHelper testOutputHelper, FontRegistrySetup setup)
+            : base(testOutputHelper, setup)
         {
-        }
-
-        [Fact]
-        public void FontRegistryDoesNotThrowException()
-        {
-            var ex = Record.Exception(() => RegisterTestIcons());
-            Assert.Null(ex);
         }
 
         [Fact]
         public void TestFontIsRegistered()
         {
-            RegisterTestIcons();
-
             Assert.Single(FontRegistry.RegisteredFonts);
 
             var iconFont = FontRegistry.RegisteredFonts.First().Value;
@@ -46,21 +37,12 @@ namespace AP.MobileToolkit.Fonts.Tests
         [Theory]
         [InlineData("test-foo", MockFontAMapping.Foo)]
         [InlineData("test-foo-bar", MockFontAMapping.FooBar)]
-
         public void RegistryReturnsExpectedChar(string icon, string expectedGlyph)
         {
-            RegisterTestIcons();
-
             Assert.True(FontRegistry.HasFont(icon, out var font));
             var glyph = font.GetGlyph(icon);
             Assert.False(string.IsNullOrEmpty(glyph));
             Assert.Equal(expectedGlyph, glyph);
-        }
-
-        private void RegisterTestIcons()
-        {
-            FontRegistry.Clear();
-            FontRegistry.RegisterFonts(MockFont.Font);
         }
     }
 }

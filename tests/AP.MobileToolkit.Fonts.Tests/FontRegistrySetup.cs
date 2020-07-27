@@ -1,5 +1,6 @@
 ﻿using System;
 using AP.MobileToolkit.Fonts.Tests.Mocks;
+using Xunit.Abstractions;
 
 namespace AP.MobileToolkit.Fonts.Tests
 {

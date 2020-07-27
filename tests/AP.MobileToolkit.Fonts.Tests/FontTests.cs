@@ -3,14 +3,11 @@ using Xunit.Abstractions;
 
 namespace AP.MobileToolkit.Fonts.Tests
 {
-    public class FontTests
+    public class FontTests : TestBase, IClassFixture<FontRegistrySetup>
     {
-        private ITestOutputHelper testOutput;
-
-        public FontTests(ITestOutputHelper testOutputHelper)
+        public FontTests(ITestOutputHelper testOutputHelper, FontRegistrySetup setup)
+            : base(testOutputHelper, setup)
         {
-            testOutput = testOutputHelper;
-            Xamarin.Forms.Mocks.MockForms.Init();
         }
 
         [Theory]

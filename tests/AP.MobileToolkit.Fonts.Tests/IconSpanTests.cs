@@ -8,7 +8,7 @@ namespace AP.MobileToolkit.Fonts.Tests
     public class IconSpanTests : TestBase, IClassFixture<FontRegistrySetup>
     {
         public IconSpanTests(ITestOutputHelper testOutputHelper, FontRegistrySetup setup)
-            : base(testOutputHelper)
+            : base(testOutputHelper, setup)
         {
         }
 
