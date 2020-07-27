@@ -3,11 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ap="http://avantipoint.com/mobiletoolkit"
              Title="Extensions"
-             IconImageSource="{FontImage {ap:Icon 'far fa-dashboard'}, Size=32}"
+             IconImageSource="{ap:IconImageSource {x:Static ap:FontAwesomeSolid.TachometerAlt}, Size='32'}"
              x:Class="SampleFonts.WebClasses">
   <ContentPage.ToolbarItems>
     <ToolbarItem Text="Login"
-                 IconImageSource="{ap:IconImageSource 'fas fa-sign-in-alt', Color=Black, Size='40'}" />
+                 IconImageSource="{ap:IconImageSource 'fas fa-sign-in-alt', Color=Black, Size='25'}" />
   </ContentPage.ToolbarItems>
   <ScrollView>
     <StackLayout>
@@ -126,7 +126,7 @@
 
         <Image HeightRequest="40"
                Aspect="AspectFit"
-               Grid.Row="1">
+               Grid.Row="2">
           <Image.Source>
             <ap:IconImageSource Name="fab fa-github"
                                 Size="40"
@@ -156,7 +156,7 @@
                Grid.Column="1" />
 
         <Image Source="{ap:IconImageSource 'fab fa-github', Size=40, Color=Black}"
-               Grid.Row="1" />
+               Grid.Row="2" />
         <Label Text="Font Awesome Brands - Github"
                Grid.Row="2"
                Grid.Column="1" />

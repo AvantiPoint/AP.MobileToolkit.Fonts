@@ -1,16 +1,15 @@
-﻿using System;
-using AP.MobileToolkit.Fonts.Tests.Mocks;
-using AP.MobileToolkit.Markup;
+﻿using AP.MobileToolkit.Markup;
 using Xamarin.Forms;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace AP.MobileToolkit.Fonts.Tests
 {
-    public class CsharpMarkupTests
+    public class CsharpMarkupTests : TestBase, IClassFixture<FontRegistrySetup>
     {
-        public CsharpMarkupTests()
+        public CsharpMarkupTests(ITestOutputHelper testOutputHelper, FontRegistrySetup setup)
+            : base(testOutputHelper, setup)
         {
-            Xamarin.Forms.Mocks.MockForms.Init();
             FontRegistry.Clear();
             FontRegistry.RegisterFonts(FontAwesomeRegular.Font, FontAwesomeSolid.Font);
         }

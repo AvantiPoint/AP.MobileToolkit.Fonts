@@ -1,0 +1,22 @@
+﻿<Project Sdk="MSBuild.Sdk.Extras">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Description>Provides the embedded font helpers for adding FontAwesome Free - Solid to your Xamarin.Forms project.</Description>
+    <PackageId>AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Solid</PackageId>
+    <PackageTags>avantipoint, fonts, xamarin.forms, embedded fonts, fontawesome</PackageTags>
+    <MappingFile>FontAwesomeSolid</MappingFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="$(FontAwesomeSolidFont)" />
+    <EmbeddedFont Include="$(FontAwesomeSolidFont)" Alias="fas" FontName="FontAwesomeSolid" Version="5.13.0" />
+    <CssResource Include="$(FontAwesomeCssFile)" />
+    <PackageReference Include="AP.MobileToolkit.FontGenerator" Version="3.0.13-beta">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <ProjectReference Include="..\AP.MobileToolkit.Forms.Fonts\AP.MobileToolkit.Forms.Fonts.csproj" />
+  </ItemGroup>
+
+</Project>

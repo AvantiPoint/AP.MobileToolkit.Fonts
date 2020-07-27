@@ -1,0 +1,60 @@
+﻿<Project Sdk="MSBuild.Sdk.Extras">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;Xamarin.iOS10;MonoAndroid90;MonoAndroid10.0</TargetFrameworks>
+    <TargetFrameworks Condition=" '$(OS)' == 'Windows_NT' ">$(TargetFrameworks);uap10.0.17763</TargetFrameworks>
+    <Description>Provides extensions for easily bundling Icon Fonts with as Embedded Fonts that ship via NuGet</Description>
+    <PackageTags>avantipoint, fonts, xamarin.forms, embedded fonts</PackageTags>
+    <RootNamespace>AP.MobileToolkit</RootNamespace>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" $(TargetFramework.StartsWith('uap10')) ">
+    <DefineConstants>$(DefineConstants);UWP</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="**/Platform/**/*.cs" />
+    <None Include="**/Platform/**/*.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('MonoAndroid')) ">
+    <None Remove="**\*.android.cs" />
+    <None Remove="**\*.android.*.cs" />
+    <Compile Include="**\*.android.cs" />
+    <Compile Include="**\*.android.*.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('Xamarin.iOS')) ">
+    <None Remove="**\*.ios.cs" />
+    <None Remove="**\*.ios.*.cs" />
+    <Compile Include="**\*.ios.cs" />
+    <Compile Include="**\*.ios.*.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('Xamarin.Mac')) ">
+    <None Remove="**\*.macos.cs" />
+    <None Remove="**\*.macos.*.cs" />
+    <Compile Include="**\*.macos.cs" />
+    <Compile Include="**\*.macos.*.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('uap10.0')) ">
+    <None Remove="**\*.uwp.cs" />
+    <None Remove="**\*.uwp.*.cs" />
+    <Compile Include="**\*.uwp.cs" />
+    <Compile Include="**\*.uwp.*.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('netstandard')) ">
+    <None Remove="**\*.netstandard.cs" />
+    <None Remove="**\*.netstandard.*.cs" />
+    <Compile Include="**\*.netstandard.cs" />
+    <Compile Include="**\*.netstandard.*.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="4.7.0.1142" />
+  </ItemGroup>
+
+</Project>

@@ -12,14 +12,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.6.0.726" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.1" />
+    <PackageReference Include="Xamarin.Forms" Version="4.7.0.1142" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\src\AP.MobileToolkit.Fonts.FontAwesomeFree.Brands\AP.MobileToolkit.Fonts.FontAwesomeFree.Brands.csproj" />
-    <ProjectReference Include="..\..\..\src\AP.MobileToolkit.Fonts.FontAwesomeFree.Regular\AP.MobileToolkit.Fonts.FontAwesomeFree.Regular.csproj" />
-    <ProjectReference Include="..\..\..\src\AP.MobileToolkit.Fonts.FontAwesomeFree.Solid\AP.MobileToolkit.Fonts.FontAwesomeFree.Solid.csproj" />
-    <ProjectReference Include="..\..\..\src\AP.MobileToolkit.Fonts\AP.MobileToolkit.Fonts.csproj" />
+    <ProjectReference Include="..\..\..\src\forms\AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Brands\AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Brands.csproj" />
+    <ProjectReference Include="..\..\..\src\forms\AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Regular\AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Regular.csproj" />
+    <ProjectReference Include="..\..\..\src\forms\AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Solid\AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Solid.csproj" />
+    <ProjectReference Include="..\..\..\src\forms\AP.MobileToolkit.Forms.Fonts\AP.MobileToolkit.Forms.Fonts.csproj" />
   </ItemGroup>
+
 </Project>

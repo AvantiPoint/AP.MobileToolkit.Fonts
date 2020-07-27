@@ -5,17 +5,17 @@ using Xunit.Abstractions;
 
 namespace AP.MobileToolkit.Fonts.Tests
 {
-    public class IconFontTests : TestBase
+    public class IconFontTests : TestBase, IClassFixture<FontRegistrySetup>
     {
-        public IconFontTests(ITestOutputHelper testOutputHelper)
-            : base(testOutputHelper)
+        public IconFontTests(ITestOutputHelper testOutputHelper, FontRegistrySetup setup)
+            : base(testOutputHelper, setup)
         {
         }
 
         [Fact]
         public void IconClassReturnsRegisteredIcons()
         {
-            var iconFont = new EmbeddedMappedFont("Test.otf", "test", typeof(MockFontA));
+            var iconFont = MockFont.Font;
 
             Assert.NotNull(iconFont._mappings);
             Assert.Equal(2, iconFont._mappings.Count());
@@ -36,7 +36,7 @@ namespace AP.MobileToolkit.Fonts.Tests
         [InlineData("test foo-bar", MockFontAMapping.FooBar)]
         public void LocatesIconWithKey(string key, string expectedGlyph)
         {
-            var iconFont = new EmbeddedMappedFont("Test.otf", "test", typeof(MockFontAMapping));
+            var iconFont = MockFont.Font;
 
             var glyph = iconFont.GetGlyph(key);
 
