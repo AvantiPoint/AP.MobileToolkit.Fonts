@@ -13,6 +13,10 @@
     <DefineConstants>$(DefineConstants);UWP</DefineConstants>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" $(TargetFramework.StartsWith('MonoAndroid')) ">
+    <AndroidResgenClass>FontsResource</AndroidResgenClass>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Remove="**/Platform/**/*.cs" />
     <None Include="**/Platform/**/*.cs" />
