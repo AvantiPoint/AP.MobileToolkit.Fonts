@@ -1,4 +1,4 @@
-﻿<Project Sdk="MSBuild.Sdk.Extras">
+<Project Sdk="MSBuild.Sdk.Extras">
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;Xamarin.iOS10;MonoAndroid90;MonoAndroid10.0</TargetFrameworks>
@@ -14,7 +14,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition=" $(TargetFramework.StartsWith('MonoAndroid')) ">
-    <AndroidResgenClass>FontsResource</AndroidResgenClass>
+    <RootNamespace>AP.MobileToolkit.Forms.Fonts</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
