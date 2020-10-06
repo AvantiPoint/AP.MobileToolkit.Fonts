@@ -14,7 +14,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition=" $(TargetFramework.StartsWith('MonoAndroid')) ">
-    <RootNamespace>AP.MobileToolkit.Forms.Fonts</RootNamespace>
+    <AndroidResgenNamespace>AP.MobileToolkit.Forms.Fonts</AndroidResgenNamespace>
   </PropertyGroup>
 
   <ItemGroup>
