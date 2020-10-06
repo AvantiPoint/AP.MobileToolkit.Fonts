@@ -1,4 +1,4 @@
-﻿<Project Sdk="MSBuild.Sdk.Extras">
+<Project Sdk="MSBuild.Sdk.Extras">
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;Xamarin.iOS10;MonoAndroid90;Xamarin.Mac20</TargetFrameworks>
@@ -13,6 +13,10 @@
 
   <PropertyGroup Condition=" $(TargetFramework.StartsWith('uap10')) ">
     <DefineConstants>$(DefineConstants);UWP</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" $(TargetFramework.StartsWith('MonoAndroid')) ">
+    <RootNamespace>AP.MobileToolkit.Forms.Fonts</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
