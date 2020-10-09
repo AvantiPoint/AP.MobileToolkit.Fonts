@@ -1,0 +1,17 @@
+name: Label sponsors
+on:
+  pull_request:
+    types: [opened]
+  issues:
+    types: [opened]
+jobs:
+  build:
+    name: Add Sponsor Labels
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add Sponsor Labels
+        id: sponsor-labels
+        uses: brianlagunas/sponsor-action@v1.0
+        with:
+          maintainers: 'dansiegel'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
