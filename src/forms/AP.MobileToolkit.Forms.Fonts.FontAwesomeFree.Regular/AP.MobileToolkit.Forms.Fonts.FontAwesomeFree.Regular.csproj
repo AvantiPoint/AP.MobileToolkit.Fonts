@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Description>Provides the embedded font helpers for adding FontAwesome Free - Regular to your Xamarin.Forms project.</Description>
-    <PackageId>AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Regular</PackageId>
+    <PackageId>AvantiPoint.MobileToolkit.Forms.Fonts.FontAwesomeFree.Regular</PackageId>
     <PackageTags>avantipoint, fonts, xamarin.forms, embedded fonts, fontawesome</PackageTags>
     <MappingFile>FontAwesomeRegular</MappingFile>
   </PropertyGroup>
