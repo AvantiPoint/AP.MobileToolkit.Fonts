@@ -5,13 +5,16 @@
              Padding="{OnPlatform Default=20, iOS='20,40'}"
              Title="Info"
              x:Class="SampleFonts.InfoPage">
+  <NavigationPage.TitleView>
+    <Label Text="About"
+           FontSize="Title"
+           HorizontalTextAlignment="Center"/>
+  </NavigationPage.TitleView>
   <ContentPage.IconImageSource>
     <FontImageSource Glyph="{ap:Icon IconName='fas fa-info-circle'}" />
   </ContentPage.IconImageSource>
   <ScrollView>
     <StackLayout>
-      <Label Text="About"
-             FontSize="Title" />
       <Label Text="The AP.MobileToolkit.Fonts library lets you more easily create and consume common icon fonts in your Xamarin.Forms projects. To start we are releasing support for Font Awesome Free and will be releasing additional fonts over time." />
 
       <Label Text="Extensions &amp; Controls"

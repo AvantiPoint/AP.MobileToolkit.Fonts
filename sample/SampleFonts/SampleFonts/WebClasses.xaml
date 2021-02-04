@@ -83,14 +83,6 @@
                Grid.Row="2"
                Grid.Column="1" />
       </Grid>
-      <Label Text="Effects" />
-      <!--<Entry>
-        <Entry.Effects>
-          <ap:ImageEntryEffect Icon="far fa-user"
-                               ImageHeight="40"
-                               ImageWidth="40" />
-        </Entry.Effects>
-      </Entry>-->
       <Label Text="Image Source" />
       <Grid>
         <Grid.ColumnDefinitions>

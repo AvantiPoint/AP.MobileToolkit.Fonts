@@ -6,12 +6,24 @@
             xmlns:local="clr-namespace:SampleFonts"
              mc:Ignorable="d"
              x:Class="SampleFonts.MainPage">
+
   <NavigationPage Title="{Binding Title,Source={x:Reference web}}"
                   IconImageSource="{Binding IconImageSource, Source={x:Reference web}}">
     <x:Arguments>
       <local:WebClasses x:Name="web" />
     </x:Arguments>
   </NavigationPage>
-  <local:Mappings x:Name="mappings" />
-  <local:InfoPage />
+  <NavigationPage Title="{Binding Title,Source={x:Reference mappings}}"
+                  IconImageSource="{Binding IconImageSource, Source={x:Reference mappings}}">
+    <x:Arguments>
+      <local:Mappings x:Name="mappings" />
+    </x:Arguments>
+  </NavigationPage>
+  <NavigationPage Title="{Binding Title,Source={x:Reference info}}"
+                  IconImageSource="{Binding IconImageSource, Source={x:Reference info}}">
+    <x:Arguments>
+      <local:InfoPage x:Name="info" />
+    </x:Arguments>
+  </NavigationPage>
+
 </TabbedPage>
