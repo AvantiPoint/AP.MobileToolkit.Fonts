@@ -51,7 +51,7 @@
   </ItemGroup>
 
   <ItemGroup Condition=" !$(TargetFramework.StartsWith('uap10.0')) ">
-    <PackageReference Include="Uno.UI" Version="2.4.4" />
+    <PackageReference Include="Uno.UI" Version="3.4.0" />
   </ItemGroup>
 
 </Project>

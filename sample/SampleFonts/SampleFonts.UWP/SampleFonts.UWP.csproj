@@ -145,7 +145,7 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.7.0.1142" />
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.9" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\src\forms\AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Brands\AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Brands.csproj">
