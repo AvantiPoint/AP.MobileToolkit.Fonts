@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="$(FontAwesomeRegularFont)" />
-    <EmbeddedFont Include="$(FontAwesomeRegularFont)" Alias="far" FontName="FontAwesomeRegular" Version="5.13.0" />
+    <EmbeddedFont Include="$(FontAwesomeRegularFont)" Alias="far" FontName="FontAwesomeRegular" Version="5.15.2" />
     <CssResource Include="$(FontAwesomeCssFile)" />
     <PackageReference Include="AP.MobileToolkit.FontGenerator" Version="3.0.13-beta">
       <PrivateAssets>all</PrivateAssets>
