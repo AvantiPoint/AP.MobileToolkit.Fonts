@@ -1,7 +1,7 @@
 <Project Sdk="MSBuild.Sdk.Extras">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;Xamarin.iOS10;MonoAndroid90;Xamarin.Mac20</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;Xamarin.iOS10;MonoAndroid10.0;Xamarin.Mac20</TargetFrameworks>
     <TargetFrameworks Condition=" '$(OS)' == 'Windows_NT' ">$(TargetFrameworks);uap10.0.17763</TargetFrameworks>
     <Description>Provides extensions for easily bundling Icon Fonts with as Embedded Fonts that ship via NuGet</Description>
     <PackageTags>avantipoint, fonts, xamarin.forms, embedded fonts</PackageTags>
