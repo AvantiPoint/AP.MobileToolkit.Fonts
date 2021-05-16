@@ -1,4 +1,5 @@
 ﻿using System.Runtime.CompilerServices;
+using AP.MobileToolkit.Fonts;
 using Xamarin.Forms;
 
 namespace AP.MobileToolkit.Controls
@@ -6,13 +7,21 @@ namespace AP.MobileToolkit.Controls
     public class IconImageSource : ImageSource
     {
         public static readonly BindableProperty NameProperty =
-            BindableProperty.Create(nameof(Name), typeof(string), typeof(IconImageSource), null, BindingMode.OneTime);
+            BindableProperty.Create(nameof(Name), typeof(string), typeof(IconImageSource), null, BindingMode.OneTime, propertyChanged: OnIconValueChanged);
 
         public static readonly BindableProperty SizeProperty =
-            BindableProperty.Create(nameof(Size), typeof(double), typeof(IconImageSource), null, BindingMode.OneTime);
+            BindableProperty.Create(nameof(Size), typeof(double), typeof(IconImageSource), 12.0, BindingMode.OneTime, propertyChanged: OnIconValueChanged);
 
         public static readonly BindableProperty ColorProperty =
-            BindableProperty.Create(nameof(Color), typeof(Color), typeof(IconImageSource), null);
+            BindableProperty.Create(nameof(Color), typeof(Color), typeof(IconImageSource), Color.Default, propertyChanged: OnIconValueChanged);
+
+        private static void OnIconValueChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            if(bindable is IconImageSource imageSource)
+            {
+                imageSource.OnSourceChanged();
+            }
+        }
 
         public string Name
         {
@@ -32,10 +41,13 @@ namespace AP.MobileToolkit.Controls
             set => SetValue(ColorProperty, value);
         }
 
-        protected override void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            base.OnPropertyChanged(propertyName);
-            OnSourceChanged();
-        }
+        internal FontImageSource ToFontImageSource(IFont font) =>
+            new FontImageSource
+            {
+                Glyph = font.GetGlyph(Name),
+                FontFamily = font.Alias,
+                Size = Size == 0 ? Device.GetNamedSize(NamedSize.Default, new Label()) : Size,
+                Color = Color
+            };
     }
 }

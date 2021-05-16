@@ -1,16 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using Xamarin.Forms;
 
 namespace AP.MobileToolkit.Fonts
 {
     public static class FontRegistry
     {
+        private static bool _registered;
+
         private static readonly Dictionary<string, IFont> _registeredFonts = new Dictionary<string, IFont>();
         internal static IReadOnlyDictionary<string, IFont> RegisteredFonts => _registeredFonts;
 
         public static void RegisterFonts(params IFont[] fonts)
         {
+#if !NETSTANDARD
+            if(!_registered)
+            {
+                Register(typeof(Controls.IconImageSource), typeof(Platform.IconImageSourceHandler));
+            }
+#endif
+
+            _registered = true;
+
             foreach (var font in fonts)
             {
                 if (_registeredFonts.ContainsKey(font.Alias))
@@ -24,6 +37,17 @@ namespace AP.MobileToolkit.Fonts
 
                 _registeredFonts.Add(font.Alias, font);
             }
+        }
+
+        internal static void Register(Type type, Type renderer)
+        {
+            var assembly = typeof(Image).Assembly;
+            var registrarType = assembly.GetType("Xamarin.Forms.Internals.Registrar") ?? assembly.GetType("Xamarin.Forms.Registrar");
+            var registrarProperty = registrarType.GetRuntimeProperty("Registered");
+
+            var registrar = registrarProperty.GetValue(registrarType, null);
+            var registerMethod = registrar.GetType().GetRuntimeMethod("Register", new[] { typeof(Type), typeof(Type) });
+            registerMethod.Invoke(registrar, new[] { type, renderer });
         }
 
         internal static IFont LocateFont(string selector)
