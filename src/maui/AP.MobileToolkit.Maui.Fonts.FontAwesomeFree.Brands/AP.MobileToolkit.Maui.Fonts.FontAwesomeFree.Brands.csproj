@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Description>Provides the embedded font helpers for adding FontAwesome Free - Brands to your Maui project.</Description>
+    <PackageId>AvantiPoint.MobileToolkit.Maui.Fonts.FontAwesomeFree.Brands</PackageId>
+    <PackageTags>avantipoint, fonts, maui, embedded fonts, fontawesome</PackageTags>
+    <MappingFile>FontAwesomeBrands</MappingFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="$(FontAwesomeBrandsFont)" />
+    <EmbeddedFont Include="$(FontAwesomeBrandsFont)" Alias="fab" FontName="FontAwesomeBrands" Version="5.15.2" />
+    <CssResource Include="$(FontAwesomeCssFile)" />
+    <PackageReference Include="AP.MobileToolkit.FontGenerator" Version="3.1.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <ProjectReference Include="..\AP.MobileToolkit.Maui.Fonts\AP.MobileToolkit.Maui.Fonts.csproj" />
+  </ItemGroup>
+
+</Project>
