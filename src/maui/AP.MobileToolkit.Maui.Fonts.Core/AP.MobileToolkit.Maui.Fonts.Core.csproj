@@ -29,4 +29,8 @@
     <Compile Include="**\*.windows.cs" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\AP.MobileToolkit.Fonts.Abstractions\AP.MobileToolkit.Fonts.Abstractions.csproj" />
+  </ItemGroup>
+
 </Project>

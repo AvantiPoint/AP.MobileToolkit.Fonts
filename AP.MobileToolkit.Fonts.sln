@@ -46,6 +46,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AP.MobileToolkit.Maui.Fonts
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AP.MobileToolkit.Maui.Fonts.Core", "src\maui\AP.MobileToolkit.Maui.Fonts.Core\AP.MobileToolkit.Maui.Fonts.Core.csproj", "{D9A361C2-6F41-4CC1-99C3-2DD9E1D472CE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AP.MobileToolkit.Fonts.Abstractions", "src\AP.MobileToolkit.Fonts.Abstractions\AP.MobileToolkit.Fonts.Abstractions.csproj", "{2867CF2E-49FB-403D-A613-A88CD149F173}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -426,6 +428,30 @@ Global
 		{D9A361C2-6F41-4CC1-99C3-2DD9E1D472CE}.Release|x64.Build.0 = Release|Any CPU
 		{D9A361C2-6F41-4CC1-99C3-2DD9E1D472CE}.Release|x86.ActiveCfg = Release|Any CPU
 		{D9A361C2-6F41-4CC1-99C3-2DD9E1D472CE}.Release|x86.Build.0 = Release|Any CPU
+		{2867CF2E-49FB-403D-A613-A88CD149F173}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2867CF2E-49FB-403D-A613-A88CD149F173}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2867CF2E-49FB-403D-A613-A88CD149F173}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{2867CF2E-49FB-403D-A613-A88CD149F173}.Debug|ARM.Build.0 = Debug|Any CPU
+		{2867CF2E-49FB-403D-A613-A88CD149F173}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{2867CF2E-49FB-403D-A613-A88CD149F173}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{2867CF2E-49FB-403D-A613-A88CD149F173}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{2867CF2E-49FB-403D-A613-A88CD149F173}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{2867CF2E-49FB-403D-A613-A88CD149F173}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2867CF2E-49FB-403D-A613-A88CD149F173}.Debug|x64.Build.0 = Debug|Any CPU
+		{2867CF2E-49FB-403D-A613-A88CD149F173}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2867CF2E-49FB-403D-A613-A88CD149F173}.Debug|x86.Build.0 = Debug|Any CPU
+		{2867CF2E-49FB-403D-A613-A88CD149F173}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2867CF2E-49FB-403D-A613-A88CD149F173}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2867CF2E-49FB-403D-A613-A88CD149F173}.Release|ARM.ActiveCfg = Release|Any CPU
+		{2867CF2E-49FB-403D-A613-A88CD149F173}.Release|ARM.Build.0 = Release|Any CPU
+		{2867CF2E-49FB-403D-A613-A88CD149F173}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{2867CF2E-49FB-403D-A613-A88CD149F173}.Release|iPhone.Build.0 = Release|Any CPU
+		{2867CF2E-49FB-403D-A613-A88CD149F173}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{2867CF2E-49FB-403D-A613-A88CD149F173}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{2867CF2E-49FB-403D-A613-A88CD149F173}.Release|x64.ActiveCfg = Release|Any CPU
+		{2867CF2E-49FB-403D-A613-A88CD149F173}.Release|x64.Build.0 = Release|Any CPU
+		{2867CF2E-49FB-403D-A613-A88CD149F173}.Release|x86.ActiveCfg = Release|Any CPU
+		{2867CF2E-49FB-403D-A613-A88CD149F173}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -450,6 +476,7 @@ Global
 		{A4B5484B-CF69-48D7-8972-B1A7E64A1E1B} = {A7CBBD90-F92E-4429-9C8B-2C06795EDCF0}
 		{4E693B82-7F80-427B-9819-1F802349D614} = {A7CBBD90-F92E-4429-9C8B-2C06795EDCF0}
 		{D9A361C2-6F41-4CC1-99C3-2DD9E1D472CE} = {A7CBBD90-F92E-4429-9C8B-2C06795EDCF0}
+		{2867CF2E-49FB-403D-A613-A88CD149F173} = {6A1E0C57-A046-403E-AA03-EB56913991DD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3E2F7183-469C-4935-B094-FE592A3C485E}
