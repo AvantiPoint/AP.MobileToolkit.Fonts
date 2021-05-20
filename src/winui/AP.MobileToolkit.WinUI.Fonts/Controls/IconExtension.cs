@@ -1,8 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+#if !WINDOWS_UWP
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Markup;
+#else
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Markup;
+#endif
 
 namespace AP.MobileToolkit.Controls
 {
