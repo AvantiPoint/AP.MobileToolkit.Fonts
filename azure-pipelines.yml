@@ -1,7 +1,7 @@
 trigger:
   - master
 
-name: 3.0.0.$(Build.BuildId)
+name: 3.1.$(Build.BuildId)
 
 variables:
 - name: BuildPlatform
@@ -102,7 +102,7 @@ stages:
 
   - stage: NuGet
     displayName: Deploy to NuGet.org
-    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'), eq(variables['system.pullrequest.isfork'], false), or(eq(variables['IS_PREVIEW'], 'true'), eq(variables['IS_RELEASE'], 'true')))
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'), eq(variables['system.pullrequest.isfork'], false), eq(variables['IS_RELEASE'], 'true'))
     jobs:
       - deployment: NuGet
         displayName: 'NuGet.org'
