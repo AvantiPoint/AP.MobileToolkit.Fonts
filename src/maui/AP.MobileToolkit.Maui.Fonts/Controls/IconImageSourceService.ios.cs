@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Maui;
 using UIKit;
@@ -13,7 +9,8 @@ namespace AP.MobileToolkit.Fonts.Controls
     {
         public Task<IImageSourceServiceResult<UIImage>> GetImageAsync(IImageSource imageSource, float scale = 1, CancellationToken cancellationToken = default)
         {
-            throw new System.NotImplementedException();
+            var fontImageSource = GetFontImageSource(imageSource);
+            return _fontImageSourceService.GetImageAsync(fontImageSource, scale, cancellationToken);
         }
     }
 }

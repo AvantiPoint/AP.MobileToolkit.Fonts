@@ -14,17 +14,8 @@ namespace AP.MobileToolkit.Fonts.Controls
     {
         public Task<IImageSourceServiceResult<Drawable>> GetDrawableAsync(IImageSource imageSource, Context context, CancellationToken cancellationToken = default)
         {
-            if (imageSource is null)
-            {
-                throw new ArgumentNullException(nameof(imageSource));
-            }
-
-            if (context is null)
-            {
-                throw new ArgumentNullException(nameof(context));
-            }
-
-            throw new System.NotImplementedException();
+            var fontImageSource = GetFontImageSource(imageSource);
+            return _fontImageSourceService.GetDrawableAsync(fontImageSource, context, cancellationToken);
         }
     }
 }

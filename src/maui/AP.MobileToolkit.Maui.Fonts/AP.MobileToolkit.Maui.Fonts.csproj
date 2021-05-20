@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net6.0;net6.0-ios;net6.0-android30</TargetFrameworks>
+    <TargetFrameworks>net6.0;net6.0-ios;net6.0-android;net6.0-windows10.0.18362</TargetFrameworks>
     <RootNamespace>AP.MobileToolkit.Fonts</RootNamespace>
     <AssemblyName>AP.MobileToolkit.Fonts</AssemblyName>
     <PackageId>AP.MobileToolkit.Maui.Fonts</PackageId>
@@ -10,20 +10,24 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Maui.Controls" Version="6.0.100-preview.4.2983" />
+    <PackageReference Include="Microsoft.Maui.Controls" Version="6.0.100-nightly.611" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="**\*.ios.cs;**\*.android.cs" />
-    <None Include="**\*.ios.cs;**\*.android.cs" />
+    <Compile Remove="**\*.ios.cs;**\*.android.cs;**\*.windows.cs" />
+    <None Include="**\*.ios.cs;**\*.android.cs;**\*.windows.cs" />
   </ItemGroup>
 
   <ItemGroup Condition=" $(TargetFramework) == 'net6.0-ios' ">
     <Compile Include="**\*.ios.cs" />
   </ItemGroup>
 
-  <ItemGroup Condition=" $(TargetFramework) == 'net6.0-android' ">
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('net6.0-android')) ">
     <Compile Include="**\*.android.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('net6.0-windows10')) ">
+    <Compile Include="**\*.windows.cs" />
   </ItemGroup>
 
 </Project>

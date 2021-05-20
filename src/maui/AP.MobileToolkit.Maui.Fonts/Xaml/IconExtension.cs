@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Xaml;
 
@@ -8,7 +9,7 @@ namespace AP.MobileToolkit.Fonts.Xaml
     [ContentProperty(nameof(IconName))]
     public class IconExtension : BindableObject, IMarkupExtension<string>
     {
-        private const string UnknownIcon = "Unknown Icon";
+        private const string UnknownIcon = "?";
 
         public static readonly BindableProperty IconNameProperty =
             BindableProperty.Create(nameof(IconName), typeof(string), typeof(IconExtension), null, propertyChanged: OnIconNameChanged);
@@ -22,6 +23,7 @@ namespace AP.MobileToolkit.Fonts.Xaml
         }
 
         private IProvideValueTarget _provideValueTarget;
+        private IFontRegistry _fontRegistry;
 
         public string IconName
         {
@@ -36,8 +38,10 @@ namespace AP.MobileToolkit.Fonts.Xaml
                 throw new ArgumentNullException("The IconGlyphExtension requires a ServiceProvider");
             }
 
-            _provideValueTarget = serviceProvider.GetService<IProvideValueTarget>();
-            if (_provideValueTarget.TargetObject is Element element)
+            _fontRegistry = serviceProvider.GetRequiredService<IFontRegistry>();
+
+            _provideValueTarget = serviceProvider.GetRequiredService<IProvideValueTarget>();
+            if (_provideValueTarget.TargetObject is Element element && (BindingContext is null || BindingContext == element))
             {
                 SetBinding(BindingContextProperty, new Binding(nameof(BindingContext), BindingMode.OneWay, source: element));
             }
@@ -47,7 +51,7 @@ namespace AP.MobileToolkit.Fonts.Xaml
 
         private string ProvideValue()
         {
-            if (!string.IsNullOrEmpty(IconName) && FontRegistry.HasFont(IconName, out var font))
+            if (!string.IsNullOrEmpty(IconName) && _fontRegistry.HasFont(IconName, out var font))
             {
                 var element = _provideValueTarget.TargetObject;
                 var elementType = element.GetType();
@@ -60,7 +64,6 @@ namespace AP.MobileToolkit.Fonts.Xaml
                 fontFamilyProperty.SetValue(element, font.FontFileName);
                 return font.GetGlyph(IconName);
             }
-
             return UnknownIcon;
         }
 

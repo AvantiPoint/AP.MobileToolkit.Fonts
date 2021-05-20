@@ -1,12 +1,11 @@
 ﻿using System;
+using AP.MobileToolkit.Fonts;
 using AP.MobileToolkit.Fonts.Controls;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Maui;
-using Microsoft.Maui.Hosting;
 
-namespace AP.MobileToolkit.Fonts
+namespace Microsoft.Maui.Hosting
 {
-    public static class AppHostBuilderExtensions
+    public static class APMobileToolkitFontAppHostBuilderExtensions
     {
         public static IAppHostBuilder UseMobileToolkitFonts(this IAppHostBuilder builder, Action<FontOptionsBuilder> configureOptions)
         {
@@ -31,8 +30,7 @@ namespace AP.MobileToolkit.Fonts
 
             builder.ConfigureImageSources((issc) =>
             {
-                issc.AddService<IIconImageSource>(x => 
-                    new IconImageSourceService(x.GetRequiredService<IFontRegistry>()));
+                issc.AddService<IIconImageSource, IconImageSourceService>();
             });
         return builder;
         }
