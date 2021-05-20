@@ -1,12 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net6.0;net6.0-ios;net6.0-android;net6.0-windows10.0.18362</TargetFrameworks>
+    <TargetFramework>net6.0</TargetFramework>
     <RootNamespace>AP.MobileToolkit.Fonts</RootNamespace>
     <AssemblyName>AP.MobileToolkit.Fonts</AssemblyName>
-    <PackageId>AP.MobileToolkit.Maui.Fonts</PackageId>
-    <Description>Provides extensions for easily bundling Icon Fonts with as Embedded Fonts that ship via NuGet</Description>
-    <PackageTags>avantipoint, fonts, maui, embedded fonts</PackageTags>
+    <PackageId>AvantiPoint.MobileToolkit.Maui.Fonts</PackageId>
+    <Description>Provides extensions for easily bundling Icon Fonts with as Embedded Fonts that ship via NuGet. This library provides the control implementations for Maui MVVM apps.</Description>
+    <PackageTags>avantipoint, fonts, maui, embedded fonts, mvvm</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,20 +14,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="**\*.ios.cs;**\*.android.cs;**\*.windows.cs" />
-    <None Include="**\*.ios.cs;**\*.android.cs;**\*.windows.cs" />
+    <ProjectReference Include="..\AP.MobileToolkit.Maui.Fonts.Core\AP.MobileToolkit.Maui.Fonts.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition=" $(TargetFramework) == 'net6.0-ios' ">
-    <Compile Include="**\*.ios.cs" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" $(TargetFramework.StartsWith('net6.0-android')) ">
-    <Compile Include="**\*.android.cs" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" $(TargetFramework.StartsWith('net6.0-windows10')) ">
-    <Compile Include="**\*.windows.cs" />
-  </ItemGroup>
+  
 
 </Project>

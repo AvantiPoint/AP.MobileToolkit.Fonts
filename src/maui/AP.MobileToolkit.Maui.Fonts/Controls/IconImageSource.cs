@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Maui;
+﻿using System.Runtime.CompilerServices;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Graphics;
 
@@ -39,18 +33,18 @@ namespace AP.MobileToolkit.Fonts.Controls
             set => SetValue(ColorProperty, value);
         }
 
-        //protected override void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        //{
-        //    base.OnPropertyChanged(propertyName);
-        //    switch (propertyName)
-        //    {
-        //        case null:
-        //        case nameof(Name):
-        //        case nameof(Size):
-        //        case nameof(Color):
-        //            OnSourceChanged();
-        //            break;
-        //    }
-        //}
+        protected override void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            base.OnPropertyChanged(propertyName);
+            switch (propertyName)
+            {
+                case null:
+                case nameof(Name):
+                case nameof(Size):
+                case nameof(Color):
+                    OnSourceChanged();
+                    break;
+            }
+        }
     }
 }

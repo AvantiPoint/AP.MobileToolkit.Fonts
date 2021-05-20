@@ -32,7 +32,8 @@ namespace Microsoft.Maui.Hosting
             {
                 issc.AddService<IIconImageSource, IconImageSourceService>();
             });
-        return builder;
+
+            return builder;
         }
     }
 }
