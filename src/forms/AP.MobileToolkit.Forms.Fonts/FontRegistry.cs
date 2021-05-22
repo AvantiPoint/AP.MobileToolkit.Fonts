@@ -8,7 +8,9 @@ namespace AP.MobileToolkit.Fonts
 {
     public static class FontRegistry
     {
+#if !NETSTANDARD
         private static bool _registered;
+#endif
 
         private static readonly Dictionary<string, IFont> _registeredFonts = new Dictionary<string, IFont>();
         internal static IReadOnlyDictionary<string, IFont> RegisteredFonts => _registeredFonts;
@@ -20,9 +22,9 @@ namespace AP.MobileToolkit.Fonts
             {
                 Register(typeof(Controls.IconImageSource), typeof(Platform.IconImageSourceHandler));
             }
-#endif
 
             _registered = true;
+#endif
 
             foreach (var font in fonts)
             {
