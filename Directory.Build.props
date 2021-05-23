@@ -27,6 +27,7 @@
 
   <!-- Font Assets -->
   <PropertyGroup>
+    <FontAwesomeVersion>5.15.3</FontAwesomeVersion>
     <FontAwesomeBrandsFont>$(MSBuildThisFileDirectory)fonts\fa-brands-400.ttf</FontAwesomeBrandsFont>
     <FontAwesomeRegularFont>$(MSBuildThisFileDirectory)fonts\fa-regular-400.ttf</FontAwesomeRegularFont>
     <FontAwesomeSolidFont>$(MSBuildThisFileDirectory)fonts\fa-solid-900.ttf</FontAwesomeSolidFont>
