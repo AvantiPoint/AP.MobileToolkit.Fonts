@@ -5,16 +5,14 @@ namespace AP.MobileToolkit.Fonts.Controls
 {
     public partial class IconImageSourceService : IImageSourceService<IIconImageSource>
     {
-        private IFontManager _fontManager { get; }
+#if IOS || ANDROID || WINDOWS
         private IFontRegistry _fontRegistry { get; }
         private FontImageSourceService _fontImageSourceService { get; }
 
         public IconImageSourceService(
-            IFontManager fontManager,
-            IFontRegistry fontRegistry, 
+            IFontRegistry fontRegistry,
             FontImageSourceService fontImageSourceService)
         {
-            _fontManager = fontManager;
             _fontRegistry = fontRegistry;
             _fontImageSourceService = fontImageSourceService;
         }
@@ -45,5 +43,6 @@ namespace AP.MobileToolkit.Fonts.Controls
             public string Glyph { get; init; }
             public bool IsEmpty => string.IsNullOrEmpty(Glyph);
         }
+#endif
     }
 }
