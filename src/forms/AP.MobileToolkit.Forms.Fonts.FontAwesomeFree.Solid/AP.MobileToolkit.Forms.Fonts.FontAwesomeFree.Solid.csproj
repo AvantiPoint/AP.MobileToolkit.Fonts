@@ -10,9 +10,8 @@
 
   <ItemGroup>
     <EmbeddedResource Include="$(FontAwesomeSolidFont)" />
-    <EmbeddedFont Include="$(FontAwesomeSolidFont)" Alias="fas" FontName="FontAwesomeSolid" Version="5.15.2" />
-    <CssResource Include="$(FontAwesomeCssFile)" />
-    <PackageReference Include="AP.MobileToolkit.FontGenerator" Version="3.1.1">
+    <AdditionalFiles Include="$(FontAwesomeSolidFont)" Alias="fas" FontName="FontAwesomeSolid" Version="$(FontAwesomeVersion)" CssFile="$(FontAwesomeCssFile)" />
+    <PackageReference Include="AP.MobileToolkit.FontGenerator" Version="3.2.7">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
