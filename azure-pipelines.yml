@@ -18,11 +18,16 @@ stages:
         pool:
           vmImage: windows-latest
         steps:
-          - task: UseDotNet@2
-            inputs:
-              packageType: sdk
-              useGlobalJson: true
-              includePreviewVersions: true
+          # - task: UseDotNet@2
+          #   inputs:
+          #     packageType: sdk
+          #     useGlobalJson: true
+          #     includePreviewVersions: true
+          - powershell: |
+              dotnet tool install --global Redth.Net.Maui.Check --version 0.4.2
+              maui-check --dev --non-interactive
+
+            displayName: Setup for Maui and .NET 6
 
           - powershell: |
               dotnet tool install --global dotnet-vs --version 1.0.0
