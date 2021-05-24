@@ -18,6 +18,14 @@ stages:
         pool:
           vmImage: windows-latest
         steps:
+          - task: UseDotNet@2
+            inputs:
+              packageType: sdk
+              includePreviewVersions: true
+              version: 6.x
+              vsVersion: 16.10
+
+          
           # - task: UseDotNet@2
           #   inputs:
           #     packageType: sdk
@@ -29,10 +37,10 @@ stages:
 
             displayName: Setup for Maui and .NET 6
 
-          - powershell: |
-              dotnet tool install --global dotnet-vs --version 1.0.0
-              vs install preview enterprise +mobile
-            displayName: Setup VS Preview
+          # - powershell: |
+          #     dotnet tool install --global dotnet-vs --version 1.0.0
+          #     vs install preview enterprise +mobile
+          #   displayName: Setup VS Preview
 
           - powershell: |
               msbuild build-forms.slnf /r /p:Configuration=Release
