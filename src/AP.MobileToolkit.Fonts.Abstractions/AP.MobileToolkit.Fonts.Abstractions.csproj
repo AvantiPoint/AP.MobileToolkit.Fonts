@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Description>Provides common abstractions used by various platform implementations of the AvantiPoint MobileToolkit Fonts library.</Description>
+  </PropertyGroup>
+
+</Project>

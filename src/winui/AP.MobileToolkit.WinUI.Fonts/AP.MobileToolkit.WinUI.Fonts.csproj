@@ -51,7 +51,11 @@
   </ItemGroup>
 
   <ItemGroup Condition=" !$(TargetFramework.StartsWith('uap10.0')) ">
-    <PackageReference Include="Uno.UI" Version="3.4.0" />
+    <PackageReference Include="Uno.WinUI" Version="3.8.0-dev.195" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\AP.MobileToolkit.Fonts.Abstractions\AP.MobileToolkit.Fonts.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>

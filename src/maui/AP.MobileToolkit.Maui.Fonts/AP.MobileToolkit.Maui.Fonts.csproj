@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>AP.MobileToolkit.Fonts</RootNamespace>
+    <AssemblyName>AP.MobileToolkit.Fonts</AssemblyName>
+    <PackageId>AvantiPoint.MobileToolkit.Maui.Fonts</PackageId>
+    <Description>Provides extensions for easily bundling Icon Fonts with as Embedded Fonts that ship via NuGet. This library provides the control implementations for Maui MVVM apps.</Description>
+    <PackageTags>avantipoint, fonts, maui, embedded fonts, mvvm</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Maui.Controls" Version="6.0.100-nightly.611" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AP.MobileToolkit.Maui.Fonts.Core\AP.MobileToolkit.Maui.Fonts.Core.csproj" />
+  </ItemGroup>
+
+  
+
+</Project>
