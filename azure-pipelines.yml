@@ -1,7 +1,7 @@
 trigger:
   - master
 
-name: 3.1.$(Build.BuildId)
+name: 4.0.$(Build.BuildId)
 
 variables:
 - name: BuildPlatform
@@ -22,33 +22,26 @@ stages:
             inputs:
               packageType: sdk
               useGlobalJson: true
-
-          - task: NuGetToolInstaller@1
-            displayName: Install latest NuGet.exe
-            inputs:
-              checkLatest: true
-
-          - task: NuGetCommand@2
-            displayName: NuGet Restore
-            inputs:
-              command: restore
-
-          - task: MSBuild@1
-            displayName: MSBuild
-            inputs:
-              platform: '$(BuildPlatform)'
-              configuration: '$(BuildConfiguration)'
-              msbuildArguments: '/p:JavaSdkDirectory="$(JAVA_HOME)"'
+              includePreviewVersions: true
 
           - powershell: |
-              dotnet test $(System.DefaultWorkingDirectory)\tests\AP.MobileToolkit.Fonts.Tests\AP.MobileToolkit.Fonts.Tests.csproj --configuration $env:BuildConfiguration --logger trx --no-build --collect "Code Coverage"
-            displayName: Run Tests
+              dotnet tool install --global dotnet-vs --version 1.0.0
+              vs install preview enterprise +mobile
+            displayName: Setup VS Preview
 
-          - task: PublishTestResults@2
-            displayName: Publish Test Results
-            inputs:
-              testRunTitle: 'AP.MobileToolkit.Fonts'
-              testResultsFiles: '**/*.trx'
+          - powershell: |
+              msbuild build-forms.slnf /r /p:Configuration=Release
+            displayName: MSBuild
+
+          # - powershell: |
+          #     dotnet test $(System.DefaultWorkingDirectory)\tests\AP.MobileToolkit.Fonts.Tests\AP.MobileToolkit.Fonts.Tests.csproj --configuration $env:BuildConfiguration --logger trx --no-build --collect "Code Coverage"
+          #   displayName: Run Tests
+
+          # - task: PublishTestResults@2
+          #   displayName: Publish Test Results
+          #   inputs:
+          #     testRunTitle: 'AP.MobileToolkit.Fonts'
+          #     testResultsFiles: '**/*.trx'
 
           - powershell: 'build\Sign-Packages.ps1'
             displayName: 'Authenticode Sign Artifacts'

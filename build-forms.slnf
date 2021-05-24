@@ -1,0 +1,12 @@
+{
+  "solution": {
+    "path": "AP.MobileToolkit.Fonts.sln",
+    "projects": [
+      "src\\AP.MobileToolkit.Fonts.Abstractions\\AP.MobileToolkit.Fonts.Abstractions.csproj",
+      "src\\forms\\AP.MobileToolkit.Forms.Fonts\\AP.MobileToolkit.Forms.Fonts.csproj",
+      "src\\forms\\AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Brands\\AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Brands.csproj",
+      "src\\forms\\AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Regular\\AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Regular.csproj",
+      "src\\forms\\AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Solid\\AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Solid.csproj",
+    ]
+  }
+}
