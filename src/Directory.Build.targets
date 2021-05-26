@@ -1,0 +1,17 @@
+<Project>
+  <Import Project="..\Directory.Build.targets" />
+
+  <Target Name="CopyFontReadMe"
+          BeforeTargets="CoreBuild"
+          Condition=" $(ReadMeFilePath) != '' ">
+    <Exec Command="type $(ReadMeFilePath) > $(IntermediateOutputPath)\readme.txt" />
+  </Target>
+
+  <Target Name="_AddPackageReadMe"
+          AfterTargets="CopyFontReadMe"
+          Condition="Exists('$(IntermediateOutputPath)\readme.txt')">
+    <ItemGroup>
+      <_PackageFiles Include="$(IntermediateOutputPath)\readme.txt" PackagePath="" />
+    </ItemGroup>
+  </Target>
+</Project>

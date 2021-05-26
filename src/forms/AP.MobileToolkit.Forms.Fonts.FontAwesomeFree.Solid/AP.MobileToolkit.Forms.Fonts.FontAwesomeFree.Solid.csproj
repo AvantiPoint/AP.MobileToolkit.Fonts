@@ -6,12 +6,13 @@
     <PackageId>AvantiPoint.MobileToolkit.Forms.Fonts.FontAwesomeFree.Solid</PackageId>
     <PackageTags>avantipoint, fonts, xamarin.forms, embedded fonts, fontawesome</PackageTags>
     <MappingFile>FontAwesomeSolid</MappingFile>
+    <ReadMeFilePath>$(FontAwesomeReadMe)</ReadMeFilePath>
   </PropertyGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="$(FontAwesomeSolidFont)" />
     <AdditionalFiles Include="$(FontAwesomeSolidFont)" Alias="fas" FontName="FontAwesomeSolid" Version="$(FontAwesomeVersion)" CssFile="$(FontAwesomeCssFile)" />
-    <PackageReference Include="AP.MobileToolkit.FontGenerator" Version="3.2.7">
+    <PackageReference Include="AP.MobileToolkit.FontGenerator" Version="4.0.12">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>

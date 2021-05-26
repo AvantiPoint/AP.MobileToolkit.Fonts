@@ -1,4 +1,4 @@
-﻿<Project Sdk="MSBuild.Sdk.Extras">
+<Project Sdk="MSBuild.Sdk.Extras">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -6,12 +6,13 @@
     <PackageId>AvantiPoint.MobileToolkit.Forms.Fonts.FontAwesomeFree.Brands</PackageId>
     <PackageTags>avantipoint, fonts, xamarin.forms, embedded fonts, fontawesome</PackageTags>
     <MappingFile>FontAwesomeBrands</MappingFile>
+    <ReadMeFilePath>$(FontAwesomeReadMe)</ReadMeFilePath>
   </PropertyGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="$(FontAwesomeBrandsFont)" />
     <AdditionalFiles Include="$(FontAwesomeBrandsFont)" Alias="fab" FontName="FontAwesomeBrands" Version="$(FontAwesomeVersion)" CssFile="$(FontAwesomeCssFile)" />
-    <PackageReference Include="AP.MobileToolkit.FontGenerator" Version="3.2.7">
+    <PackageReference Include="AP.MobileToolkit.FontGenerator" Version="4.0.12">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
