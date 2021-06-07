@@ -48,9 +48,15 @@ stages:
           #     vs install preview enterprise +mobile
           #   displayName: Setup VS Preview
 
-          - powershell: |
-              msbuild build-forms.slnf /r /p:Configuration=Release
-            displayName: MSBuild
+          # - powershell: |
+          #     msbuild build-forms.slnf /r /p:Configuration=Release
+          #   displayName: MSBuild
+
+          - task: MSBuild@1
+            inputs:
+              solution: build-forms.slnf
+              configuration: Release
+              restoreNugetPackages: true
 
           - powershell: |
               dotnet test tests\AP.MobileToolkit.Fonts.Tests\AP.MobileToolkit.Fonts.Tests.csproj --configuration Release --logger trx --no-build --collect "Code Coverage"
