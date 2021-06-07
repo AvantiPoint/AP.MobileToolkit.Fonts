@@ -46,15 +46,15 @@ stages:
               msbuild build-forms.slnf /r /p:Configuration=Release
             displayName: MSBuild
 
-          # - powershell: |
-          #     dotnet test $(System.DefaultWorkingDirectory)\tests\AP.MobileToolkit.Fonts.Tests\AP.MobileToolkit.Fonts.Tests.csproj --configuration $env:BuildConfiguration --logger trx --no-build --collect "Code Coverage"
-          #   displayName: Run Tests
+          - powershell: |
+              dotnet test tests\AP.MobileToolkit.Fonts.Tests\AP.MobileToolkit.Fonts.Tests.csproj --configuration Release --logger trx --no-build --collect "Code Coverage"
+            displayName: Run Tests
 
-          # - task: PublishTestResults@2
-          #   displayName: Publish Test Results
-          #   inputs:
-          #     testRunTitle: 'AP.MobileToolkit.Fonts'
-          #     testResultsFiles: '**/*.trx'
+          - task: PublishTestResults@2
+            displayName: Publish Test Results
+            inputs:
+              testRunTitle: 'AP.MobileToolkit.Fonts'
+              testResultsFiles: '**/*.trx'
 
           - powershell: 'build\Sign-Packages.ps1'
             displayName: 'Authenticode Sign Artifacts'

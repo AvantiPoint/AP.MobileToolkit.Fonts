@@ -3,10 +3,16 @@
     "path": "AP.MobileToolkit.Fonts.sln",
     "projects": [
       "src\\AP.MobileToolkit.Fonts.Abstractions\\AP.MobileToolkit.Fonts.Abstractions.csproj",
-      "src\\forms\\AP.MobileToolkit.Forms.Fonts\\AP.MobileToolkit.Forms.Fonts.csproj",
+      "src\\forms\\AP.MobileToolkit.Forms.Fonts.DevIcons\\AP.MobileToolkit.Forms.Fonts.DevIcons.csproj",
       "src\\forms\\AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Brands\\AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Brands.csproj",
       "src\\forms\\AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Regular\\AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Regular.csproj",
       "src\\forms\\AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Solid\\AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Solid.csproj",
+      "src\\forms\\AP.MobileToolkit.Forms.Fonts.MaterialIconsOutlined\\AP.MobileToolkit.Forms.Fonts.MaterialIconsOutlined.csproj",
+      "src\\forms\\AP.MobileToolkit.Forms.Fonts.MaterialIconsRound\\AP.MobileToolkit.Forms.Fonts.MaterialIconsRound.csproj",
+      "src\\forms\\AP.MobileToolkit.Forms.Fonts.MaterialIconsSharp\\AP.MobileToolkit.Forms.Fonts.MaterialIconsSharp.csproj",
+      "src\\forms\\AP.MobileToolkit.Forms.Fonts.MaterialIcons\\AP.MobileToolkit.Forms.Fonts.MaterialIcons.csproj",
+      "src\\forms\\AP.MobileToolkit.Forms.Fonts\\AP.MobileToolkit.Forms.Fonts.csproj",
+      "tests\\AP.MobileToolkit.Fonts.Tests\\AP.MobileToolkit.Fonts.Tests.csproj"
     ]
   }
 }
