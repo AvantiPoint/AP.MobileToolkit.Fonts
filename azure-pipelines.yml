@@ -39,7 +39,7 @@ stages:
 
           - powershell: |
               dotnet tool install --global Redth.Net.Maui.Check --version 0.5.0
-              maui-check --preview --non-interactive --ci
+              maui-check --preview --non-interactive --ci --fix
 
             displayName: Setup for Maui and .NET 6
 
