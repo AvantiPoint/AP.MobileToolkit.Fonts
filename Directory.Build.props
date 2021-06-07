@@ -43,10 +43,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Nerdbank.GitVersioning" Version="3.4.203" PrivateAssets="all" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Remove=".DS_Store" />
     <SourceRoot Include="$(MSBuildThisFileDirectory)"/>
   </ItemGroup>
