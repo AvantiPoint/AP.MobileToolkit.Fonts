@@ -22,18 +22,11 @@ stages:
             inputs:
               packageType: sdk
               includePreviewVersions: true
-              version: 6.x
-              vsVersion: 16.10
+              version: 6.0.100-preview.4.21255.9
 
-          
-          # - task: UseDotNet@2
-          #   inputs:
-          #     packageType: sdk
-          #     useGlobalJson: true
-          #     includePreviewVersions: true
           - powershell: |
-              dotnet tool install --global Redth.Net.Maui.Check --version 0.4.2
-              maui-check --dev --non-interactive
+              dotnet tool install --global Redth.Net.Maui.Check --version 0.5.0
+              maui-check --preview --non-interactive --ci
 
             displayName: Setup for Maui and .NET 6
 
