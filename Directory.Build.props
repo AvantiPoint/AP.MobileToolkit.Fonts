@@ -23,7 +23,8 @@
     <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <EmitCompilerGeneratedFiles>True</EmitCompilerGeneratedFiles>
+    <LangVersion>latest</LangVersion>
+    <!-- <EmitCompilerGeneratedFiles>True</EmitCompilerGeneratedFiles> -->
   </PropertyGroup>
 
   <!-- Font Assets -->
@@ -34,8 +35,18 @@
     <FontAwesomeRegularFont>$(MSBuildThisFileDirectory)fonts\fa-regular-400.ttf</FontAwesomeRegularFont>
     <FontAwesomeSolidFont>$(MSBuildThisFileDirectory)fonts\fa-solid-900.ttf</FontAwesomeSolidFont>
     <FontAwesomeCssFile>$(MSBuildThisFileDirectory)fonts\fontawesome.min.css</FontAwesomeCssFile>
+    <DevIconsReadMe>$(MSBuildThisFileDirectory)fonts\devicons.readme</DevIconsReadMe>
     <DevIconsFont>$(MSBuildThisFileDirectory)fonts\devicons.ttf</DevIconsFont>
     <DevIconsCssFile>$(MSBuildThisFileDirectory)fonts\devicons.min.css</DevIconsCssFile>
+    <MaterialIconsReadMe>$(MSBuildThisFileDirectory)fonts\materialicons.readme</MaterialIconsReadMe>
+    <MaterialIconsFont>$(MSBuildThisFileDirectory)fonts\MaterialIcons-Regular.ttf</MaterialIconsFont>
+    <MaterialIconsCodepoints>$(MSBuildThisFileDirectory)fonts\MaterialIcons-Regular.codepoints</MaterialIconsCodepoints>
+    <MaterialIconsOutlinedFont>$(MSBuildThisFileDirectory)fonts\MaterialIconsOutlined-Regular.otf</MaterialIconsOutlinedFont>
+    <MaterialIconsOutlinedCodepoints>$(MSBuildThisFileDirectory)fonts\MaterialIconsOutlined-Regular.codepoints</MaterialIconsOutlinedCodepoints>
+    <MaterialIconsRoundFont>$(MSBuildThisFileDirectory)fonts\MaterialIconsRound-Regular.otf</MaterialIconsRoundFont>
+    <MaterialIconsRoundCodepoints>$(MSBuildThisFileDirectory)fonts\MaterialIconsRound-Regular.codepoints</MaterialIconsRoundCodepoints>
+    <MaterialIconsSharpFont>$(MSBuildThisFileDirectory)fonts\MaterialIconsSharp-Regular.otf</MaterialIconsSharpFont>
+    <MaterialIconsSharpCodepoints>$(MSBuildThisFileDirectory)fonts\MaterialIconsSharp-Regular.codepoints</MaterialIconsSharpCodepoints>
   </PropertyGroup>
 
   <ItemGroup Condition=" $(IsPackable) ">

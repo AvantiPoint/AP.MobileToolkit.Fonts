@@ -20,9 +20,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\AP.MobileToolkit.Fonts.Abstractions\AP.MobileToolkit.Fonts.Abstractions.csproj" />
+    <ProjectReference Include="..\..\src\forms\AP.MobileToolkit.Forms.Fonts.DevIcons\AP.MobileToolkit.Forms.Fonts.DevIcons.csproj" />
     <ProjectReference Include="..\..\src\forms\AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Brands\AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Brands.csproj" />
     <ProjectReference Include="..\..\src\forms\AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Regular\AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Regular.csproj" />
     <ProjectReference Include="..\..\src\forms\AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Solid\AP.MobileToolkit.Forms.Fonts.FontAwesomeFree.Solid.csproj" />
+    <ProjectReference Include="..\..\src\forms\AP.MobileToolkit.Forms.Fonts.MaterialIconsOutlined\AP.MobileToolkit.Forms.Fonts.MaterialIconsOutlined.csproj" />
+    <ProjectReference Include="..\..\src\forms\AP.MobileToolkit.Forms.Fonts.MaterialIconsRound\AP.MobileToolkit.Forms.Fonts.MaterialIconsRound.csproj" />
+    <ProjectReference Include="..\..\src\forms\AP.MobileToolkit.Forms.Fonts.MaterialIconsSharp\AP.MobileToolkit.Forms.Fonts.MaterialIconsSharp.csproj" />
+    <ProjectReference Include="..\..\src\forms\AP.MobileToolkit.Forms.Fonts.MaterialIcons\AP.MobileToolkit.Forms.Fonts.MaterialIcons.csproj" />
     <ProjectReference Include="..\..\src\forms\AP.MobileToolkit.Forms.Fonts\AP.MobileToolkit.Forms.Fonts.csproj" />
   </ItemGroup>
 

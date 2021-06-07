@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Description>Provides the embedded font helpers for adding Google's Material Icons to your Xamarin.Forms project.</Description>
+    <PackageId>AvantiPoint.MobileToolkit.Maui.Fonts.MaterialIcons</PackageId>
+    <PackageTags>avantipoint, fonts, maui, embedded fonts, materialicons</PackageTags>
+    <FontFileName>$(MaterialIconsFont)</FontFileName>
+    <FontCodepoints>$(MaterialIconsCodepoints)</FontCodepoints>
+    <FontVersion>4.0.0</FontVersion>
+    <FontAlias>material-icons</FontAlias>
+    <FontMappingFile>MaterialIcons</FontMappingFile>
+    <ReadMeFilePath>$(MaterialIconsReadMe)</ReadMeFilePath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="$(MaterialIconsFont)" />
+    <AdditionalFiles Include="$(MaterialIconsFont)" Alias="material" FontName="MaterialIcons" Version="4.0.0" CodepointsFile="$(MaterialIconsCodepoints)" />
+    <PackageReference Include="AP.MobileToolkit.FontGenerator" >
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <ProjectReference Include="..\AP.MobileToolkit.Maui.Fonts\AP.MobileToolkit.Maui.Fonts.csproj" />
+  </ItemGroup>
+
+</Project>
