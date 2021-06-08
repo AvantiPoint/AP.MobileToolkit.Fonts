@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Description>Provides the embedded font helpers for adding Google's Material Icons Outlined to your Xamarin.Forms project.</Description>
-    <PackageId>AvantiPoint.MobileToolkit.Forms.Fonts.MaterialOutlinedIcons</PackageId>
+    <PackageId>AvantiPoint.MobileToolkit.Forms.Fonts.MaterialIconsOutlined</PackageId>
     <PackageTags>avantipoint, fonts, xamarin.forms, embedded fonts, materialicons</PackageTags>
     <FontFileName>$(MaterialIconsFont)</FontFileName>
     <FontCodepoints>$(MaterialIconsCodepoints)</FontCodepoints>

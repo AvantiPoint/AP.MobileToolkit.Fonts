@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Description>Provides the embedded font helpers for adding Google's Material Icons Round to your Xamarin.Forms project.</Description>
-    <PackageId>AvantiPoint.MobileToolkit.Forms.Fonts.MaterialRoundIcons</PackageId>
+    <PackageId>AvantiPoint.MobileToolkit.Forms.Fonts.MaterialIconsRound</PackageId>
     <PackageTags>avantipoint, fonts, xamarin.forms, embedded fonts, materialicons</PackageTags>
     <ReadMeFilePath>$(MaterialIconsReadMe)</ReadMeFilePath>
   </PropertyGroup>

@@ -3,7 +3,7 @@
  <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Description>Provides the embedded font helpers for adding Google's Material Icons Sharp to your Xamarin.Forms project.</Description>
-    <PackageId>AvantiPoint.MobileToolkit.Forms.Fonts.MaterialSharpIcons</PackageId>
+    <PackageId>AvantiPoint.MobileToolkit.Forms.Fonts.MaterialIconsSharp</PackageId>
     <PackageTags>avantipoint, fonts, xamarin.forms, embedded fonts, materialicons</PackageTags>
     <ReadMeFilePath>$(MaterialIconsReadMe)</ReadMeFilePath>
   </PropertyGroup>
