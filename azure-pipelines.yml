@@ -55,8 +55,8 @@ stages:
           - task: MSBuild@1
             inputs:
               solution: build-forms.slnf
-              configuration: Release
-              restoreNugetPackages: true
+              configuration: 'Release'
+              msbuildArguments: '/r'
 
           - powershell: |
               dotnet test tests\AP.MobileToolkit.Fonts.Tests\AP.MobileToolkit.Fonts.Tests.csproj --configuration Release --logger trx --no-build --collect "Code Coverage"
