@@ -10,10 +10,10 @@ namespace AP.MobileToolkit.Fonts.Controls
             BindableProperty.Create(nameof(Name), typeof(string), typeof(IconImageSource), null, BindingMode.OneTime);
 
         public static readonly BindableProperty SizeProperty =
-            BindableProperty.Create(nameof(Size), typeof(double), typeof(IconImageSource), null, BindingMode.OneTime);
+            BindableProperty.Create(nameof(Size), typeof(double), typeof(IconImageSource), 12.0, BindingMode.OneTime);
 
         public static readonly BindableProperty ColorProperty =
-            BindableProperty.Create(nameof(Color), typeof(Color), typeof(IconImageSource), null);
+            BindableProperty.Create(nameof(Color), typeof(Color), typeof(IconImageSource), Colors.Black);
 
         public string Name
         {
