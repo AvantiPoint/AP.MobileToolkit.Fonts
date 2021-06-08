@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Description>Provides the embedded font helpers for adding Vorillaz DevIcons to your Xamarin.Forms project.</Description>
+    <PackageId>AvantiPoint.MobileToolkit.Forms.Fonts.DevIcons</PackageId>
+    <PackageTags>avantipoint, fonts, xamarin.forms, embedded fonts, devicons</PackageTags>
+    <MappingFile>DevIcons</MappingFile>
+    <ReadMeFilePath>$(DevIconsReadMe)</ReadMeFilePath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="$(DevIconsFont)" />
+    <AdditionalFiles Include="$(DevIconsFont)" Alias="devicons" FontName="DevIcons" Version="1.8.0" CssFile="$(DevIconsCssFile)" />
+    <PackageReference Include="AP.MobileToolkit.FontGenerator">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <ProjectReference Include="..\AP.MobileToolkit.Forms.Fonts\AP.MobileToolkit.Forms.Fonts.csproj" />
+  </ItemGroup>
+
+</Project>

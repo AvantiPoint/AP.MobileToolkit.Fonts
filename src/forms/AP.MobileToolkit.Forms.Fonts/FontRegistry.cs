@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.ComponentModel;
 using System.Reflection;
+using AP.MobileToolkit.Fonts.Internals;
 using Xamarin.Forms;
 
 namespace AP.MobileToolkit.Fonts
@@ -12,8 +13,8 @@ namespace AP.MobileToolkit.Fonts
         private static bool _registered;
 #endif
 
-        private static readonly Dictionary<string, IFont> _registeredFonts = new Dictionary<string, IFont>();
-        internal static IReadOnlyDictionary<string, IFont> RegisteredFonts => _registeredFonts;
+        private static readonly IDictionary<string, IFont> _registeredFonts = new Dictionary<string, IFont>();
+        internal static IDictionary<string, IFont> RegisteredFonts => _registeredFonts;
 
         public static void RegisterFonts(params IFont[] fonts)
         {
@@ -54,26 +55,15 @@ namespace AP.MobileToolkit.Fonts
 
         internal static IFont LocateFont(string selector)
         {
-            var alias = selector.Split(new[] { ' ', '-' }).First();
-            var key = _registeredFonts.Keys.FirstOrDefault(x => x.Equals(alias, StringComparison.InvariantCultureIgnoreCase));
-            return string.IsNullOrEmpty(key) ? throw new KeyNotFoundException($"Could not locate a registered font with the alias {alias}") : _registeredFonts[key];
+            return FontRegistryHelper.LocateFont(RegisteredFonts, selector);
         }
 
         internal static bool HasFont(string selector, out IFont font)
         {
-            try
-            {
-                font = LocateFont(selector);
-            }
-            catch (Exception ex)
-            {
-                Console.Write(ex);
-                font = null;
-            }
-
-            return font != null;
+            return FontRegistryHelper.HasFont(RegisteredFonts, selector, out font);
         }
 
-        internal static void Clear() => _registeredFonts.Clear();
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public static void Clear() => _registeredFonts.Clear();
     }
 }

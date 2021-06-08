@@ -16,7 +16,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition=" $(TargetFramework.StartsWith('MonoAndroid')) ">
-    <AndroidResgenNamespace>AP.MobileToolkit.Forms.Fonts</AndroidResgenNamespace>
+    <AndroidResgenNamespace>AP.MobileToolkit.WinUI.Fonts</AndroidResgenNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -51,7 +51,7 @@
   </ItemGroup>
 
   <ItemGroup Condition=" !$(TargetFramework.StartsWith('uap10.0')) ">
-    <PackageReference Include="Uno.WinUI" Version="3.8.0-dev.195" />
+    <PackageReference Include="Uno.WinUI" />
   </ItemGroup>
 
   <ItemGroup>

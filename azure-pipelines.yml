@@ -19,21 +19,27 @@ stages:
           vmImage: windows-latest
         steps:
           - task: UseDotNet@2
+            displayName: Install .NET 3.1
+            inputs:
+              packageType: sdk
+              version: 3.1.409
+
+          - task: UseDotNet@2
+            displayName: Install .NET 5
+            inputs:
+              packageType: sdk
+              version: 5.0.300
+
+          - task: UseDotNet@2
+            displayName: Install .NET 6 preview
             inputs:
               packageType: sdk
               includePreviewVersions: true
-              version: 6.x
-              vsVersion: 16.10
+              version: 6.0.100-preview.4.21255.9
 
-          
-          # - task: UseDotNet@2
-          #   inputs:
-          #     packageType: sdk
-          #     useGlobalJson: true
-          #     includePreviewVersions: true
           - powershell: |
-              dotnet tool install --global Redth.Net.Maui.Check --version 0.4.2
-              maui-check --dev --non-interactive
+              dotnet tool install --global Redth.Net.Maui.Check --version 0.5.0
+              maui-check --preview --non-interactive --ci --fix
 
             displayName: Setup for Maui and .NET 6
 
@@ -42,19 +48,25 @@ stages:
           #     vs install preview enterprise +mobile
           #   displayName: Setup VS Preview
 
-          - powershell: |
-              msbuild build-forms.slnf /r /p:Configuration=Release
-            displayName: MSBuild
-
           # - powershell: |
-          #     dotnet test $(System.DefaultWorkingDirectory)\tests\AP.MobileToolkit.Fonts.Tests\AP.MobileToolkit.Fonts.Tests.csproj --configuration $env:BuildConfiguration --logger trx --no-build --collect "Code Coverage"
-          #   displayName: Run Tests
+          #     msbuild build-forms.slnf /r /p:Configuration=Release
+          #   displayName: MSBuild
 
-          # - task: PublishTestResults@2
-          #   displayName: Publish Test Results
-          #   inputs:
-          #     testRunTitle: 'AP.MobileToolkit.Fonts'
-          #     testResultsFiles: '**/*.trx'
+          - task: MSBuild@1
+            inputs:
+              solution: build-forms.slnf
+              configuration: 'Release'
+              msbuildArguments: '/r'
+
+          - powershell: |
+              dotnet test tests\AP.MobileToolkit.Fonts.Tests\AP.MobileToolkit.Fonts.Tests.csproj --configuration Release --logger trx --no-build --collect "Code Coverage"
+            displayName: Run Tests
+
+          - task: PublishTestResults@2
+            displayName: Publish Test Results
+            inputs:
+              testRunTitle: 'AP.MobileToolkit.Fonts'
+              testResultsFiles: '**/*.trx'
 
           - powershell: 'build\Sign-Packages.ps1'
             displayName: 'Authenticode Sign Artifacts'

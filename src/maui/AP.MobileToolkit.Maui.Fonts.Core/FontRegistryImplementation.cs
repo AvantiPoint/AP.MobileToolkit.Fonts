@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using AP.MobileToolkit.Fonts.Internals;
 
 namespace AP.MobileToolkit.Fonts
 {
     internal class FontRegistryImplementation : IFontRegistry
     {
-        private IReadOnlyDictionary<string, IFont> RegisteredFonts { get; }
+        private IDictionary<string, IFont> RegisteredFonts { get; }
 
         public FontRegistryImplementation(IEnumerable<IFont> fonts)
         {
@@ -36,24 +37,12 @@ namespace AP.MobileToolkit.Fonts
 
         public IFont LocateFont(string selector)
         {
-            var alias = selector.Split(new[] { ' ', '-' }).First();
-            var key = RegisteredFonts.Keys.FirstOrDefault(x => x.Equals(alias, StringComparison.InvariantCultureIgnoreCase));
-            return string.IsNullOrEmpty(key) ? throw new KeyNotFoundException($"Could not locate a registered font with the alias {alias}") : RegisteredFonts[key];
+            return FontRegistryHelper.LocateFont(RegisteredFonts, selector);
         }
 
         public bool HasFont(string selector, out IFont font)
         {
-            try
-            {
-                font = LocateFont(selector);
-            }
-            catch (Exception ex)
-            {
-                Console.Write(ex);
-                font = null;
-            }
-
-            return font != null;
+            return FontRegistryHelper.HasFont(RegisteredFonts, selector, out font);
         }
     }
 }

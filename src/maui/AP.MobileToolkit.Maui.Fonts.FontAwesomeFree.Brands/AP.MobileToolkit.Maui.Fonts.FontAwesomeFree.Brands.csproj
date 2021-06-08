@@ -11,7 +11,7 @@
   <ItemGroup>
     <EmbeddedResource Include="$(FontAwesomeBrandsFont)" />
     <AdditionalFiles Include="$(FontAwesomeBrandsFont)" Alias="fab" FontName="FontAwesomeBrands" Version="$(FontAwesomeVersion)" CssFile="$(FontAwesomeCssFile)" />
-    <PackageReference Include="AP.MobileToolkit.FontGenerator" Version="3.2.7">
+    <PackageReference Include="AP.MobileToolkit.FontGenerator" >
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
