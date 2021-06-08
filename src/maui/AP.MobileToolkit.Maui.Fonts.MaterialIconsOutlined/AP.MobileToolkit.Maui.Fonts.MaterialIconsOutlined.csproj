@@ -2,6 +2,25 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
+    <Description>Provides the embedded font helpers for adding Google's Material Icons Outlined to your Maui project.</Description>
+    <PackageId>AvantiPoint.MobileToolkit.Maui.Fonts.MaterialIconsOutlined</PackageId>
+    <PackageTags>avantipoint, fonts, maui, dotnetmaui, embedded fonts, materialicons</PackageTags>
+    <FontFileName>$(MaterialIconsFont)</FontFileName>
+    <FontCodepoints>$(MaterialIconsCodepoints)</FontCodepoints>
+    <FontVersion>4.0.0</FontVersion>
+    <FontAlias>material-icons</FontAlias>
+    <FontMappingFile>MaterialIcons</FontMappingFile>
+    <ReadMeFilePath>$(MaterialIconsReadMe)</ReadMeFilePath>
   </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="$(MaterialIconsOutlinedFont)" />
+    <AdditionalFiles Include="$(MaterialIconsOutlinedFont)" Alias="material-outlined" FontName="MaterialIconsOutlined" Version="4.0.0" CodepointsFile="$(MaterialIconsOutlinedCodepoints)" />
+    <PackageReference Include="AP.MobileToolkit.FontGenerator" >
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <ProjectReference Include="..\AP.MobileToolkit.Maui.Fonts.Core\AP.MobileToolkit.Maui.Fonts.Core.csproj" />
+  </ItemGroup>
 
 </Project>

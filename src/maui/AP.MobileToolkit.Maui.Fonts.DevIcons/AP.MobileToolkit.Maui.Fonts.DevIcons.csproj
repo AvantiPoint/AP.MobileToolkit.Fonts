@@ -6,19 +6,19 @@
     <TargetFramework>net6.0</TargetFramework>
     <Description>Provides the embedded font helpers for adding Vorillaz DevIcons to your Maui project.</Description>
     <PackageId>AvantiPoint.MobileToolkit.Maui.Fonts.DevIcons</PackageId>
-    <PackageTags>avantipoint, fonts, maui, embedded fonts, devicons</PackageTags>
+    <PackageTags>avantipoint, fonts, maui, dotnetmaui, embedded fonts, devicons</PackageTags>
     <MappingFile>DevIcons</MappingFile>
     <ReadMeFilePath>$(DevIconsReadMe)</ReadMeFilePath>
   </PropertyGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="$(DevIconsBrandsFont)" />
-    <AdditionalFiles Include="$(DevIconsBrandsFont)" Alias="devicons" FontName="DevIconsBrands" Version="1.8.0" CssFile="$(DevIconsCssFile)" />
-    <PackageReference Include="AP.MobileToolkit.FontGenerator" >
+    <EmbeddedResource Include="$(DevIconsFont)" />
+    <AdditionalFiles Include="$(DevIconsFont)" Alias="devicons" FontName="DevIcons" Version="1.8.0" CssFile="$(DevIconsCssFile)" />
+    <PackageReference Include="AP.MobileToolkit.FontGenerator">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <ProjectReference Include="..\AP.MobileToolkit.Maui.Fonts\AP.MobileToolkit.Maui.Fonts.csproj" />
+    <ProjectReference Include="..\AP.MobileToolkit.Maui.Fonts.Core\AP.MobileToolkit.Maui.Fonts.Core.csproj" />
   </ItemGroup>
 
 </Project>
