@@ -42,6 +42,8 @@ stages:
               maui-check --preview --non-interactive --ci --fix
 
             displayName: Setup for Maui and .NET 6
+            env:
+              DOTNET_CLI_TELEMETRY_OPTOUT: 1
 
           # - powershell: |
           #     dotnet tool install --global dotnet-vs --version 1.0.0
@@ -59,16 +61,18 @@ stages:
               configuration: 'Release'
               msbuildArguments: '/r'
 
-          - task: DotNetCoreCLI@2
+          - powershell: |
+              dotnet restore build-maui.slnf -configFile build\nuget.config
+              dotnet build build-maui.slnf -c Release
             displayName: Build Maui Packages
-            inputs:
-              command: build
-              buildProperties: build-maui.slnf
-              configuration: Release
+            env:
+              DOTNET_CLI_TELEMETRY_OPTOUT: 1
 
           - powershell: |
               dotnet test tests\AP.MobileToolkit.Fonts.Tests\AP.MobileToolkit.Fonts.Tests.csproj --configuration Release --logger trx --no-build --collect "Code Coverage"
             displayName: Run Tests
+            env:
+              DOTNET_CLI_TELEMETRY_OPTOUT: 1
 
           - task: PublishTestResults@2
             displayName: Publish Test Results
