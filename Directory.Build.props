@@ -35,9 +35,11 @@
     <FontAwesomeRegularFont>$(MSBuildThisFileDirectory)fonts\fa-regular-400.ttf</FontAwesomeRegularFont>
     <FontAwesomeSolidFont>$(MSBuildThisFileDirectory)fonts\fa-solid-900.ttf</FontAwesomeSolidFont>
     <FontAwesomeCssFile>$(MSBuildThisFileDirectory)fonts\fontawesome.min.css</FontAwesomeCssFile>
+    <DevIconsVersion>1.8.0</DevIconsVersion>
     <DevIconsReadMe>$(MSBuildThisFileDirectory)fonts\devicons.readme</DevIconsReadMe>
     <DevIconsFont>$(MSBuildThisFileDirectory)fonts\devicons.ttf</DevIconsFont>
     <DevIconsCssFile>$(MSBuildThisFileDirectory)fonts\devicons.min.css</DevIconsCssFile>
+    <MaterialIconsVersion>4.0.0</MaterialIconsVersion>
     <MaterialIconsReadMe>$(MSBuildThisFileDirectory)fonts\materialicons.readme</MaterialIconsReadMe>
     <MaterialIconsFont>$(MSBuildThisFileDirectory)fonts\MaterialIcons-Regular.ttf</MaterialIconsFont>
     <MaterialIconsCodepoints>$(MSBuildThisFileDirectory)fonts\MaterialIcons-Regular.codepoints</MaterialIconsCodepoints>

@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="$(MaterialIconsRoundFont)" />
-    <AdditionalFiles Include="$(MaterialIconsRoundFont)" Alias="material-round" FontName="MaterialIconsRound" Version="4.0.0" CodepointsFile="$(MaterialIconsRoundCodepoints)" />
+    <AdditionalFiles Include="$(MaterialIconsRoundFont)" Alias="material-round" FontName="MaterialIconsRound" Version="$(MaterialIconsVersion)" CodepointsFile="$(MaterialIconsRoundCodepoints)" />
     <PackageReference Include="AP.MobileToolkit.FontGenerator" >
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

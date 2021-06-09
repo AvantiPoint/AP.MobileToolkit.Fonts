@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="$(MaterialIconsFont)" />
-    <AdditionalFiles Include="$(MaterialIconsFont)" Alias="material" FontName="MaterialIcons" Version="4.0.0" CodepointsFile="$(MaterialIconsCodepoints)" />
+    <AdditionalFiles Include="$(MaterialIconsFont)" Alias="material" FontName="MaterialIcons" Version="$(MaterialIconsVersion)" CodepointsFile="$(MaterialIconsCodepoints)" />
     <PackageReference Include="AP.MobileToolkit.FontGenerator" >
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
