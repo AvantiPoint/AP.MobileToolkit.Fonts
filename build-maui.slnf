@@ -1,0 +1,19 @@
+{
+  "solution": {
+    "path": "AP.MobileToolkit.Fonts.sln",
+    "projects": [
+      "src\\AP.MobileToolkit.Fonts.Abstractions\\AP.MobileToolkit.Fonts.Abstractions.csproj",
+      "src\\maui\\AP.MobileToolkit.Comet.Fonts\\AP.MobileToolkit.Comet.Fonts.csproj",
+      "src\\maui\\AP.MobileToolkit.Maui.Fonts.Core\\AP.MobileToolkit.Maui.Fonts.Core.csproj",
+      "src\\maui\\AP.MobileToolkit.Maui.Fonts.DevIcons\\AP.MobileToolkit.Maui.Fonts.DevIcons.csproj",
+      "src\\maui\\AP.MobileToolkit.Maui.Fonts.FontAwesomeFree.Brands\\AP.MobileToolkit.Maui.Fonts.FontAwesomeFree.Brands.csproj",
+      "src\\maui\\AP.MobileToolkit.Maui.Fonts.FontAwesomeFree.Regular\\AP.MobileToolkit.Maui.Fonts.FontAwesomeFree.Regular.csproj",
+      "src\\maui\\AP.MobileToolkit.Maui.Fonts.FontAwesomeFree.Solid\\AP.MobileToolkit.Maui.Fonts.FontAwesomeFree.Solid.csproj",
+      "src\\maui\\AP.MobileToolkit.Maui.Fonts.MaterialIconsOutlined\\AP.MobileToolkit.Maui.Fonts.MaterialIconsOutlined.csproj",
+      "src\\maui\\AP.MobileToolkit.Maui.Fonts.MaterialIconsRound\\AP.MobileToolkit.Maui.Fonts.MaterialIconsRound.csproj",
+      "src\\maui\\AP.MobileToolkit.Maui.Fonts.MaterialIconsSharp\\AP.MobileToolkit.Maui.Fonts.MaterialIconsSharp.csproj",
+      "src\\maui\\AP.MobileToolkit.Maui.Fonts.MaterialIcons\\AP.MobileToolkit.Maui.Fonts.MaterialIcons.csproj",
+      "src\\maui\\AP.MobileToolkit.Maui.Fonts\\AP.MobileToolkit.Maui.Fonts.csproj"
+    ]
+  }
+}
