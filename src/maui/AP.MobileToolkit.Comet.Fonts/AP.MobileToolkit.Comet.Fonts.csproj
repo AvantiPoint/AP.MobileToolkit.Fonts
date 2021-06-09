@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>AP.MobileToolkit.Fonts</RootNamespace>
+    <AssemblyName>AP.MobileToolkit.Fonts</AssemblyName>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Description>The AvantiPoint MobileToolkit makes it super simple to use Font Libraries like Font Awesome, DevIcons, Material Icons or even your own custom icon fonts. Building an MVU app with Clancey's Comet, be sure to add this to support the MVU approach to Icon Image Sources</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Clancey.Comet" />
+    <ProjectReference Include="..\AP.MobileToolkit.Maui.Fonts.Core\AP.MobileToolkit.Maui.Fonts.Core.csproj" />
+  </ItemGroup>
+
+</Project>
