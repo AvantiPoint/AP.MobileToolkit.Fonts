@@ -11,7 +11,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="$(DevIconsFont)" />
-    <AdditionalFiles Include="$(DevIconsFont)" Alias="devicons" FontName="DevIcons" Version="1.8.0" CssFile="$(DevIconsCssFile)" />
+    <AdditionalFiles Include="$(DevIconsFont)" Alias="devicons" FontName="DevIcons" Version="$(DevIconsVersion)" CssFile="$(DevIconsCssFile)" />
     <PackageReference Include="AP.MobileToolkit.FontGenerator">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

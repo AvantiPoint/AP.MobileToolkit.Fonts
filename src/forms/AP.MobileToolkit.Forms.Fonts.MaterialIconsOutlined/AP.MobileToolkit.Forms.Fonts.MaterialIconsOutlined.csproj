@@ -7,7 +7,7 @@
     <PackageTags>avantipoint, fonts, xamarin.forms, embedded fonts, materialicons</PackageTags>
     <FontFileName>$(MaterialIconsFont)</FontFileName>
     <FontCodepoints>$(MaterialIconsCodepoints)</FontCodepoints>
-    <FontVersion>4.0.0</FontVersion>
+    <FontVersion>$(MaterialIconsVersion)</FontVersion>
     <FontAlias>material-icons</FontAlias>
     <FontMappingFile>MaterialIcons</FontMappingFile>
     <ReadMeFilePath>$(MaterialIconsReadMe)</ReadMeFilePath>
@@ -15,7 +15,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="$(MaterialIconsOutlinedFont)" />
-    <AdditionalFiles Include="$(MaterialIconsOutlinedFont)" Alias="material-outlined" FontName="MaterialIconsOutlined" Version="4.0.0" CodepointsFile="$(MaterialIconsOutlinedCodepoints)" />
+    <AdditionalFiles Include="$(MaterialIconsOutlinedFont)" Alias="material-outlined" FontName="MaterialIconsOutlined" Version="$(MaterialIconsVersion)" CodepointsFile="$(MaterialIconsOutlinedCodepoints)" />
     <PackageReference Include="AP.MobileToolkit.FontGenerator" >
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
