@@ -1,7 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <Import Project="..\..\..\Fonts.props" />
-
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <Description>Provides the embedded font helpers for adding Vorillaz DevIcons to your Maui project.</Description>
