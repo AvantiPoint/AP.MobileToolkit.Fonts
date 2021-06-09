@@ -7,6 +7,7 @@
     <Authors>Dan Siegel</Authors>
     <Company>AvantiPoint</Company>
     <Copyright>Copyright © AvantiPoint 2016-2021</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>avantipoint-icon.png</PackageIcon>
     <PackageProjectUrl>https://github.com/AvantiPoint/AP.MobileToolkit</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
@@ -15,16 +16,11 @@
     <PackageOutputPath Condition=" '$(BUILD_ARTIFACTSTAGINGDIRECTORY)' != '' ">$(BUILD_ARTIFACTSTAGINGDIRECTORY)</PackageOutputPath>
     <IsTestProject>$(MSBuildProjectName.Contains('Test'))</IsTestProject>
     <IsPackable>!$(IsTestProject)</IsPackable>
-    <IsPackable Condition=" $(MSBuildProjectName.StartsWith('SampleFonts')) ">false</IsPackable>
+    <IsPackable Condition=" $(MSBuildProjectName.Contains('Sample')) ">false</IsPackable>
     <GeneratePackageOnBuild>$(IsPackable)</GeneratePackageOnBuild>
-    <IsPackable Condition=" $(MSBuildProjectName.StartsWith('ToolkitDemo')) ">false</IsPackable>
     <IS_PREVIEW Condition=" '$(IS_PREVIEW)' == '' ">false</IS_PREVIEW>
     <IS_RELEASE Condition=" '$(IS_RELEASE)' == '' ">false</IS_RELEASE>
     <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
-    <EmbedUntrackedSources>true</EmbedUntrackedSources>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <LangVersion>latest</LangVersion>
-    <!-- <EmitCompilerGeneratedFiles>True</EmitCompilerGeneratedFiles> -->
   </PropertyGroup>
 
   <!-- Font Assets -->
