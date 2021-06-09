@@ -8,7 +8,7 @@ namespace Microsoft.Maui.Hosting
 {
     public static class APMobileToolkitFontAppHostBuilderExtensions
     {
-        public static IAppHostBuilder UseMobileToolkitFonts(this IAppHostBuilder builder, Action<FontOptionsBuilder> configureOptions)
+        public static IAppHostBuilder ConfigureIconFonts(this IAppHostBuilder builder, Action<FontOptionsBuilder> configureOptions)
         {
             var options = new FontOptionsBuilder();
             configureOptions(options);
