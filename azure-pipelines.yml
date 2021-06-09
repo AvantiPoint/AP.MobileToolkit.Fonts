@@ -62,7 +62,7 @@ stages:
               msbuildArguments: '/r'
 
           - powershell: |
-              dotnet restore build-maui.slnf -configFile build\nuget.config
+              dotnet restore .\build-maui.slnf --configfile .\build\nuget.config
               dotnet build build-maui.slnf -c Release
             displayName: Build Maui Packages
             env:
