@@ -15,7 +15,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <ProjectReference Include="..\AP.MobileToolkit.Maui.Fonts\AP.MobileToolkit.Maui.Fonts.csproj" />
+    <ProjectReference Include="..\AP.MobileToolkit.Maui.Fonts.Core\AP.MobileToolkit.Maui.Fonts.Core.csproj" />
   </ItemGroup>
 
 </Project>

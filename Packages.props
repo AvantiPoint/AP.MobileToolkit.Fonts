@@ -10,8 +10,14 @@
     <PackageReference Update="xunit.runner.visualstudio" Version="2.4.3" />
     <PackageReference Update="coverlet.collector" Version="3.0.3" />
     <PackageReference Update="Uno.WinUI" Version="3.7.4" />
+    <PackageReference Update="Microsoft.Maui" Version="6.0.100-nightly.672" />
     <PackageReference Update="Microsoft.Maui.Core" Version="6.0.100-nightly.672" />
     <PackageReference Update="Microsoft.Maui.Controls" Version="6.0.100-nightly.672" />
+    <PackageReference Update="Microsoft.Maui.Controls.Compatibility" Version="6.0.100-nightly.672" />
+    <PackageReference Update="Microsoft.Maui.Resizetizer" Version="6.0.100-nightly.672" />
+    <PackageReference Update="Clancey.Comet" Version="0.3.43-beta" />
+    <PackageReference Update="Microsoft.ProjectReunion" Version="[0.5.6]" />
+    <PackageReference Update="Microsoft.ProjectReunion.WinUI" Version="[0.5.6]" />
   </ItemGroup>
 
   <ItemGroup>

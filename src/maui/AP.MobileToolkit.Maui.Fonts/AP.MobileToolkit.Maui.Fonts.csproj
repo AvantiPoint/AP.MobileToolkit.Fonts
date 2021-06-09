@@ -5,7 +5,7 @@
     <RootNamespace>AP.MobileToolkit.Fonts</RootNamespace>
     <AssemblyName>AP.MobileToolkit.Fonts</AssemblyName>
     <PackageId>AvantiPoint.MobileToolkit.Maui.Fonts</PackageId>
-    <Description>Provides extensions for easily bundling Icon Fonts with as Embedded Fonts that ship via NuGet. This library provides the control implementations for Maui MVVM apps.</Description>
+    <Description>The AvantiPoint MobileToolkit makes it super simple to use Font Libraries like Font Awesome, DevIcons, Material Icons or even your own custom icon fonts. We meet you where you're building apps. Use this library when building MVVM apps with Dotnet Maui to add support for using the Icon Image Source and get some XAML helpers.</Description>
     <PackageTags>avantipoint, fonts, maui, embedded fonts, mvvm</PackageTags>
   </PropertyGroup>
 
