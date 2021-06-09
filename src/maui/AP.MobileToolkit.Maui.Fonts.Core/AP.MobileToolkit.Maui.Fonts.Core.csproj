@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net6.0;net6.0-ios;net6.0-android;net6.0-windows10.0.18362</TargetFrameworks>
+    <TargetFrameworks>net6.0;net6.0-ios;net6.0-android;net6.0-windows10.0.18362;net6.0-maccatalyst</TargetFrameworks>
     <RootNamespace>AP.MobileToolkit.Fonts</RootNamespace>
     <PackageId>AvantiPoint.MobileToolkit.Maui.Fonts.Core</PackageId>
     <Description>Easily use Embedded Icon Font libraries like Font Awesome, Material Icons, DevIcons and more! This core enables any Maui app to leverage the power of AvantiPoint Fonts! This core Maui compatibility library provides the common API for those developing traditional MVVM or MVU apps.</Description>
@@ -18,6 +18,10 @@
   </ItemGroup>
 
   <ItemGroup Condition=" $(TargetFramework) == 'net6.0-ios' ">
+    <Compile Include="**\*.ios.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('net6.0-mac')) ">
     <Compile Include="**\*.ios.cs" />
   </ItemGroup>
 

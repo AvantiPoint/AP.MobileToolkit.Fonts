@@ -5,7 +5,7 @@ namespace AP.MobileToolkit.Fonts.Controls
 {
     public partial class IconImageSourceService : IImageSourceService<IIconImageSource>
     {
-#if IOS || ANDROID || WINDOWS
+#if IOS || ANDROID || WINDOWS || MACCATALYST
         private IFontRegistry _fontRegistry { get; }
         private FontImageSourceService _fontImageSourceService { get; }
 
