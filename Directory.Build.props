@@ -6,7 +6,7 @@
     <IncludeSource>True</IncludeSource>
     <Authors>Dan Siegel</Authors>
     <Company>AvantiPoint</Company>
-    <Copyright>Copyright © AvantiPoint 2020</Copyright>
+    <Copyright>Copyright © AvantiPoint 2016-2021</Copyright>
     <PackageIcon>avantipoint-icon.png</PackageIcon>
     <PackageProjectUrl>https://github.com/AvantiPoint/AP.MobileToolkit</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
