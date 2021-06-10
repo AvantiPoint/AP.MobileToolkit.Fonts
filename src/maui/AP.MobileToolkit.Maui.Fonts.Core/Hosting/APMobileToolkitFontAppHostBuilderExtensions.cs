@@ -2,6 +2,7 @@
 using AP.MobileToolkit.Fonts;
 using AP.MobileToolkit.Fonts.Controls;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Maui.LifecycleEvents;
 
 namespace Microsoft.Maui.Hosting
@@ -34,35 +35,7 @@ namespace Microsoft.Maui.Hosting
                 issc.AddService<IIconImageSource, IconImageSourceService>();
             });
 
-            builder.ConfigureLifecycleEvents((ctx, lifecyle) =>
-            {
-#if ANDROID
-                lifecyle.AddAndroid(b =>
-                {
-                    b.OnStart(_ =>
-                    {
-                        RegistryLocator.Registry = MauiApplication.Current.Services.GetRequiredService<IFontRegistry>();
-                    });
-                });
-#elif IOS || MACCATALYST
-                lifecyle.AddiOS(b =>
-                {
-                    b.FinishedLaunching((app, options) =>
-                    {
-                        RegistryLocator.Registry = MauiUIApplicationDelegate.Current.Services.GetRequiredService<IFontRegistry>();
-                        return true;
-                    });
-                });
-#elif WINDOWS
-                lifecyle.AddWindows(b =>
-                {
-                    b.OnLaunched((app, args) =>
-                    {
-                        RegistryLocator.Registry = MauiWinUIApplication.Current.Services.GetRequiredService<IFontRegistry>();
-                    });
-                });
-#endif
-            });
+            builder.ConfigureServices<RegistryLocator>();
 
             return builder;
         }

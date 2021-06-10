@@ -1,0 +1,11 @@
+<Project>
+  <Import Project="..\Directory.Build.targets" />
+
+  <PropertyGroup>
+    <Description>$(Description)
+
+NOTE: This is an early preview version of Maui using a nightly build. Be sure to add the Maui Nightly CI feed before installing:
+https://pkgs.dev.azure.com/xamarin/public/_packaging/maui-nightly/nuget/v3/index.json
+    </Description>
+  </PropertyGroup>
+</Project>
