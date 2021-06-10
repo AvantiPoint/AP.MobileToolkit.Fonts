@@ -9,9 +9,9 @@
     <Copyright>Copyright © AvantiPoint 2016-2021</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>avantipoint-icon.png</PackageIcon>
-    <PackageProjectUrl>https://github.com/AvantiPoint/AP.MobileToolkit</PackageProjectUrl>
+    <PackageProjectUrl>https://avantipoint.github.io/AP.MobileToolkit/fonts/</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/AvantiPoint/AP.MobileToolkit</RepositoryUrl>
+    <RepositoryUrl>https://github.com/AvantiPoint/AP.MobileToolkit.Fonts.git</RepositoryUrl>
     <PackageOutputPath>$(MSBuildThisFileDirectory)Artifacts</PackageOutputPath>
     <PackageOutputPath Condition=" '$(BUILD_ARTIFACTSTAGINGDIRECTORY)' != '' ">$(BUILD_ARTIFACTSTAGINGDIRECTORY)</PackageOutputPath>
     <IsTestProject>$(MSBuildProjectName.Contains('Test'))</IsTestProject>
@@ -21,6 +21,14 @@
     <IS_PREVIEW Condition=" '$(IS_PREVIEW)' == '' ">false</IS_PREVIEW>
     <IS_RELEASE Condition=" '$(IS_RELEASE)' == '' ">false</IS_RELEASE>
     <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+  </PropertyGroup> 
+
+  <PropertyGroup>
+    <!-- Nuget source link -->
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
 
   <!-- Font Assets -->

@@ -63,10 +63,15 @@ stages:
 
           - powershell: |
               dotnet restore .\build-maui.slnf --configfile .\build\nuget.config
-              dotnet build build-maui.slnf -c Release
-            displayName: Build Maui Packages
+            displayName: Restore Maui Projects
             env:
               DOTNET_CLI_TELEMETRY_OPTOUT: 1
+
+          - task: MSBuild@1
+            displayName: Build Maui Packages
+            inputs:
+              solution: build-maui.slnf
+              configuration: 'Release'
 
           - powershell: |
               dotnet test tests\AP.MobileToolkit.Fonts.Tests\AP.MobileToolkit.Fonts.Tests.csproj --configuration Release --logger trx --no-build --collect "Code Coverage"

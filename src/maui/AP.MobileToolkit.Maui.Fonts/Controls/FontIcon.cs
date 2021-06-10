@@ -54,7 +54,7 @@ namespace AP.MobileToolkit.Fonts.Controls
             }
         }
 
-            public static void RegisterDefaultOnChangedHandler(FontIconHandler fontIconHandler) =>
+        public static void RegisterDefaultOnChangedHandler(FontIconHandler fontIconHandler) =>
             _defaultOnChanged = fontIconHandler;
 
         public static IconImageSource CreateIconImageSource(BindableObject bindable, string selector) =>
