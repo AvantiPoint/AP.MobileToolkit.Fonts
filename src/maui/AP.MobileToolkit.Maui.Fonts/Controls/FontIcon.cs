@@ -10,7 +10,7 @@ namespace AP.MobileToolkit.Fonts.Controls
         public delegate void FontIconHandler(BindableObject bindable, string selector, string glyph, string fontFamily);
 
         public static readonly BindableProperty IconProperty =
-    BindableProperty.CreateAttached("Icon", typeof(string), typeof(BindableObject), null, propertyChanged: OnIconChanged);
+            BindableProperty.CreateAttached("Icon", typeof(string), typeof(BindableObject), null, propertyChanged: OnIconChanged);
 
         public static readonly BindableProperty ColorProperty =
             BindableProperty.CreateAttached("Color", typeof(Color), typeof(BindableObject), Colors.Black, propertyChanged: OnIconChanged);
