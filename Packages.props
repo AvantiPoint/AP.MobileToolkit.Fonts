@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <GlobalPackageReference Include="Nerdbank.GitVersioning" Version="3.4.205" />
+    <GlobalPackageReference Include="Nerdbank.GitVersioning" Version="3.4.216" />
   </ItemGroup>
 
   <ItemGroup Condition=" $(IsPackable) ">
