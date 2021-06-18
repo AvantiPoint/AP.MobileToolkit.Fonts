@@ -1,4 +1,8 @@
 <Project>
+  <PropertyGroup>
+    <MauiVersion>6.0.100-preview.5.794</MauiVersion>
+    <ProjectReunionVersion>0.8.0-preview</ProjectReunionVersion>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Update="Xamarin.Forms" Version="5.0.0.2012" />
     <PackageReference Update="Xamarin.Essentials" Version="1.6.1" />
@@ -10,14 +14,15 @@
     <PackageReference Update="xunit.runner.visualstudio" Version="2.4.3" />
     <PackageReference Update="coverlet.collector" Version="3.0.3" />
     <PackageReference Update="Uno.WinUI" Version="3.7.4" />
-    <PackageReference Update="Microsoft.Maui" Version="6.0.100-nightly.672" />
-    <PackageReference Update="Microsoft.Maui.Core" Version="6.0.100-nightly.672" />
-    <PackageReference Update="Microsoft.Maui.Controls" Version="6.0.100-nightly.672" />
-    <PackageReference Update="Microsoft.Maui.Controls.Compatibility" Version="6.0.100-nightly.672" />
-    <PackageReference Update="Microsoft.Maui.Resizetizer" Version="6.0.100-nightly.672" />
-    <PackageReference Update="Clancey.Comet" Version="0.3.43-beta" />
-    <PackageReference Update="Microsoft.ProjectReunion" Version="[0.5.6]" />
-    <PackageReference Update="Microsoft.ProjectReunion.WinUI" Version="[0.5.6]" />
+    <PackageReference Update="Microsoft.Maui" Version="$(MauiVersion)" />
+    <PackageReference Update="Microsoft.Maui.Core" Version="$(MauiVersion)" />
+    <PackageReference Update="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+    <PackageReference Update="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+    <PackageReference Update="Microsoft.Maui.Resizetizer" Version="$(MauiVersion)" />
+    <PackageReference Update="Clancey.Comet" Version="0.3.46-beta" />
+    <PackageReference Update="Microsoft.ProjectReunion" Version="$(ProjectReunionVersion)" />
+    <PackageReference Update="Microsoft.ProjectReunion.WinUI" Version="$(ProjectReunionVersion)" />
+    <PackageReference Update="Microsoft.ProjectReunion.Foundation" Version="$(ProjectReunionVersion)" />
   </ItemGroup>
 
   <ItemGroup>

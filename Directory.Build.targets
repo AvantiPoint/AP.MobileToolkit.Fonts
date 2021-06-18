@@ -6,4 +6,8 @@
     <Product>$(AssemblyName) ($(TargetFramework))</Product>
   </PropertyGroup>
 
+  <!-- Required - Overwrite tasks that are not needed when multitargeting -->
+  <Target Name="ValidateWinUIPlatform" />
+  <Target Name="BinPlaceBootstrapDll" />
+
 </Project>

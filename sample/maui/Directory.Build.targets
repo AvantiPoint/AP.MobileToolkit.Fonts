@@ -15,4 +15,5 @@
     <!-- If removed, Top level debug targets show as a list of devices for the selected TFM -->
     <ProjectCapability Include="XamarinStaticLaunchProfiles" />
   </ItemGroup>
+
 </Project>
