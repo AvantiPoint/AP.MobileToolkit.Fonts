@@ -7,6 +7,8 @@ using Xamarin.Forms;
 
 namespace AP.MobileToolkit.Fonts
 {
+    public delegate void FontIconHandler(BindableObject bindable, string selector, string glyph, string fontFamily);
+
     public static class FontRegistry
     {
 #if !NETSTANDARD
@@ -61,6 +63,16 @@ namespace AP.MobileToolkit.Fonts
         internal static bool HasFont(string selector, out IFont font)
         {
             return FontRegistryHelper.HasFont(RegisteredFonts, selector, out font);
+        }
+
+        internal static FontIconHandler OnChanged = DefaultOnChanged;
+
+        public static void RegisterDefaultOnChangedHandler(FontIconHandler fontIconHandler) =>
+            OnChanged = fontIconHandler;
+
+        private static void DefaultOnChanged(BindableObject bindable, string selector, string glyph, string fontFamily)
+        {
+            Console.WriteLine($"The control type '{bindable.GetType().FullName}' is not supported. To add support please register a delegate handler or file an issue on GitHub.");
         }
 
         [EditorBrowsable(EditorBrowsableState.Never)]

@@ -1,23 +1,18 @@
-﻿using System;
-using AP.MobileToolkit.Fonts;
+﻿using AP.MobileToolkit.Fonts;
 using Xamarin.Forms;
 
 namespace AP.MobileToolkit.Controls
 {
     public static class FontIcon
     {
-        public delegate void FontIconHandler(BindableObject bindable, string selector, string glyph, string fontFamily);
-
         public static readonly BindableProperty IconProperty =
-    BindableProperty.CreateAttached("Icon", typeof(string), typeof(BindableObject), null, propertyChanged: OnIconChanged);
+            BindableProperty.CreateAttached("Icon", typeof(string), typeof(FontIcon), null, propertyChanged: OnIconChanged);
 
         public static readonly BindableProperty ColorProperty =
-            BindableProperty.CreateAttached("Color", typeof(Color), typeof(BindableObject), Color.Default, propertyChanged: OnIconChanged);
+            BindableProperty.CreateAttached("Color", typeof(Color), typeof(FontIcon), Color.Default, propertyChanged: OnIconChanged);
 
         public static readonly BindableProperty SizeProperty =
-            BindableProperty.CreateAttached("Size", typeof(double), typeof(BindableObject), 12.0, propertyChanged: OnIconChanged);
-
-        private static FontIconHandler _defaultOnChanged = DefaultOnChanged;
+            BindableProperty.CreateAttached("Size", typeof(double), typeof(FontIcon), 12.0, propertyChanged: OnIconChanged);
 
         private static void OnIconChanged(BindableObject bindable, object oldValue, object newValue)
         {
@@ -48,13 +43,10 @@ namespace AP.MobileToolkit.Controls
                     menuItem.IconImageSource = CreateIconImageSource(bindable, selector);
                     break;
                 default:
-                    _defaultOnChanged?.Invoke(bindable, selector, glyph, fontFamily);
+                    FontRegistry.OnChanged?.Invoke(bindable, selector, glyph, fontFamily);
                     break;
             }
         }
-
-        public static void RegisterDefaultOnChangedHandler(FontIconHandler fontIconHandler) =>
-            _defaultOnChanged = fontIconHandler;
 
         public static IconImageSource CreateIconImageSource(BindableObject bindable, string selector) => 
             new IconImageSource
@@ -64,9 +56,22 @@ namespace AP.MobileToolkit.Controls
                 Color = (Color)bindable.GetValue(ColorProperty)
             };
 
-        private static void DefaultOnChanged(BindableObject bindable, string selector, string glyph, string fontFamily)
-        {
-            Console.WriteLine($"The control type '{bindable.GetType().FullName}' is not supported. To add support please register a delegate handler or file an issue on GitHub.");
-        }
+        public static string GetIcon(BindableObject bindable) =>
+            (string)bindable.GetValue(IconProperty);
+
+        public static void SetIcon(BindableObject bindable, string selector) =>
+            bindable.SetValue(IconProperty, selector);
+
+        public static Color GetColor(BindableObject bindable) =>
+            (Color)bindable.GetValue(ColorProperty);
+
+        public static void SetColor(BindableObject bindable, Color color) =>
+            bindable.SetValue(ColorProperty, color);
+
+        public static double GetSize(BindableObject bindable) =>
+            (double)bindable.GetValue(SizeProperty);
+
+        public static void SetSize(BindableObject bindable, double size) =>
+            bindable.SetValue(SizeProperty, size);
     }
 }
