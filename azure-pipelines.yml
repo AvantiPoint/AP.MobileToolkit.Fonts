@@ -34,11 +34,10 @@ stages:
             displayName: Install .NET 6 preview
             inputs:
               packageType: sdk
-              includePreviewVersions: true
-              version: 6.0.100-preview.4.21255.9
+              useGlobalJson: true
 
           - powershell: |
-              dotnet tool install --global Redth.Net.Maui.Check --version 0.5.0
+              dotnet tool install --global Redth.Net.Maui.Check --version 0.5.6
               maui-check --preview --non-interactive --ci --fix
 
             displayName: Setup for Maui and .NET 6

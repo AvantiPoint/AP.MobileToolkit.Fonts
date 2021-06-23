@@ -1,15 +1,15 @@
 ﻿using System;
-using AP.MobileToolkit.Fonts;
+using System.ComponentModel;
 using AP.MobileToolkit.Fonts.Controls;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Maui.LifecycleEvents;
+using Microsoft.Maui.Hosting;
 
-namespace Microsoft.Maui.Hosting
+namespace AP.MobileToolkit.Fonts.Internals
 {
     public static class APMobileToolkitFontAppHostBuilderExtensions
     {
-        public static IAppHostBuilder ConfigureIconFonts(this IAppHostBuilder builder, Action<FontOptionsBuilder> configureOptions)
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public static IAppHostBuilder ConfigureIconFontsInternal(this IAppHostBuilder builder, Action<FontOptionsBuilder> configureOptions)
         {
             var options = new FontOptionsBuilder();
             configureOptions(options);
@@ -35,7 +35,7 @@ namespace Microsoft.Maui.Hosting
                 issc.AddService<IIconImageSource, IconImageSourceService>();
             });
 
-            builder.ConfigureServices<RegistryLocator>();
+            //builder.ConfigureServices<RegistryLocator>();
 
             return builder;
         }

@@ -18,17 +18,17 @@
           <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <Label Text="{ap:Icon IconName='far fa-user'}" />
+        <Label ap:FontIcon.Icon="far fa-user" />
         <Label Text="Font Awesome Regular - User"
                Grid.Column="1" />
 
-        <Label Text="{ap:Icon 'fas fa-user'}"
+        <Label ap:FontIcon.Icon="fas fa-user"
                Grid.Row="1" />
         <Label Text="Font Awesome Solid - User"
                Grid.Row="1"
                Grid.Column="1" />
 
-        <Label Text="{ap:Icon 'fab fa-github'}"
+        <Label ap:FontIcon.Icon="fab fa-github"
                Grid.Row="2" />
         <Label Text="Font Awesome Brands - Github"
                Grid.Row="2"
@@ -38,7 +38,7 @@
       <Label>
         <Label.FormattedText>
           <FormattedString>
-            <ap:IconSpan GlyphName="far fa-user" />
+            <Span ap:FontIcon.Icon="far fa-user" />
             <Span Text="    Font Awesome Regular - User" />
           </FormattedString>
         </Label.FormattedText>
@@ -46,7 +46,7 @@
       <Label>
         <Label.FormattedText>
           <FormattedString>
-            <ap:IconSpan GlyphName="fas fa-user" />
+            <Span ap:FontIcon.Icon="fas fa-user" />
             <Span Text="    Font Awesome Solid - User" />
           </FormattedString>
         </Label.FormattedText>
@@ -54,7 +54,7 @@
       <Label>
         <Label.FormattedText>
           <FormattedString>
-            <ap:IconSpan GlyphName="fab fa-github" />
+            <Span ap:FontIcon.Icon="fab fa-github" />
             <Span Text="    Font Awesome Brands - GitHub" />
           </FormattedString>
         </Label.FormattedText>
@@ -67,17 +67,17 @@
           <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <Button Text="{ap:Icon 'far fa-user'}" />
+        <Button ap:FontIcon.Icon="far fa-user" />
         <Label Text="Font Awesome Regular - User"
                Grid.Column="1" />
 
-        <Button Text="{ap:Icon 'fas fa-user'}"
+        <Button ap:FontIcon.Icon="fas fa-user"
                Grid.Row="1" />
         <Label Text="Font Awesome Solid - User"
                Grid.Row="1"
                Grid.Column="1" />
 
-        <Button Text="{ap:Icon 'fab fa-github'}"
+        <Button ap:FontIcon.Icon="fab fa-github"
                Grid.Row="2" />
         <Label Text="Font Awesome Brands - Github"
                Grid.Row="2"
