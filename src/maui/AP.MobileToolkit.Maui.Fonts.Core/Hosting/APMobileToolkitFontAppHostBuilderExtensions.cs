@@ -35,8 +35,6 @@ namespace AP.MobileToolkit.Fonts.Internals
                 issc.AddService<IIconImageSource, IconImageSourceService>();
             });
 
-            //builder.ConfigureServices<RegistryLocator>();
-
             return builder;
         }
     }

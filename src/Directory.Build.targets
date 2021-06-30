@@ -4,14 +4,14 @@
   <Target Name="CopyFontReadMe"
           BeforeTargets="CoreBuild"
           Condition=" $(ReadMeFilePath) != '' ">
-    <Exec Command="type $(ReadMeFilePath) > $(IntermediateOutputPath)\readme.txt" />
+    <Exec Command="type $(ReadMeFilePath) > $(IntermediateOutputPath)\readme.md" />
   </Target>
 
   <Target Name="_AddPackageReadMe"
           AfterTargets="CopyFontReadMe"
-          Condition="Exists('$(IntermediateOutputPath)\readme.txt')">
+          Condition="Exists('$(IntermediateOutputPath)\readme.md')">
     <ItemGroup>
-      <_PackageFiles Include="$(IntermediateOutputPath)\readme.txt" PackagePath="" />
+      <_PackageFiles Include="$(IntermediateOutputPath)\readme.md" PackagePath="" />
     </ItemGroup>
   </Target>
 </Project>
