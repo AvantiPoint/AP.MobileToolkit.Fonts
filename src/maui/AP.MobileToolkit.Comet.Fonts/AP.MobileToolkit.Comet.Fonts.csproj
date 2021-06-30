@@ -5,6 +5,7 @@
     <RootNamespace>AP.MobileToolkit.Fonts</RootNamespace>
     <AssemblyName>AP.MobileToolkit.Fonts</AssemblyName>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>AvantiPoint.MobileToolkit.Comet.Fonts</PackageId>
     <Description>The AvantiPoint MobileToolkit makes it super simple to use Font Libraries like Font Awesome, DevIcons, Material Icons or even your own custom icon fonts. Building an MVU app with Clancey's Comet, be sure to add this to support the MVU approach to Icon Image Sources</Description>
   </PropertyGroup>
 
