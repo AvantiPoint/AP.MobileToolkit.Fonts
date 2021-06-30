@@ -34,25 +34,25 @@
   <!-- Font Assets -->
   <PropertyGroup>
     <FontAwesomeVersion>5.15.3</FontAwesomeVersion>
-    <FontAwesomeReadMe>$(MSBuildThisFileDirectory)fonts\fontawesome.readme</FontAwesomeReadMe>
-    <FontAwesomeBrandsFont>$(MSBuildThisFileDirectory)fonts\fa-brands-400.ttf</FontAwesomeBrandsFont>
-    <FontAwesomeRegularFont>$(MSBuildThisFileDirectory)fonts\fa-regular-400.ttf</FontAwesomeRegularFont>
-    <FontAwesomeSolidFont>$(MSBuildThisFileDirectory)fonts\fa-solid-900.ttf</FontAwesomeSolidFont>
-    <FontAwesomeCssFile>$(MSBuildThisFileDirectory)fonts\fontawesome.min.css</FontAwesomeCssFile>
+    <FontAwesomeReadMe>$(MSBuildThisFileDirectory)fonts\FontAwesome\fontawesome.readme</FontAwesomeReadMe>
+    <FontAwesomeBrandsFont>$(MSBuildThisFileDirectory)fonts\FontAwesome\fa-brands-400.ttf</FontAwesomeBrandsFont>
+    <FontAwesomeRegularFont>$(MSBuildThisFileDirectory)fonts\FontAwesome\fa-regular-400.ttf</FontAwesomeRegularFont>
+    <FontAwesomeSolidFont>$(MSBuildThisFileDirectory)fonts\FontAwesome\fa-solid-900.ttf</FontAwesomeSolidFont>
+    <FontAwesomeCssFile>$(MSBuildThisFileDirectory)fonts\FontAwesome\fontawesome.min.css</FontAwesomeCssFile>
     <DevIconsVersion>1.8.0</DevIconsVersion>
-    <DevIconsReadMe>$(MSBuildThisFileDirectory)fonts\devicons.readme</DevIconsReadMe>
-    <DevIconsFont>$(MSBuildThisFileDirectory)fonts\devicons.ttf</DevIconsFont>
-    <DevIconsCssFile>$(MSBuildThisFileDirectory)fonts\devicons.min.css</DevIconsCssFile>
+    <DevIconsReadMe>$(MSBuildThisFileDirectory)fonts\DevIcons\devicons.readme</DevIconsReadMe>
+    <DevIconsFont>$(MSBuildThisFileDirectory)fonts\DevIcons\devicons.ttf</DevIconsFont>
+    <DevIconsCssFile>$(MSBuildThisFileDirectory)fonts\DevIcons\devicons.min.css</DevIconsCssFile>
     <MaterialIconsVersion>4.0.0</MaterialIconsVersion>
-    <MaterialIconsReadMe>$(MSBuildThisFileDirectory)fonts\materialicons.readme</MaterialIconsReadMe>
-    <MaterialIconsFont>$(MSBuildThisFileDirectory)fonts\MaterialIcons-Regular.ttf</MaterialIconsFont>
-    <MaterialIconsCodepoints>$(MSBuildThisFileDirectory)fonts\MaterialIcons-Regular.codepoints</MaterialIconsCodepoints>
-    <MaterialIconsOutlinedFont>$(MSBuildThisFileDirectory)fonts\MaterialIconsOutlined-Regular.otf</MaterialIconsOutlinedFont>
-    <MaterialIconsOutlinedCodepoints>$(MSBuildThisFileDirectory)fonts\MaterialIconsOutlined-Regular.codepoints</MaterialIconsOutlinedCodepoints>
-    <MaterialIconsRoundFont>$(MSBuildThisFileDirectory)fonts\MaterialIconsRound-Regular.otf</MaterialIconsRoundFont>
-    <MaterialIconsRoundCodepoints>$(MSBuildThisFileDirectory)fonts\MaterialIconsRound-Regular.codepoints</MaterialIconsRoundCodepoints>
-    <MaterialIconsSharpFont>$(MSBuildThisFileDirectory)fonts\MaterialIconsSharp-Regular.otf</MaterialIconsSharpFont>
-    <MaterialIconsSharpCodepoints>$(MSBuildThisFileDirectory)fonts\MaterialIconsSharp-Regular.codepoints</MaterialIconsSharpCodepoints>
+    <MaterialIconsReadMe>$(MSBuildThisFileDirectory)fonts\MaterialIcons\materialicons.readme</MaterialIconsReadMe>
+    <MaterialIconsFont>$(MSBuildThisFileDirectory)fonts\MaterialIcons\MaterialIcons-Regular.ttf</MaterialIconsFont>
+    <MaterialIconsCodepoints>$(MSBuildThisFileDirectory)fonts\MaterialIcons\MaterialIcons-Regular.codepoints</MaterialIconsCodepoints>
+    <MaterialIconsOutlinedFont>$(MSBuildThisFileDirectory)fonts\MaterialIcons\MaterialIconsOutlined-Regular.otf</MaterialIconsOutlinedFont>
+    <MaterialIconsOutlinedCodepoints>$(MSBuildThisFileDirectory)fonts\MaterialIcons\MaterialIconsOutlined-Regular.codepoints</MaterialIconsOutlinedCodepoints>
+    <MaterialIconsRoundFont>$(MSBuildThisFileDirectory)fonts\MaterialIcons\MaterialIconsRound-Regular.otf</MaterialIconsRoundFont>
+    <MaterialIconsRoundCodepoints>$(MSBuildThisFileDirectory)fonts\MaterialIcons\MaterialIconsRound-Regular.codepoints</MaterialIconsRoundCodepoints>
+    <MaterialIconsSharpFont>$(MSBuildThisFileDirectory)fonts\MaterialIcons\MaterialIconsSharp-Regular.otf</MaterialIconsSharpFont>
+    <MaterialIconsSharpCodepoints>$(MSBuildThisFileDirectory)fonts\MaterialIcons\MaterialIconsSharp-Regular.codepoints</MaterialIconsSharpCodepoints>
   </PropertyGroup>
 
   <ItemGroup Condition=" $(IsPackable) ">
