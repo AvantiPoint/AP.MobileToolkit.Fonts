@@ -1,36 +1,30 @@
 <Project>
   <PropertyGroup>
-    <MauiVersion>6.0.100-preview.5.794</MauiVersion>
-    <ProjectReunionVersion>0.8.0</ProjectReunionVersion>
+    <ProjectReunionVersion>0.8.12</ProjectReunionVersion>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Update="Xamarin.Forms" Version="5.0.0.2012" />
-    <PackageReference Update="Xamarin.Essentials" Version="1.6.1" />
+    <PackageReference Update="Xamarin.Essentials" Version="1.7.3" />
     <PackageReference Update="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.9" />
     <PackageReference Update="AP.MobileToolkit.FontGenerator" Version="4.0.18" />
-    <PackageReference Update="Microsoft.NET.Test.Sdk" Version="16.10.0" />
+    <PackageReference Update="Microsoft.NET.Test.Sdk" Version="17.3.0" />
     <PackageReference Update="Xamarin.Forms.Mocks" Version="4.7.0.1" />
-    <PackageReference Update="xunit" Version="2.4.1" />
-    <PackageReference Update="xunit.runner.visualstudio" Version="2.4.3" />
-    <PackageReference Update="coverlet.collector" Version="3.0.3" />
-    <PackageReference Update="Uno.WinUI" Version="3.7.4" />
-    <PackageReference Update="Microsoft.Maui" Version="$(MauiVersion)" />
-    <PackageReference Update="Microsoft.Maui.Core" Version="$(MauiVersion)" />
-    <PackageReference Update="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-    <PackageReference Update="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
-    <PackageReference Update="Microsoft.Maui.Resizetizer" Version="$(MauiVersion)" />
-    <PackageReference Update="Clancey.Comet" Version="0.3.50-beta" />
+    <PackageReference Update="xunit" Version="2.4.2" />
+    <PackageReference Update="xunit.runner.visualstudio" Version="2.4.5" />
+    <PackageReference Update="coverlet.collector" Version="3.1.2" />
+    <PackageReference Update="Uno.WinUI" Version="4.4.13" />
+    <PackageReference Update="Clancey.Comet" Version="0.3.464-beta" />
     <PackageReference Update="Microsoft.ProjectReunion" Version="$(ProjectReunionVersion)" />
     <PackageReference Update="Microsoft.ProjectReunion.WinUI" Version="$(ProjectReunionVersion)" />
     <PackageReference Update="Microsoft.ProjectReunion.Foundation" Version="$(ProjectReunionVersion)" />
   </ItemGroup>
 
   <ItemGroup>
-    <GlobalPackageReference Include="Nerdbank.GitVersioning" Version="3.4.220" />
+    <GlobalPackageReference Include="Nerdbank.GitVersioning" Version="3.5.109" />
   </ItemGroup>
 
   <ItemGroup Condition=" $(IsPackable) ">
     <GlobalPackageReference Include="Microsoft.SourceLink.GitHub"
-                            Version="1.1.0-beta-20204-02" />
+                            Version="1.1.1" />
   </ItemGroup>
 </Project>

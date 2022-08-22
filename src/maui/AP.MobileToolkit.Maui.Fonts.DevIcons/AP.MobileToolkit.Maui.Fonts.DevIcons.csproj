@@ -7,6 +7,7 @@
     <PackageTags>avantipoint, fonts, maui, dotnetmaui, embedded fonts, devicons</PackageTags>
     <MappingFile>DevIcons</MappingFile>
     <ReadMeFilePath>$(DevIconsReadMe)</ReadMeFilePath>
+    <UseMaui>true</UseMaui>
   </PropertyGroup>
 
   <ItemGroup>

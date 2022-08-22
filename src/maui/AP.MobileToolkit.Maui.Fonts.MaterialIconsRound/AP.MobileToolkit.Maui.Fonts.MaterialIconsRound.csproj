@@ -11,6 +11,7 @@
     <FontAlias>material-icons</FontAlias>
     <FontMappingFile>MaterialIcons</FontMappingFile>
     <ReadMeFilePath>$(MaterialIconsReadMe)</ReadMeFilePath>
+    <UseMaui>true</UseMaui>
   </PropertyGroup>
 
   <ItemGroup>

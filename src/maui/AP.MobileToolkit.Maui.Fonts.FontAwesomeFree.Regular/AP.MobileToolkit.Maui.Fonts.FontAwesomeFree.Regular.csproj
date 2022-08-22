@@ -6,6 +6,7 @@
     <PackageId>AvantiPoint.MobileToolkit.Maui.Fonts.FontAwesomeFree.Regular</PackageId>
     <PackageTags>avantipoint, fonts, maui, embedded fonts, fontawesome</PackageTags>
     <MappingFile>FontAwesomeRegular</MappingFile>
+    <UseMaui>true</UseMaui>
   </PropertyGroup>
 
   <ItemGroup>
