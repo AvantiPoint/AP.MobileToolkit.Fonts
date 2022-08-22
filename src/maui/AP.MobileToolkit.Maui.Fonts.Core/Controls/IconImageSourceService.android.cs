@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using Android.Content;
 using Android.Graphics.Drawables;
+using Android.Widget;
 using Microsoft.Maui;
 
 namespace AP.MobileToolkit.Fonts.Controls
@@ -16,6 +13,12 @@ namespace AP.MobileToolkit.Fonts.Controls
         {
             var fontImageSource = GetFontImageSource(imageSource);
             return _fontImageSourceService.GetDrawableAsync(fontImageSource, context, cancellationToken);
+        }
+
+        public Task<IImageSourceServiceResult> LoadDrawableAsync(IImageSource imageSource, ImageView imageView, CancellationToken cancellationToken = default)
+        {
+            var fontImageSource = GetFontImageSource(imageSource);
+            return _fontImageSourceService.LoadDrawableAsync(fontImageSource, imageView, cancellationToken);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using AP.MobileToolkit.Fonts;
 using AP.MobileToolkit.Fonts.Controls;
 using AP.MobileToolkit.Fonts.Internals;
 using Microsoft.Extensions.DependencyInjection;
@@ -9,13 +10,13 @@ using Microsoft.Maui.Handlers;
 using Microsoft.Maui.Hosting;
 using IImage = Microsoft.Maui.IImage;
 
-namespace AP.MobileToolkit.Fonts
+namespace Microsoft.Maui.Hosting
 {
-    public static class BuilderExtensions
+    public static class ToolkitFontsBuilderExtensions
     {
-        public static IAppHostBuilder ConfigureIconFonts(this IAppHostBuilder builder, Action<FontOptionsBuilder> configureOptions)
+        public static MauiAppBuilder ConfigureIconFonts(this MauiAppBuilder builder, Action<FontOptionsBuilder> configureOptions)
         {
-            LabelHandler.LabelMapper[KnownPropertyNames.Icon] = (handler, view) =>
+            LabelHandler.Mapper.AppendToMapping(KnownPropertyNames.Icon, (handler, view) =>
             {
                 if (view is not Label label)
                     return;
@@ -24,9 +25,9 @@ namespace AP.MobileToolkit.Fonts
                 (var glyph, string fontName) = Lookup(selector, handler.MauiContext);
                 label.Text = glyph;
                 label.FontFamily = fontName;
-            };
+            });
 
-            ButtonHandler.ButtonMapper[KnownPropertyNames.Icon] = (handler, view) =>
+            ButtonHandler.Mapper.AppendToMapping(KnownPropertyNames.Icon, (handler, view) =>
             {
                 if (view is not Button button)
                     return;
@@ -35,16 +36,16 @@ namespace AP.MobileToolkit.Fonts
                 (var glyph, string fontName) = Lookup(selector, handler.MauiContext);
                 button.Text = glyph;
                 button.FontFamily = fontName;
-            };
+            });
 
-            ImageHandler.ImageMapper[KnownPropertyNames.Icon] = ImageMapper;
-            ImageHandler.ImageMapper[KnownPropertyNames.Color] = ImageMapper;
-            ImageHandler.ImageMapper[KnownPropertyNames.Size] = ImageMapper;
+            ImageHandler.Mapper.AppendToMapping(KnownPropertyNames.Icon, ImageMapper);
+            ImageHandler.Mapper.AppendToMapping(KnownPropertyNames.Color, ImageMapper);
+            ImageHandler.Mapper.AppendToMapping(KnownPropertyNames.Size, ImageMapper);
 
             return builder.ConfigureIconFontsInternal(configureOptions);
         }
 
-        private static void ImageMapper(ImageHandler handler, IImage view)
+        private static void ImageMapper(IImageHandler handler, IImage view)
         {
             if (view is not Image image)
                 return;

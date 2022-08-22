@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ap="http://avantipoint.com/mobiletoolkit"
+             Title="Extensions"
+             IconImageSource="{ap:IconImageSource {x:Static ap:FontAwesomeSolid.TachometerAlt}, Size='32'}"
+             x:Class="MauiSampleFonts.Pages.WebClasses">
+  <ContentPage.ToolbarItems>
+    <ToolbarItem Text="Login"
+                 IconImageSource="{ap:IconImageSource 'fas fa-sign-in-alt', Color=Black, Size='25'}" />
+  </ContentPage.ToolbarItems>
+  <ScrollView>
+    <StackLayout>
+      <Label Text="Labels" />
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="50" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label ap:FontIcon.Icon="far fa-user" />
+        <Label Text="Font Awesome Regular - User"
+               Grid.Column="1" />
+
+        <Label ap:FontIcon.Icon="fas fa-user"
+               Grid.Row="1" />
+        <Label Text="Font Awesome Solid - User"
+               Grid.Row="1"
+               Grid.Column="1" />
+
+        <Label ap:FontIcon.Icon="fab fa-github"
+               Grid.Row="2" />
+        <Label Text="Font Awesome Brands - Github"
+               Grid.Row="2"
+               Grid.Column="1" />
+      </Grid>
+      <Label Text="Spans" />
+      <Label>
+        <Label.FormattedText>
+          <FormattedString>
+            <Span ap:FontIcon.Icon="far fa-user" />
+            <Span Text="    Font Awesome Regular - User" />
+          </FormattedString>
+        </Label.FormattedText>
+      </Label>
+      <Label>
+        <Label.FormattedText>
+          <FormattedString>
+            <Span ap:FontIcon.Icon="fas fa-user" />
+            <Span Text="    Font Awesome Solid - User" />
+          </FormattedString>
+        </Label.FormattedText>
+      </Label>
+      <Label>
+        <Label.FormattedText>
+          <FormattedString>
+            <Span ap:FontIcon.Icon="fab fa-github" />
+            <Span Text="    Font Awesome Brands - GitHub" />
+          </FormattedString>
+        </Label.FormattedText>
+      </Label>
+
+      <Label Text="Buttons" />
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="50" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Button ap:FontIcon.Icon="far fa-user" />
+        <Label Text="Font Awesome Regular - User"
+               Grid.Column="1" />
+
+        <Button ap:FontIcon.Icon="fas fa-user"
+               Grid.Row="1" />
+        <Label Text="Font Awesome Solid - User"
+               Grid.Row="1"
+               Grid.Column="1" />
+
+        <Button ap:FontIcon.Icon="fab fa-github"
+               Grid.Row="2" />
+        <Label Text="Font Awesome Brands - Github"
+               Grid.Row="2"
+               Grid.Column="1" />
+      </Grid>
+      <Label Text="Image Source" />
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="50" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Image HeightRequest="40"
+               Aspect="AspectFit">
+          <Image.Source>
+            <ap:IconImageSource Name="far fa-user"
+                                Size="40"
+                                Color="Black" />
+          </Image.Source>
+        </Image>
+        <Label Text="Font Awesome Regular - User"
+               Grid.Column="1" />
+
+        <Image HeightRequest="40"
+               Aspect="AspectFit"
+               BackgroundColor="Gray"
+               WidthRequest="60"
+               Grid.Row="1">
+          <Image.Source>
+            <ap:IconImageSource Name="fas fa-user"
+                                Size="40"
+                                Color="White" />
+          </Image.Source>
+        </Image>
+        <Label Text="Font Awesome Solid - User"
+               Grid.Row="1"
+               Grid.Column="1" />
+
+        <Image HeightRequest="40"
+               Aspect="AspectFit"
+               Grid.Row="2">
+          <Image.Source>
+            <ap:IconImageSource Name="fab fa-github"
+                                Size="40"
+                                Color="Black" />
+          </Image.Source>
+        </Image>
+        <Label Text="Font Awesome Brands - Github"
+               Grid.Row="2"
+               Grid.Column="1" />
+      </Grid>
+      <Label Text="Image Source - Extension" />
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="50" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Image Source="{ap:IconImageSource 'far fa-user', Size=40, Color=Black}" />
+        <Label Text="Font Awesome Regular - User"
+               Grid.Column="1" />
+
+        <Image Source="{ap:IconImageSource 'fas fa-user', Size=40, Color=White}"
+               BackgroundColor="Gray"
+               Grid.Row="1" />
+        <Label Text="Font Awesome Solid - User"
+               Grid.Row="1"
+               Grid.Column="1" />
+
+        <Image Source="{ap:IconImageSource 'fab fa-github', Size=40, Color=Black}"
+               Grid.Row="2" />
+        <Label Text="Font Awesome Brands - Github"
+               Grid.Row="2"
+               Grid.Column="1" />
+      </Grid>
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

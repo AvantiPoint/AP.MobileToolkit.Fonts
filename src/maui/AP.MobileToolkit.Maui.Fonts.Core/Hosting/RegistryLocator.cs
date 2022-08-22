@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using AP.MobileToolkit.Fonts;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 
 namespace Microsoft.Maui.Hosting
 {

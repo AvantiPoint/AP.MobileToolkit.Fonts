@@ -1,5 +1,8 @@
-﻿using Microsoft.Maui;
+﻿using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.Maui;
 using Microsoft.Maui.Graphics;
+using Font = Microsoft.Maui.Font;
 
 namespace AP.MobileToolkit.Fonts.Controls
 {
