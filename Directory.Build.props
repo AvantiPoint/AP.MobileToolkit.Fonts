@@ -33,11 +33,11 @@
 
   <!-- Font Assets -->
   <PropertyGroup>
-    <FontAwesomeVersion>5.15.3</FontAwesomeVersion>
+    <FontAwesomeVersion>6.1.2</FontAwesomeVersion>
     <FontAwesomeReadMe>$(MSBuildThisFileDirectory)fonts\FontAwesome\fontawesome.readme</FontAwesomeReadMe>
-    <FontAwesomeBrandsFont>$(MSBuildThisFileDirectory)fonts\FontAwesome\fa-brands-400.ttf</FontAwesomeBrandsFont>
-    <FontAwesomeRegularFont>$(MSBuildThisFileDirectory)fonts\FontAwesome\fa-regular-400.ttf</FontAwesomeRegularFont>
-    <FontAwesomeSolidFont>$(MSBuildThisFileDirectory)fonts\FontAwesome\fa-solid-900.ttf</FontAwesomeSolidFont>
+    <FontAwesomeBrandsFont>$(MSBuildThisFileDirectory)fonts\FontAwesome\fa-brands-400.otf</FontAwesomeBrandsFont>
+    <FontAwesomeRegularFont>$(MSBuildThisFileDirectory)fonts\FontAwesome\fa-regular-400.otf</FontAwesomeRegularFont>
+    <FontAwesomeSolidFont>$(MSBuildThisFileDirectory)fonts\FontAwesome\fa-solid-900.otf</FontAwesomeSolidFont>
     <FontAwesomeCssFile>$(MSBuildThisFileDirectory)fonts\FontAwesome\fontawesome.min.css</FontAwesomeCssFile>
     <DevIconsVersion>1.8.0</DevIconsVersion>
     <DevIconsReadMe>$(MSBuildThisFileDirectory)fonts\DevIcons\devicons.readme</DevIconsReadMe>
