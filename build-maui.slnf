@@ -3,7 +3,6 @@
     "path": "AP.MobileToolkit.Fonts.sln",
     "projects": [
       "src\\AP.MobileToolkit.Fonts.Abstractions\\AP.MobileToolkit.Fonts.Abstractions.csproj",
-      "src\\maui\\AP.MobileToolkit.Comet.Fonts\\AP.MobileToolkit.Comet.Fonts.csproj",
       "src\\maui\\AP.MobileToolkit.Maui.Fonts.Core\\AP.MobileToolkit.Maui.Fonts.Core.csproj",
       "src\\maui\\AP.MobileToolkit.Maui.Fonts.DevIcons\\AP.MobileToolkit.Maui.Fonts.DevIcons.csproj",
       "src\\maui\\AP.MobileToolkit.Maui.Fonts.FontAwesomeFree.Brands\\AP.MobileToolkit.Maui.Fonts.FontAwesomeFree.Brands.csproj",
