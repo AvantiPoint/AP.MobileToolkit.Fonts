@@ -37,8 +37,7 @@ stages:
               version: 6.0.400
 
           - powershell: |
-              dotnet tool install --global Redth.Net.Maui.Check --version 1.0.0
-              maui-check --non-interactive --ci --fix
+              dotnet workload install maui
 
             displayName: Setup for Maui and .NET 6
             env:
