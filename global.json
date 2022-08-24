@@ -1,10 +1,10 @@
 {
   "sdk": {
-    "version": "6.0.100-preview.5.21302.13",
+    "version": "6.0.400",
     "rollForward": "latestPatch",
-    "allowPrerelease": true
+    "allowPrerelease": false
   },
   "msbuild-sdks": {
-    "MSBuild.Sdk.Extras": "3.0.23"
+    "MSBuild.Sdk.Extras": "3.0.44"
   }
 }

@@ -31,14 +31,13 @@ stages:
               version: 5.0.300
 
           - task: UseDotNet@2
-            displayName: Install .NET 6 preview
+            displayName: Install .NET 6
             inputs:
               packageType: sdk
-              useGlobalJson: true
+              version: 6.0.400
 
           - powershell: |
-              dotnet tool install --global Redth.Net.Maui.Check --version 0.5.6
-              maui-check --preview --non-interactive --ci --fix
+              dotnet workload install maui
 
             displayName: Setup for Maui and .NET 6
             env:
